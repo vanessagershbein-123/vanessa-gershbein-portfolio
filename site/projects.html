@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects and Builds</title>
+<meta name="description" content="Vanessa Gershbein: marketer, customer-insights nerd, and MBA candidate at UT Austin McCombs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Work+Sans:wght@400;600;700&family=Caveat:wght@600&family=Mrs+Saint+Delafield&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="inner site">
+<div>
+<div class="wrap">
+<header class="site-head">
+  <a class="brand" href="index.html"><span class="avatar logo"><img src="images/logo-vg.png" alt="" width="96" height="96"></span>Vanessa Gershbein</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="about.html">About me</a><div class="explore-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="explore-list">Explore <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="explore-list" hidden><li><a href="work.html">Selected Work</a></li><li><a href="career.html">My Career</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I've Made</a></li><li><a href="photography.html">Photography</a></li><li><a href="projects.html">Projects &amp; Builds</a></li></ul></div><a href="#contact">Say hello</a></nav>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="made.html">What I've Made</a></nav>
+
+<section class="page-title">
+  <h1>I like trying things <span class="hl">I don't know how to do yet.</span></h1>
+  <p>From building with AI to volunteering and creative side projects, this is where I push myself.</p>
+</section>
+
+<section class="proj-section" aria-labelledby="ai-h">
+  <h2 id="ai-h"><span class="dot" style="--c:var(--cobalt)"></span>Built with AI</h2>
+  <div class="proj-grid fit">
+    <article class="proj-card" style="--c:var(--cobalt)"><span class="when">Website · Sept 2026</span><h3>This website</h3><p>Designed and built with Claude, starting from two sites I admired. I wrote the copy, chose the look, and shipped it.</p></article>
+  </div>
+</section>
+
+<section class="proj-section" aria-labelledby="creative-h">
+  <h2 id="creative-h"><span class="dot" style="--c:var(--tomato)"></span>Creative</h2>
+  <div class="proj-grid">
+    <article class="proj-card has-photo" style="--c:var(--tomato)"><img src="images/jewelry.jpg" alt="Rows of handmade resin earrings with pressed flowers laid out on a mirrored tray" width="900" height="1200" loading="lazy"><div class="proj-text"><span class="when">Local markets</span><h3>Resin jewelry</h3><p>I design and pour resin jewelry with pressed flowers and have sold it at local markets. Ask me about my favorite piece!</p></div></article>
+  </div>
+</section>
+
+<section class="proj-section" aria-labelledby="give-h">
+  <h2 id="give-h"><span class="dot" style="--c:var(--sun)"></span>Giving back</h2>
+  <ul class="give-list">
+    <li><strong>Volunteer swim instructor</strong><span>Keens</span><span class="yrs">2025</span></li>
+    <li><strong>Operations</strong><span>Artist Talk on Art</span><span class="yrs">2023 – 2025</span><p class="give-note">Every week I helped host and publish panel discussions where senior artists talked about their work. The series is archived at the Smithsonian's Archives of American Art.</p></li>
+    <li><strong>Community Outreach Liaison</strong><span>Kantar</span><span class="yrs">2022 – 2023</span><p class="give-note">Organized community service events for the New York office, from volunteer days with Encore to clothing and food drives.</p></li>
+    <li><strong>Marketing Specialist</strong><span>50:50 Startup</span><span class="yrs">2020 – 2021</span><p class="give-note">Helped fundraise for and promote a global entrepreneurship program that brings together Israeli Arabs, Jews, and Palestinians to build equally owned tech startups.</p></li>
+  </ul>
+</section>
+
+<section class="talk" id="contact">
+  <p class="hand">psst, I love a good coffee chat</p>
+  <div class="talk-info">
+  <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
+  <div class="rows">
+    <div class="row"><span class="label">Email</span><span class="addr" id="email">vg25626@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
+    <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
+  </div>
+  </div>
+  <form class="talk-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <input type="hidden" name="page" value="projects.html">
+    <p class="hp" hidden><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <label class="f"><span>Name</span><input name="name" autocomplete="name" required></label>
+    <label class="f"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+    <label class="f"><span>What's on your mind?</span><textarea name="message" rows="4" required></textarea></label>
+    <button type="submit" class="send">Send it</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+<footer class="site-foot"><span>© 2026 Vanessa Gershbein</span><a href="made.html">← Back to What I've Made</a></footer>
+</div>
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.dataset.copy);
+    var done = function () { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy'; }, 1500); };
+    var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(el.textContent.trim()).then(done, fallback); } else { fallback(); }
+  });
+});
+// Explore menu in the header
+document.querySelectorAll('.explore-menu').forEach(function (m) {
+  var btn = m.querySelector('.explore-btn'), list = m.querySelector('.explore-list');
+  function set(open) { btn.setAttribute('aria-expanded', open); list.hidden = !open; m.classList.toggle('open', open); }
+  btn.addEventListener('click', function (e) { e.stopPropagation(); set(list.hidden); });
+  document.addEventListener('click', function (e) { if (!m.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); btn.focus(); } });
+});
+// contact form: send to Netlify without leaving the page
+document.querySelectorAll('.talk-form').forEach(function (form) {
+  var status = form.querySelector('.form-status'), btn = form.querySelector('.send');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    btn.disabled = true; status.textContent = 'Sending...';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset(); form.classList.add('sent'); status.textContent = 'Thanks! Your note is on its way to my inbox.'; })
+      .catch(function () { status.textContent = "Hmm, that didn't send. You can email me at vg25626@my.utexas.edu."; })
+      .then(function () { btn.disabled = false; });
+  });
+});
+</script>
+<script src="bubble.js" defer></script>
+</body>
+</html>
