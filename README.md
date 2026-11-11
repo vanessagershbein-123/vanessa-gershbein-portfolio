@@ -9,14 +9,14 @@ I spent six years figuring out why people choose what they choose. Now I'm an MB
 ## What's inside
 
 - **A home page you can play with.** Soap bubbles drift behind the headline. Pop one and it reveals a real fact about me.
-- **What I believe about marketing.** The About page opens with my story, then the takeaways I keep coming back to, each linking to the post or project it came from.
+- **Step inside my head.** On the About page my eyes follow your cursor, and the thoughts orbiting me are things I believe about marketing. Pop one and it carries you to the post it came from.
 - **Results first.** Selected Work groups real projects by the kind of work, leads each one with its result, and turns a few into quick guessing games.
 - **A career timeline** that fills in as you scroll.
 - **A contact form** that sends straight to my inbox.
 
 | About me | Career timeline | Selected Work |
 | --- | --- | --- |
-| ![About page with Vanessa's story and her beliefs about marketing as thought bubbles](screenshots/about-desktop.png) | ![Career page laid out as a timeline](screenshots/career-desktop.png) | ![Selected Work page with project cards](screenshots/work-desktop.png) |
+| ![About page with Vanessa's face and her beliefs about marketing orbiting it](screenshots/about-desktop.png) | ![Career page laid out as a timeline](screenshots/career-desktop.png) | ![Selected Work page with project cards](screenshots/work-desktop.png) |
 
 ## How it's built
 
@@ -24,12 +24,14 @@ I designed and built this site with Claude, starting from two sites I admired. I
 
 - **No framework.** Plain HTML, CSS, and a little JavaScript.
 - **One script builds every page.** `build.py` holds all the copy and writes each page into `site/`. To change a page, edit the copy there and run `python3 build.py`.
+- **Physics for the bubbles.** The orbiting thoughts on About use [Matter.js](https://brm.io/matter-js/). The cursor-following eyes swap between nine photos of me looking in different directions.
 - **Hosted on Netlify**, which publishes the `site/` folder and handles the contact form.
 
 ```
 build.py        every page's copy and layout
 site/           the finished website
   styles.css    all the styling
+  mind.js       About page: orbiting thoughts and cursor-following face
   landing.js    home page bubbles and the facts inside them
   bubble.js     floating bubbles and small pops around the site
   quiz.js       the guessing games on Selected Work

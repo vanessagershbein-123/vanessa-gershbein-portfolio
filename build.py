@@ -208,6 +208,19 @@ page("about.html", "About Vanessa", "about", body="""
   </div>
 </section>
 
+<div class="home about-mind">
+<section class="mind" aria-label="Step inside my head: what I believe about marketing">
+  <p class="hero-line"><span class="invite">Step inside my head. Pop a thought.</span></p>
+  <div class="mind-stage">
+    <img class="me" src="images/face/face-5.jpg" alt="Vanessa Gershbein smiling, wearing a dark green blazer" width="404" height="404">
+    <a class="thought belief-t t1" href="camp.html" style="--c:var(--sun)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">A good brief is a good prompt.</span><span class="t-line">From Marketing Camp</span></a>
+    <a class="thought belief-t t2" href="kenvue.html" style="--c:var(--cobalt)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">Retailers don't care if your brand wins.</span><span class="t-line">From my Kenvue recap</span></a>
+    <a class="thought belief-t t3" href="work.html#creative-h" style="--c:var(--tomato)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">Everyday people can beat a celebrity.</span><span class="t-line">From my creative tests</span></a>
+    <a class="thought belief-t t4" href="trek.html" style="--c:var(--pink)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">Plan for how it fails.</span><span class="t-line">From the Tech Trek</span></a>
+  </div>
+</section>
+</div>
+
 <section class="about-section">
   <h2>The short version of my story</h2>
   <div class="prose">
@@ -217,15 +230,6 @@ page("about.html", "About Vanessa", "about", body="""
   </div>
 </section>
 
-<section class="about-section">
-  <h2>What I believe about marketing</h2>
-  <ul class="beliefs">
-    <li class="belief"><a href="kenvue.html"><q>Retailers don't care if your brand wins. They care if their category grows.</q><span class="src">From my Kenvue recap →</span></a></li>
-    <li class="belief"><a href="camp.html"><q>A good brief is a good prompt.</q><span class="src">From Marketing Camp →</span></a></li>
-    <li class="belief"><a href="work.html#creative-h"><q>Everyday people can beat a celebrity.</q><span class="src">From my creative tests →</span></a></li>
-    <li class="belief"><a href="trek.html"><q>Think about how it fails before you celebrate how it works.</q><span class="src">From the Tech Trek →</span></a></li>
-  </ul>
-</section>
 
 <section class="about-section">
   <h2>A few things I love</h2>
@@ -235,6 +239,8 @@ page("about.html", "About Vanessa", "about", body="""
     <li style="--c:var(--paper)"><strong>Film photography</strong><span>See them on my <a href="photography.html">Photography</a>&nbsp;page.</span></li>
   </ul>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" defer></script>
+<script src="mind.js" defer></script>
 """)
 
 # ---------- CAREER ----------
