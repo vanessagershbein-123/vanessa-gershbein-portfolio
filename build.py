@@ -318,7 +318,6 @@ page("career.html", "Vanessa's Career", "career", body="""
   <article class="entry" style="--c:var(--pink)">
     <div class="logo has-img"><img src="images/logo-northeastern.png" alt="Northeastern University seal"></div>
     <div>
-      <span class="when">Class of 2020</span>
       <h2>BA, Communication Studies, Cum Laude</h2>
       <p class="where">Northeastern University · Boston, MA</p>
     </div>
