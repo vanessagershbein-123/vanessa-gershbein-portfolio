@@ -6,9 +6,19 @@
   var field = document.querySelector('.lp-field'), facts = [], next = 0, factEl = null, factTimer;
   try { facts = JSON.parse(field.dataset.facts || '[]'); } catch (err) {}
   var live = field && field.querySelector('[data-fact-live]');
+  var slot = document.querySelector('.lp-fact-slot');
   function showFact(b) {
     if (!facts.length) return;
-    var text = facts[next % facts.length]; next++;
+    var n = next % facts.length, text = facts[n]; next++;
+    var br0 = b.getBoundingClientRect();
+    document.dispatchEvent(new CustomEvent('lp-pop', { detail: { x: br0.left + br0.width / 2, y: br0.top + br0.height / 2 } }));
+    if (slot) {   // steady spot under the button: stays until the next pop
+      slot.querySelector('.fs-count').textContent = (n + 1) + ' / ' + facts.length;
+      slot.querySelector('.fs-text').textContent = text;
+      slot.hidden = false; slot.classList.remove('in'); void slot.offsetWidth; slot.classList.add('in');
+      if (live) live.textContent = text;
+      return;
+    }
     if (factEl) factEl.remove();
     clearTimeout(factTimer);
     factEl = document.createElement('p');

@@ -29,10 +29,10 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
     home_href = "preview-home.html" if preview else "index.html"
     resume_menu = '<div class="explore-menu resume-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="resume-list">Resume <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="resume-list" hidden><li><a href="Vanessa-Gershbein-Resume-Brand-Marketing.pdf" download>Brand marketing resume</a></li><li><a href="Vanessa-Gershbein-Resume-Product-Marketing.pdf" download>Product marketing resume</a></li></ul></div>'
     chev = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-    if preview:
+    if True:  # recruiter-row header on every page
         cur = lambda k: ' aria-current="page"' if current == k else ''
-        about_href = "preview-about.html"
-        more_cur = ' is-current' if current in ("mba", "made") else ''
+        about_href = "preview-about.html" if preview else "about.html"
+        more_cur = ' is-current' if current in ("mba", "made") else (' about-cur' if current == "about" else '')
         nav = (f'<nav aria-label="Main" class="nav-v2"><a class="d-only" href="{about_href}"{cur("about")}>About me</a><a href="work.html"{cur("work")}>Work</a><a href="career.html"{cur("career")}>Career</a>'
                f'<div class="explore-menu"><button type="button" class="explore-btn{more_cur}" aria-expanded="false" aria-controls="more-list">More {chev}</button><ul class="explore-list" id="more-list" hidden><li class="m-only"><a href="{about_href}">About me</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I\'ve Made</a></li><li class="m-only"><a href="#contact">Say hello</a></li></ul></div>'
                f'{resume_menu}<a class="d-only" href="#contact">Say hello</a></nav>')
@@ -198,21 +198,7 @@ page("index.html", "Vanessa Gershbein", "home", landing=True, body="""
 
 # ---------- ABOUT ----------
 page("about.html", "About Vanessa", "about", body="""
-<div class="home about-mind">
-<section class="mind" aria-label="Step inside my head">
-  <p class="hero-line"><span class="invite">Step inside my head. Pop a thought.</span></p>
-  <div class="mind-stage">
-    <p id="hi-h" class="giant-name" aria-hidden="true"><span class="sig">hi, I'm</span><span class="word">vanessa</span><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.9 6.3 5.7 11.1 12 12-6.3.9-11.1 5.7-12 12-.9-6.3-5.7-11.1-12-12C6.3 11.1 11.1 6.3 12 0Z"/></svg></p>
-    <img class="me" src="images/face/face-5.jpg" alt="Vanessa Gershbein smiling, wearing a dark green blazer" width="404" height="404">
-    <a class="thought t1" href="career.html" style="--c:var(--sun)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">My Career</span></a>
-    <a class="thought t2" href="work.html" style="--c:var(--cobalt)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">Selected Work</span></a>
-    <a class="thought t3" href="made.html" style="--c:var(--tomato)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">What I've Made</span></a>
-    <a class="thought t4" href="mba.html" style="--c:var(--pink)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">At McCombs</span></a>
-  </div>
-</section>
-</div>
-
-<section class="page-title calm">
+<section class="page-title">
   <h1>West Coast raised, East Coast trained, <span class="hl">now figuring out Texas.</span></h1>
 </section>
 
@@ -232,6 +218,16 @@ page("about.html", "About Vanessa", "about", body="""
 </section>
 
 <section class="about-section">
+  <h2>What I believe about marketing</h2>
+  <ul class="beliefs">
+    <li class="belief"><a href="kenvue.html"><q>Retailers don't care if your brand wins. They care if their category grows.</q><span class="src">From my Kenvue recap →</span></a></li>
+    <li class="belief"><a href="camp.html"><q>A good brief is a good prompt.</q><span class="src">From Marketing Camp →</span></a></li>
+    <li class="belief"><a href="work.html#creative-h"><q>Everyday people can beat a celebrity.</q><span class="src">From my creative tests →</span></a></li>
+    <li class="belief"><a href="trek.html"><q>Think about how it fails before you celebrate how it works.</q><span class="src">From the Tech Trek →</span></a></li>
+  </ul>
+</section>
+
+<section class="about-section">
   <h2>A few things I love</h2>
   <ul class="loves">
     <li style="--c:var(--mint)"><strong>Backpacking</strong>Two summers as a counselor in Yosemite, and I've been chasing trails and road trips ever since.</li>
@@ -239,8 +235,6 @@ page("about.html", "About Vanessa", "about", body="""
     <li style="--c:var(--paper)"><strong>Film photography</strong><span>See them on my <a href="photography.html">Photography</a>&nbsp;page.</span></li>
   </ul>
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" defer></script>
-<script src="mind.js" defer></script>
 """)
 
 # ---------- CAREER ----------
