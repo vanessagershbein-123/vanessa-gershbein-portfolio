@@ -1,7 +1,27 @@
-/* Preview landing: the bubble field. Click (or press Enter on) a bubble and it pops into droplets, then floats back. */
+/* Home: the bubble field. Pop a bubble (click, tap, or Enter on the big one) and it bursts into droplets,
+   shows the next real fact about Vanessa, then floats back. */
 (function () {
   try { sessionStorage.removeItem('cameFrom'); } catch (err) {}
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var field = document.querySelector('.lp-field'), facts = [], next = 0, factEl = null, factTimer;
+  try { facts = JSON.parse(field.dataset.facts || '[]'); } catch (err) {}
+  var live = field && field.querySelector('[data-fact-live]');
+  function showFact(b) {
+    if (!facts.length) return;
+    var text = facts[next % facts.length]; next++;
+    if (factEl) factEl.remove();
+    clearTimeout(factTimer);
+    factEl = document.createElement('p');
+    factEl.className = 'lp-fact'; factEl.setAttribute('aria-hidden', 'true'); factEl.textContent = text;
+    document.body.appendChild(factEl);
+    var br = b.getBoundingClientRect(), w = factEl.offsetWidth, h = factEl.offsetHeight, pad = 12;
+    var x = br.left + br.width / 2 - w / 2, y = br.top + br.height / 2 - h / 2;
+    x = Math.max(pad, Math.min(innerWidth - w - pad, x)); y = Math.max(pad, Math.min(innerHeight - h - pad, y));
+    factEl.style.left = x + scrollX + 'px'; factEl.style.top = y + scrollY + 'px';
+    if (live) live.textContent = text;
+    var el = factEl;
+    factTimer = setTimeout(function () { el.classList.add('out'); setTimeout(function () { el.remove(); }, 400); }, 3600);
+  }
   document.querySelectorAll('.lp-float').forEach(function (b) {
     function pop() {
       if (b.classList.contains('popped')) return;
@@ -14,6 +34,7 @@
         d.animate([{ transform: 'translate(-50%,-50%)', opacity: 1 }, { transform: 'translate(calc(-50% + ' + Math.cos(a) * dist + 'px), calc(-50% + ' + Math.sin(a) * dist + 'px)) scale(.3)', opacity: 0 }], { duration: 650, easing: 'cubic-bezier(.16,1,.3,1)' }).onfinish = (function (x) { return function () { x.remove(); }; })(d);
       }
       b.classList.add('popped');
+      showFact(b);
       var hint = document.querySelector('.lp-hint'); if (hint) hint.style.opacity = 0;
       setTimeout(function () { b.classList.remove('popped'); b.classList.add('reborn'); }, 2200);
       setTimeout(function () { b.classList.remove('reborn'); }, 3600);

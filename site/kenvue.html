@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kenvue DFML Summit · Vanessa Gershbein</title>
-<meta name="description" content="Vanessa Gershbein: marketer, customer-insights nerd, and MBA candidate at UT Austin McCombs.">
+<meta name="description" content="What Vanessa Gershbein learned at Kenvue's Developing Future Marketing Leaders Summit about the tensions in brand management.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kenvue DFML Summit · Vanessa Gershbein">
-<meta property="og:description" content="Six years figuring out why people choose what they choose. Now an MBA candidate at UT Austin McCombs.">
+<meta property="og:description" content="What Vanessa Gershbein learned at Kenvue's Developing Future Marketing Leaders Summit about the tensions in brand management.">
 <meta property="og:image" content="https://vanessagershbein.netlify.app/images/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,9 +24,9 @@
 <div class="wrap">
 <header class="site-head">
   <a class="brand" href="index.html"><span class="avatar logo"><img src="images/logo-vg.png" alt="" width="96" height="96"></span>Vanessa Gershbein</a>
-  <nav aria-label="Main"><a href="index.html">Home</a><a href="about.html">About me</a><div class="explore-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="explore-list">Explore <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="explore-list" hidden><li><a href="work.html">Selected Work</a></li><li><a href="career.html">My Career</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I've Made</a></li><li><a href="photography.html">Photography</a></li><li><a href="projects.html">Projects &amp; Builds</a></li></ul></div><a href="#contact">Say hello</a></nav>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="about.html">About me</a><div class="explore-menu"><button type="button" class="explore-btn is-current" aria-expanded="false" aria-controls="explore-list">Explore <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="explore-list" hidden><li><a href="work.html">Selected Work</a></li><li><a href="career.html">My Career</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I've Made</a></li><li><a href="photography.html">Photography</a></li><li><a href="projects.html">Projects &amp; Builds</a></li></ul></div><div class="explore-menu resume-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="resume-list">Resume <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="resume-list" hidden><li><a href="Vanessa-Gershbein-Resume-Brand-Marketing.pdf" download>Brand marketing resume</a></li><li><a href="Vanessa-Gershbein-Resume-Product-Marketing.pdf" download>Product marketing resume</a></li></ul></div><a href="#contact">Say hello</a></nav>
 </header>
-<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="mba.html">At McCombs</a></nav>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="mba.html">At McCombs</a><span>/</span><span aria-current="page">Kenvue DFML Summit</span></nav>
 
 <article class="blog">
   <header class="page-title">
@@ -37,7 +37,7 @@
   <figure class="trek-hero"><img src="images/kenvue-group.jpg" alt="Our group of MBA students smiling in front of the Kenvue building" width="1600" height="1200"></figure>
 
   <div class="post">
-    <p class="hook">Brand management, it turns out, is the art of holding two good ideas at once.</p>
+    <p class="hook">Brand management is the art of holding two good ideas at once.</p>
     <p>In November I flew to New Jersey for Kenvue's Developing Future Marketing Leaders (DFML) Summit: two days at headquarters with MBA students from several schools, just days after Kenvue officially became part of Kimberly-Clark. Across panels, case studies, and coffee chats, the leaders kept coming back to the same tensions.</p>
 
     <h2>A company that invests in leaders before it hires them</h2>
@@ -60,7 +60,7 @@
     <div class="quiz" data-answer="3">
       <p class="quiz-q">Quick guess. Who moves an over-the-counter brand the most?</p>
       <div class="quiz-opts"><button type="button" data-pick="1">A creator with millions of followers</button><button type="button" data-pick="2">A big TV campaign</button><button type="button" data-pick="3">Your doctor</button></div>
-      <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Your doctor! The panel called doctor recommendations an annuity: slow to build, and they keep paying out.</p>
+      <p class="quiz-result"><strong class="quiz-verdict"></strong> Your doctor! The panel called doctor recommendations an annuity: slow to build, and they keep paying out.</p>
     </div>
     <script src="quiz.js" defer></script>
     <p>The panel on marketing to doctors flipped how I think about influence. Health brands need both creators with big audiences and the experts who publish research and teach other doctors. Patients now walk in with answers from ChatGPT, so brands also have to make sure accurate information is what AI tools learn from.</p>
@@ -106,12 +106,15 @@ document.querySelectorAll('.copy').forEach(function (btn) {
   });
 });
 // Explore menu in the header
+var menus = [];
 document.querySelectorAll('.explore-menu').forEach(function (m) {
   var btn = m.querySelector('.explore-btn'), list = m.querySelector('.explore-list');
   function set(open) { btn.setAttribute('aria-expanded', open); list.hidden = !open; m.classList.toggle('open', open); }
-  btn.addEventListener('click', function (e) { e.stopPropagation(); set(list.hidden); });
+  menus.push(set);
+  btn.addEventListener('click', function (e) { e.stopPropagation(); var opening = list.hidden; menus.forEach(function (f) { f(false); }); set(opening); });
   document.addEventListener('click', function (e) { if (!m.contains(e.target)) set(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); btn.focus(); } });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !list.hidden) { set(false); btn.focus(); } });
+  m.addEventListener('focusout', function (e) { if (e.relatedTarget && !m.contains(e.relatedTarget)) set(false); });
 });
 // contact form: send to Netlify without leaving the page
 document.querySelectorAll('.talk-form').forEach(function (form) {

@@ -5,6 +5,9 @@ document.querySelectorAll('.quiz').forEach(function (quiz) {
   var verdict = quiz.querySelector('.quiz-verdict');
   var buttons = quiz.querySelectorAll('button');
   var reveal = quiz.hasAttribute('data-reveal');
+  var live = document.createElement('p');
+  live.className = 'sr-only'; live.setAttribute('aria-live', 'polite');
+  quiz.appendChild(live);
   result.hidden = true;
   buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -16,6 +19,7 @@ document.querySelectorAll('.quiz').forEach(function (quiz) {
         if (!reveal && b === btn) b.classList.add('is-picked');
       });
       result.hidden = false;
+      live.textContent = result.textContent.replace(/\s+/g, ' ').trim();
     });
   });
 });

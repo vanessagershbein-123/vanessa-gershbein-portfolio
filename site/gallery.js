@@ -25,3 +25,12 @@
   layout();
   addEventListener('resize', layout);
 })();
+
+// Gallery show video: load and play only once it scrolls into view (saves data on phones)
+(function () {
+  var v = document.querySelector('video[data-src]'); if (!v) return;
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function start() { if (!v.src) { v.src = v.dataset.src; } if (still) { v.controls = true; } else { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+  if (!('IntersectionObserver' in window)) { start(); return; }
+  new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { start(); o.disconnect(); } }); }, { rootMargin: '200px' }).observe(v);
+})();

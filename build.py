@@ -3,12 +3,31 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent / "site"
 
+CRUMB_NAMES = {"about.html": "About me", "career.html": "My Career", "work.html": "Selected Work", "mba.html": "At McCombs", "made.html": "What I've Made", "photography.html": "Photography", "projects.html": "Projects &amp; Builds", "kenvue.html": "Kenvue DFML Summit", "trek.html": "Tech Trek", "camp.html": "Marketing Camp", "forte.html": "Forté Conference"}
+DESCRIPTIONS = {
+    "index.html": "Vanessa Gershbein: six years figuring out why people choose what they choose. MBA candidate at UT Austin McCombs, looking for a summer 2027 marketing role.",
+    "about.html": "Step inside Vanessa Gershbein's head: West Coast raised, East Coast trained, now at UT Austin McCombs.",
+    "career.html": "Vanessa Gershbein's career: six years in customer insights at TapResearch, Kantar, and Swayable, now an MBA candidate at McCombs.",
+    "work.html": "Selected work by Vanessa Gershbein: brand strategy, creative testing, go-to-market, and media effectiveness, each with its result.",
+    "mba.html": "Vanessa Gershbein at UT Austin McCombs: Hildebrand Scholar, Forté Fellow, MIINT Fellow, and Marketing Fellow.",
+    "made.html": "What Vanessa Gershbein makes outside work: film photography, side projects, and things built with AI.",
+    "photography.html": "Vanessa Gershbein's film photography, and the Brooklyn gallery show that raised $1,000+ for an after-school art program.",
+    "projects.html": "Projects and builds by Vanessa Gershbein: this website, resin jewelry, and volunteering.",
+    "kenvue.html": "What Vanessa Gershbein learned at Kenvue's Developing Future Marketing Leaders Summit about the tensions in brand management.",
+    "trek.html": "What Vanessa Gershbein learned on the McCombs Tech Trek.",
+    "camp.html": "What Vanessa Gershbein learned about insight at McCombs Marketing Camp.",
+    "forte.html": "Vanessa Gershbein's recap of the Forté MBA Leadership Conference.",
+}
+
 def page(filename, title, current, body, home=False, back=("index.html", "Back home"), landing=False):
     nav_about = ' aria-current="page"' if current == "about" else ""
     nav_home = ' aria-current="page"' if home or landing else ""
-    crumb = "" if home or landing else f'<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a>' + ("" if back[0] == "index.html" else f'<span>/</span><a href="{back[0]}">{back[1].replace("Back to ", "")}</a>') + '</nav>\n'
+    here = CRUMB_NAMES.get(filename)
+    crumb = "" if home or landing else f'<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a>' + ("" if back[0] == "index.html" else f'<span>/</span><a href="{back[0]}">{back[1].replace("Back to ", "")}</a>') + (f'<span>/</span><span aria-current="page">{here}</span>' if here else '') + '</nav>\n'
+    explore_cur = ' is-current' if current in ("work", "career", "mba", "made") else ''
+    desc = DESCRIPTIONS.get(filename, DESCRIPTIONS["index.html"])
     no_bubbles = filename not in ("career.html",)  # floating bubbles only on Career (About has the bubble mind; home has its bubble field)
-    bubble = "" if no_bubbles else '<div class="page-bubbles" aria-label="Floating bubbles">' + ''.join(f'<button class="page-bubble b{i}" type="button" aria-label="Pop a bubble"></button>' for i in range(1, 8)) + '</div>\n'
+    bubble = "" if no_bubbles else '<div class="page-bubbles" aria-hidden="true">' + ''.join(f'<button class="page-bubble b{i}" type="button" tabindex="-1"></button>' for i in range(1, 8)) + '</div>\n'
     bubble_js = "" if home else '<script src="bubble.js" defer></script>\n'  # still loaded for the back-home pop
     body = crumb + bubble + body
     foot_link = "" if home or landing else f'<a href="{back[0]}">← {back[1]}</a>'
@@ -19,10 +38,10 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
-<meta name="description" content="Vanessa Gershbein: marketer, customer-insights nerd, and MBA candidate at UT Austin McCombs.">
+<meta name="description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
-<meta property="og:description" content="Six years figuring out why people choose what they choose. Now an MBA candidate at UT Austin McCombs.">
+<meta property="og:description" content="{desc}">
 <meta property="og:image" content="https://vanessagershbein.netlify.app/images/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -39,7 +58,7 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
 <div class="wrap">
 <header class="site-head">
   <a class="brand" href="index.html"><span class="avatar logo"><img src="images/logo-vg.png" alt="" width="96" height="96"></span>Vanessa Gershbein</a>
-  <nav aria-label="Main"><a href="index.html"{nav_home}>Home</a><a href="about.html"{nav_about}>About me</a><div class="explore-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="explore-list">Explore <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="explore-list" hidden><li><a href="work.html">Selected Work</a></li><li><a href="career.html">My Career</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I've Made</a></li><li><a href="photography.html">Photography</a></li><li><a href="projects.html">Projects &amp; Builds</a></li></ul></div><a href="#contact">Say hello</a></nav>
+  <nav aria-label="Main"><a href="index.html"{nav_home}>Home</a><a href="about.html"{nav_about}>About me</a><div class="explore-menu"><button type="button" class="explore-btn{explore_cur}" aria-expanded="false" aria-controls="explore-list">Explore <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="explore-list" hidden><li><a href="work.html">Selected Work</a></li><li><a href="career.html">My Career</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I've Made</a></li><li><a href="photography.html">Photography</a></li><li><a href="projects.html">Projects &amp; Builds</a></li></ul></div><div class="explore-menu resume-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="resume-list">Resume <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="resume-list" hidden><li><a href="Vanessa-Gershbein-Resume-Brand-Marketing.pdf" download>Brand marketing resume</a></li><li><a href="Vanessa-Gershbein-Resume-Product-Marketing.pdf" download>Product marketing resume</a></li></ul></div><a href="#contact">Say hello</a></nav>
 </header>
 {body}
 <section class="talk" id="contact">
@@ -76,12 +95,15 @@ document.querySelectorAll('.copy').forEach(function (btn) {{
   }});
 }});
 // Explore menu in the header
+var menus = [];
 document.querySelectorAll('.explore-menu').forEach(function (m) {{
   var btn = m.querySelector('.explore-btn'), list = m.querySelector('.explore-list');
   function set(open) {{ btn.setAttribute('aria-expanded', open); list.hidden = !open; m.classList.toggle('open', open); }}
-  btn.addEventListener('click', function (e) {{ e.stopPropagation(); set(list.hidden); }});
+  menus.push(set);
+  btn.addEventListener('click', function (e) {{ e.stopPropagation(); var opening = list.hidden; menus.forEach(function (f) {{ f(false); }}); set(opening); }});
   document.addEventListener('click', function (e) {{ if (!m.contains(e.target)) set(false); }});
-  document.addEventListener('keydown', function (e) {{ if (e.key === 'Escape') {{ set(false); btn.focus(); }} }});
+  document.addEventListener('keydown', function (e) {{ if (e.key === 'Escape' && !list.hidden) {{ set(false); btn.focus(); }} }});
+  m.addEventListener('focusout', function (e) {{ if (e.relatedTarget && !m.contains(e.relatedTarget)) set(false); }});
 }});
 // contact form: send to Netlify without leaving the page
 document.querySelectorAll('.talk-form').forEach(function (form) {{
@@ -111,24 +133,25 @@ page("index.html", "Vanessa Gershbein", "home", landing=True, body="""
       <a class="lp-btn" href="about.html">Step inside my head <span aria-hidden="true">→</span></a>
     </div>
   </div>
-  <div class="lp-field" aria-label="Soap bubbles you can pop">
-    <button type="button" class="lp-float f1" aria-label="Pop a bubble"></button>
-    <button type="button" class="lp-float f2" aria-label="Pop a bubble"></button>
-    <button type="button" class="lp-float f3" aria-label="Pop a bubble"></button>
-    <button type="button" class="lp-float f4" aria-label="Pop a bubble"></button>
-    <button type="button" class="lp-float f5" aria-label="Pop a bubble"></button>
-    <p class="lp-hint" aria-hidden="true">go ahead, pop one</p>
+  <div class="lp-field" data-facts="[&quot;My film photo show raised $1,000+ for an after-school art program.&quot;, &quot;One storyboard fix lifted brand awareness almost 10 points.&quot;, &quot;I spent two summers as a counselor in Yosemite.&quot;, &quot;1 of 5 fellows picked for McCombs&#x27; MIINT impact investing program.&quot;, &quot;I pour resin jewelry with pressed flowers.&quot;, &quot;I built this whole site with Claude.&quot;, &quot;Rollerskating is the one place I happily look a little silly.&quot;]">
+    <button type="button" class="lp-float f1" aria-label="Pop a bubble for a fact about me"></button>
+    <button type="button" class="lp-float f2" tabindex="-1" aria-hidden="true"></button>
+    <button type="button" class="lp-float f3" tabindex="-1" aria-hidden="true"></button>
+    <button type="button" class="lp-float f4" tabindex="-1" aria-hidden="true"></button>
+    <button type="button" class="lp-float f5" tabindex="-1" aria-hidden="true"></button>
+    <p class="lp-hint" aria-hidden="true">pop one, there's a fact inside</p>
+    <p class="sr-only" aria-live="polite" data-fact-live></p>
   </div>
 </section>
 
 <section class="lp-logos" aria-label="Where I've worked and studied">
   <p>Where I've worked and studied</p>
   <div>
-    <img src="images/logo-tapresearch.png" alt="TapResearch">
-    <img src="images/logo-kantar.png" alt="Kantar">
-    <img src="images/logo-swayable.png" alt="Swayable">
-    <img src="images/logo-ut-seal.png" alt="UT Austin">
-    <img src="images/logo-northeastern.png" alt="Northeastern University">
+    <img src="images/logo-tapresearch.png" alt="TapResearch" width="400" height="295">
+    <img src="images/logo-kantar.png" alt="Kantar" width="600" height="116">
+    <img src="images/logo-swayable.png" alt="Swayable" width="79" height="81">
+    <img src="images/logo-ut-seal-sm.png" alt="UT Austin" width="128" height="128">
+    <img src="images/logo-northeastern-sm.png" alt="Northeastern University" width="128" height="128">
   </div>
 </section>
 
@@ -142,16 +165,30 @@ page("index.html", "Vanessa Gershbein", "home", landing=True, body="""
   <a href="mba.html"><span class="lp-i-title">At McCombs</span><span class="lp-i-desc">What I'm learning, working on, and joining as a first-year MBA.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
   <a href="made.html"><span class="lp-i-title">What I've Made</span><span class="lp-i-desc">Film photography, creative side projects, and things I've built.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
 </nav>
+
+<section class="lp-film" aria-labelledby="film-h">
+  <div class="lp-film-head">
+    <h2 id="film-h">Off the clock, I shoot film.</h2>
+    <a href="photography.html">See all my photos <span aria-hidden="true">→</span></a>
+  </div>
+  <a class="lp-film-strip" href="photography.html" tabindex="-1" aria-hidden="true">
+    <img src="images/strip-bubbles.jpg" alt="Kids chasing giant soap bubbles on a city street" loading="lazy" decoding="async">
+    <img src="images/strip-mirror.jpg" alt="A woman seen from behind, her face reflected in a yellow hand mirror in afternoon light" loading="lazy" decoding="async">
+    <img src="images/strip-laundry.jpg" alt="A red sheet drying on a line against a weathered white building, a child peeking from a window" loading="lazy" decoding="async">
+    <img src="images/strip-sled.jpg" alt="A kid on a blue sled framed through a hole in the snow" loading="lazy" decoding="async">
+    <img src="images/strip-runners.jpg" alt="Runners mid-stride on sunlit pavement, their long shadows stretching behind them" loading="lazy" decoding="async">
+  </a>
+</section>
 <script src="landing.js" defer></script>
 """)
 
 # ---------- ABOUT ----------
 page("about.html", "About Vanessa", "about", body="""
 <div class="home about-mind">
-<section class="mind" aria-labelledby="hi-h">
+<section class="mind" aria-label="Step inside my head">
   <p class="hero-line"><span class="invite">Step inside my head. Pop a thought.</span></p>
   <div class="mind-stage">
-    <p id="hi-h" class="giant-name"><span class="sig">hi, I'm</span><span class="word">vanessa</span><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.9 6.3 5.7 11.1 12 12-6.3.9-11.1 5.7-12 12-.9-6.3-5.7-11.1-12-12C6.3 11.1 11.1 6.3 12 0Z"/></svg></p>
+    <p id="hi-h" class="giant-name" aria-hidden="true"><span class="sig">hi, I'm</span><span class="word">vanessa</span><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.9 6.3 5.7 11.1 12 12-6.3.9-11.1 5.7-12 12-.9-6.3-5.7-11.1-12-12C6.3 11.1 11.1 6.3 12 0Z"/></svg></p>
     <img class="me" src="images/face/face-5.jpg" alt="Vanessa Gershbein smiling, wearing a dark green blazer" width="404" height="404">
     <a class="thought t1" href="career.html" style="--c:var(--sun)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">My Career</span></a>
     <a class="thought t2" href="work.html" style="--c:var(--cobalt)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">Selected Work</span></a>
@@ -197,6 +234,14 @@ page("career.html", "Vanessa's Career", "career", body="""
 <section class="page-title">
   <h1>Six years of <span class="hl">asking people why.</span></h1>
   <p>Newest first.</p>
+  <div class="dl-menu down">
+    <button type="button" class="dl-btn" aria-expanded="false" aria-controls="dl-list-top">Download resume <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="dl-list" id="dl-list-top" hidden>
+      <p class="dl-ask">Which one?</p>
+      <a href="Vanessa-Gershbein-Resume-Brand-Marketing.pdf" download>Brand marketing <span aria-hidden="true">↓</span></a>
+      <a href="Vanessa-Gershbein-Resume-Product-Marketing.pdf" download>Product marketing <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
 </section>
 <div class="stack timeline">
   <article class="entry" style="--c:var(--tomato)">
@@ -277,15 +322,15 @@ page("career.html", "Vanessa's Career", "career", body="""
   </div>
 </section>
 <script>
-(function () {
-  var m = document.querySelector('.dl-menu'); if (!m) return;
+document.querySelectorAll('.dl-menu').forEach(function (m) {
   var btn = m.querySelector('.dl-btn'), list = m.querySelector('.dl-list');
   function set(open) { list.hidden = !open; btn.setAttribute('aria-expanded', open); m.classList.toggle('open', open); }
   btn.addEventListener('click', function () { set(list.hidden); if (!list.hidden) list.querySelector('a').focus(); });
   document.addEventListener('click', function (e) { if (!m.contains(e.target)) set(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !list.hidden) { set(false); btn.focus(); } });
+  m.addEventListener('focusout', function (e) { if (e.relatedTarget && !m.contains(e.relatedTarget)) set(false); });
   list.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setTimeout(function () { set(false); }, 150); }); });
-})();
+});
 </script>
 """)
 
@@ -293,126 +338,150 @@ page("career.html", "Vanessa's Career", "career", body="""
 page("work.html", "Vanessa's Selected Work", "work", body="""
 <section class="page-title">
   <h1>The projects I still <span class="hl">bring up at dinner.</span></h1>
-  <p>A few I'm proudest of.</p>
+  <p>A few I'm proudest of, grouped by the kind of work.</p>
 </section>
 <script src="quiz.js" defer></script>
-<div class="stack two">
-  <article class="entry" style="--c:var(--sun)">
-    <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo"></div>
-    <div class="body">
-      <span class="when">Enterprise tech brand strategy · Kantar</span>
-      <h2>Taking a tech giant's brand pulse</h2>
-      <p>A global enterprise tech company needed to know how its brand was landing, market by market. Using quarterly brand health tracking, I analyzed brand equity and customer perception data with Tableau and statistical models, then turned the findings into market-specific growth strategies. Those recommendations guided where the company invested across its key international markets, and the work generated $3.6M in annual revenue.</p>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--cobalt)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Creative testing · Swayable</span>
-      <h2>Fixing an ad before it was made</h2>
-      <p>A Mexican food brand was about to produce an awareness ad built around a grandmother's wisdom. Before they spent money on production, I tested the storyboard and presented the results to the brand and its creative agency together. Younger audiences, especially millennial moms, loved it. Older viewers were more hesitant.</p>
-      <div class="quiz" data-answer="brand">
-        <p class="quiz-q">Your turn. People liked the ad. What was holding it back?</p>
-        <div class="quiz-opts">
-          <button type="button" data-pick="brand">They couldn't tell which brand it was for</button>
-          <button type="button" data-pick="story">The story was confusing</button>
+<section class="proj-section work-group" aria-labelledby="brand-h">
+  <h2 id="brand-h"><span class="dot"></span>Brand and customer strategy</h2>
+  <div class="stack two">
+    <article class="entry" style="--c:var(--sun)">
+      <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Kantar · Enterprise tech</span>
+        <h3>Taking a tech giant's brand pulse</h3>
+        <p class="result"><b>Result</b> $3.6M in annual revenue, and a growth plan for each market.</p>
+        <p>A global enterprise tech company needed to know how its brand was landing, market by market. Using quarterly brand health tracking, I analyzed brand equity and customer perception data with Tableau and statistical models, then turned the findings into market-specific growth strategies that guided where the company invested.</p>
+      </div>
+    </article>
+    <article class="entry" style="--c:var(--pink)">
+      <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Kantar · Payments</span>
+        <h3>Why merchants should want these cardholders</h3>
+        <p class="result"><b>Result</b> $1M in revenue. The findings shaped sales incentives and positioning.</p>
+        <p>A global payments company needed to prove its cardholders were worth courting. Across 14+ research reports in three regions, I identified what drives how merchants see the value of these cardholders.</p>
+      </div>
+    </article>
+    <article class="entry" style="--c:var(--mint)">
+      <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Swayable · Outdoor retail</span>
+        <h3>Designing a loyalty program people want to join</h3>
+        <p class="result"><b>Result</b> Settled the program's name, its incentives, and how to position the credit card.</p>
+        <p>An outdoor retailer was launching a rewards program that had to feel like the brand, not just a points card. I helped the team go from idea to decision on visual identity, messaging, incentive structure, and positioning, including a premium credit card tier. Along the way, outdoor-themed messaging didn't build trust at the point of sign-up, so we took it out of that stage.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="proj-section work-group" aria-labelledby="creative-h">
+  <h2 id="creative-h"><span class="dot"></span>Creative testing</h2>
+  <div class="stack two">
+    <article class="entry" style="--c:var(--cobalt)">
+      <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Swayable · Food</span>
+        <h3>Fixing an ad before it was made</h3>
+        <p class="result"><b>Result</b> Aided brand awareness up almost 10 points on the finished ad.</p>
+        <p>A Mexican food brand was about to produce an awareness ad built around a grandmother's wisdom. Before they spent money on production, I tested the storyboard and presented the results to the brand and its creative agency together. Younger audiences, especially millennial moms, loved it. Older viewers were more hesitant.</p>
+        <div class="quiz" data-answer="brand">
+          <p class="quiz-q">Your turn. People liked the ad. What was holding it back?</p>
+          <div class="quiz-opts"><button type="button" data-pick="brand">They couldn't tell which brand it was for</button><button type="button" data-pick="story">The story was confusing</button></div>
+          <p class="quiz-result"><strong class="quiz-verdict"></strong> Viewers weren't connecting the ad to the brand. I recommended a watermark and more product moments throughout, and the agency made the changes.</p>
         </div>
-        <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Viewers weren't connecting the ad to the brand. I recommended a watermark and more product moments throughout. After the changes, the produced ad lifted aided brand awareness almost 10 points.</p>
       </div>
-    </div>
-  </article>
-  <article class="entry feature" style="--c:var(--sun)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Creative testing · Swayable</span>
-      <h2>Does a celebrity actually pay off?</h2>
-      <p>A breakfast bread brand wanted to know if star power was worth the talent spend. I tested two versions of the same ad with 5,000+ viewers: one starring a celebrity, one with everyday people.</p>
-      <div class="quiz" data-answer="everyday">
-        <p class="quiz-q">Your turn. Which version won on brand favorability?</p>
-        <div class="quiz-opts">
-          <button type="button" data-pick="celebrity">The celebrity</button>
-          <button type="button" data-pick="everyday">Everyday people</button>
+    </article>
+    <article class="entry" style="--c:var(--sun)">
+      <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Swayable · Breakfast bread</span>
+        <h3>Does a celebrity actually pay off?</h3>
+        <p class="result"><b>Result</b> Everyday people beat the celebrity on brand favorability.</p>
+        <p>A breakfast bread brand wanted to know if star power was worth the talent spend. I tested two versions of the same ad with 5,000+ viewers: one starring a celebrity, one with everyday people.</p>
+        <div class="quiz" data-answer="why" data-reveal>
+          <p class="quiz-q">Your turn. Why do you think everyday people won? Guess, then check.</p>
+          <div class="quiz-opts"><button type="button" data-pick="why">Show me why</button></div>
+          <p class="quiz-result"><strong class="quiz-verdict"></strong> It felt more relatable, and viewers didn't need a celebrity to get the joke.</p>
         </div>
-        <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> The everyday version drove the strongest lift in brand favorability. It felt more relatable, and viewers didn't need a celebrity to get the joke.</p>
       </div>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--sun)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Product · Swayable</span>
-      <h2>Turning client complaints into a feature</h2>
-      <p>Clients kept asking for an easier way to export and share research results with their teams, but nobody had made it a product priority. I went back through my client conversations, found an export issue in roughly 30% of them, and brought that case to product and engineering. I worked with engineering on the requirements, stayed the bridge between clients and the build, and helped test and roll it out. It launched within one development cycle, client satisfaction improved, and sales started using it as a selling point.</p>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--mint)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Loyalty · Swayable</span>
-      <h2>Designing a loyalty program people want to join</h2>
-      <p>An outdoor retailer was launching a rewards program that had to feel like the brand, not just a points card. I helped the team go from idea to decision on visual identity, messaging, incentive structure, and positioning, including a premium credit card tier. The research helped settle the program's name and its incentive structure. It also reshaped the credit card offer: outdoor-themed messaging didn't build trust at the point of sign-up, so we took it out of that stage.</p>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--tomato)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Iterative testing · Swayable</span>
-      <h2>Three rounds to the perfect Friday night</h2>
-      <p>A major baking brand needed a campaign built on a real family moment. Over three rounds of category and occasion research, each building on the last, I helped the team narrow a broad family idea to the one occasion that drove the strongest purchase consideration.</p>
-      <div class="quiz" data-answer="reveal" data-reveal>
-        <p class="quiz-q">Your turn. Picture the winning family moment, then check.</p>
-        <div class="quiz-opts"><button type="button" data-pick="reveal">Show me the winner</button></div>
-        <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> A nostalgic young family breaking free together on a Friday night.</p>
+    </article>
+    <article class="entry" style="--c:var(--tomato)">
+      <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Swayable · Baking</span>
+        <h3>Three rounds to the perfect Friday night</h3>
+        <p class="result"><b>Result</b> Narrowed a broad family idea to the one occasion with the strongest purchase consideration.</p>
+        <p>A major baking brand needed a campaign built on a real family moment. I ran three rounds of category and occasion research, each building on the last, so the team could build creative around one specific moment.</p>
+        <div class="quiz" data-answer="reveal" data-reveal>
+          <p class="quiz-q">Your turn. Picture the winning family moment, then check.</p>
+          <div class="quiz-opts"><button type="button" data-pick="reveal">Show me the winner</button></div>
+          <p class="quiz-result"><strong class="quiz-verdict"></strong> A nostalgic young family breaking free together on a Friday night.</p>
+        </div>
       </div>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--pink)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Creative testing · Swayable</span>
-      <h2>Which teaser makes people hit play?</h2>
-      <p>A premium streaming network had two teasers for a new original series: one told the story of the crime empire at its center, the other focused on the stars and their characters' personal development. I ran a randomized controlled test with 1,000+ viewers per ad, walked the team through the results, and set up a test design they could reuse for the next round of creative.</p>
-      <div class="quiz" data-answer="story">
-        <p class="quiz-q">Your turn. Which teaser drove more intent to watch?</p>
-        <div class="quiz-opts"><button type="button" data-pick="story">The crime empire story</button><button type="button" data-pick="other">The stars' personal journeys</button></div>
-        <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> The crime empire story won: higher intent to watch, more urgency to watch right away, and broader appeal across audiences.</p>
+    </article>
+    <article class="entry" style="--c:var(--pink)">
+      <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Swayable · Streaming</span>
+        <h3>Which teaser makes people hit play?</h3>
+        <p class="result"><b>Result</b> A clear winner on intent to watch, plus a test design the team could reuse for new creative.</p>
+        <p>A premium streaming network had two teasers for a new original series: one told the story of the crime empire at its center, the other focused on the stars and their characters' personal development. I ran a randomized controlled test with 1,000+ viewers per ad and walked the team through the results.</p>
+        <div class="quiz" data-answer="story">
+          <p class="quiz-q">Your turn. Which teaser drove more intent to watch?</p>
+          <div class="quiz-opts"><button type="button" data-pick="story">The crime empire story</button><button type="button" data-pick="other">The stars' personal journeys</button></div>
+          <p class="quiz-result"><strong class="quiz-verdict"></strong> The crime empire story won: higher intent to watch, more urgency to watch right away, and broader appeal across audiences.</p>
+        </div>
       </div>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--cobalt)">
-    <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo"></div>
-    <div class="body">
-      <span class="when">Media effectiveness · Kantar</span>
-      <h2>When the results are bad news</h2>
-      <p>A B2B software company had just rebranded two products and wanted to know how the campaign landed with tech decision-makers. The results came back negative across the board. Instead of sugarcoating it, I cut the data many ways, looking at brand equity, message association, and brand relationship separately to find what was landing and what wasn't. I built the report around clear fixes for the next campaign, and the marketing team used it to refine their future campaigns.</p>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--mint)">
-    <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo"></div>
-    <div class="body">
-      <span class="when">Media effectiveness · Kantar</span>
-      <h2>Where should a financial brand spend its next ad dollar?</h2>
-      <p>A national financial services company wanted to know which channels were earning their budget. I ran a cross-media effectiveness study that helped optimize its media buying plan. It showed that how often people saw the ads mattered more in some channels than others, and it shed light on how different audience segments see the value of working with a financial advisor. Leadership walked away with a clear roadmap for how often each audience needs to see the ads and which channels to optimize.</p>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--pink)">
-    <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo"></div>
-    <div class="body">
-      <span class="when">Payments customer insights · Kantar</span>
-      <h2>Why merchants should want these cardholders</h2>
-      <p>A global payments company needed to prove its cardholders were worth courting. Across 14+ research reports in three regions, I identified the drivers of merchant value perception, which shaped sales incentive design and positioning. The program generated $1M in revenue.</p>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--tomato)">
-    <div class="logo has-img"><img src="images/logo-salesvu.png" alt="SalesVu logo"></div>
-    <div class="body">
-      <span class="when">Go-to-market · McCombs+ · in progress</span>
-      <h2>Taking restaurant tech into Mexican restaurants</h2>
-      <p>Building the go-to-market plan for an AI restaurant-tech startup entering a new segment: who to target and what to say to win them. Yes, the research involves tacos.</p>
-    </div>
-  </article>
-</div>
-""")
+    </article>
+  </div>
+</section>
+<section class="proj-section work-group" aria-labelledby="product-h">
+  <h2 id="product-h"><span class="dot"></span>Product and go-to-market</h2>
+  <div class="stack two">
+    <article class="entry" style="--c:var(--sun)">
+      <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Swayable · Product</span>
+        <h3>Turning client complaints into a feature</h3>
+        <p class="result"><b>Result</b> Shipped in one development cycle, and sales started using it as a selling point.</p>
+        <p>Clients kept asking for an easier way to export and share research results with their teams, but nobody had made it a product priority. I went back through my client conversations, found an export issue in roughly 30% of them, and brought that case to product and engineering. I worked with engineering on the requirements, stayed the bridge between clients and the build, and helped test and roll it out. Client satisfaction improved.</p>
+      </div>
+    </article>
+    <article class="entry" style="--c:var(--tomato)">
+      <div class="logo has-img"><img src="images/logo-salesvu.png" alt="SalesVu logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">McCombs+ · Restaurant tech</span>
+        <h3>Taking restaurant tech into Mexican restaurants</h3>
+        <p class="result"><b>Status</b> In progress, fall 2026.</p>
+        <p>Building the go-to-market plan for an AI restaurant-tech startup entering a new segment: who to target and what to say to win them. Yes, the research involves tacos.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="proj-section work-group" aria-labelledby="media-h">
+  <h2 id="media-h"><span class="dot"></span>Media effectiveness</h2>
+  <div class="stack two">
+    <article class="entry" style="--c:var(--mint)">
+      <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Kantar · Financial services</span>
+        <h3>Where should a financial brand spend its next ad dollar?</h3>
+        <p class="result"><b>Result</b> A clear roadmap for how often each audience needs to see the ads, and which channels to optimize.</p>
+        <p>A national financial services company wanted to know which channels were earning their budget. I ran a cross-media effectiveness study that helped optimize its media buying plan. It showed that how often people saw the ads mattered more in some channels than others, and it shed light on how different audience segments see the value of working with a financial advisor.</p>
+      </div>
+    </article>
+    <article class="entry" style="--c:var(--cobalt)">
+      <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo" width="64" height="64"></div>
+      <div class="body">
+        <span class="when">Kantar · B2B software</span>
+        <h3>When the results are bad news</h3>
+        <p class="result"><b>Result</b> The marketing team used the readout to refine its future campaigns.</p>
+        <p>A B2B software company had just rebranded two products and wanted to know how the campaign landed with tech decision-makers. The results came back negative across the board. Instead of sugarcoating it, I cut the data many ways, looking at brand equity, message association, and brand relationship separately to find what was landing and what wasn't, then built the report around clear fixes for the next campaign.</p>
+      </div>
+    </article>
+  </div>
+</section>
+"""
+)
 
 # ---------- WHAT I'VE MADE (hub) ----------
 page("made.html", "What Vanessa Made", "made", body="""
@@ -453,7 +522,7 @@ page("photography.html", "Vanessa's Photography", "made", back=MADE_BACK, body="
   <h2 id="show-h" class="label">The gallery show · Mews Art Gallery</h2>
   <div class="show-grid">
     <div class="show-item"><img src="images/show-room.jpg" alt="Opening night of the film club show, a crowded gallery with a pink paper lantern and prints on the walls" loading="lazy"></div>
-    <div class="show-item"><video src="images/show-video.mp4" poster="images/show-video-poster.jpg" autoplay muted loop playsinline aria-label="Short video walking through the crowded gallery at the opening"></video></div>
+    <div class="show-item"><video data-src="images/show-video.mp4" poster="images/show-video-poster.jpg" preload="none" muted loop playsinline aria-label="Short video walking through the crowded gallery at the opening"></video></div>
     <div class="show-item"><img src="images/show-tv.jpg" alt="An old television playing the club's photo archive, surrounded by photo books on the floor" loading="lazy"></div>
   </div>
   <p class="show-note">I curated 35+ works for the show, representing one year of work from our film club, a group of practicing photographers still learning to call themselves artists. Each month brought a new theme and film stock, from double exposures and diptychs to strangers and maximalism. Visitors lounged in our recreated living room while our photo archive played on an old TV. Framed prints sold for $50 each, and we raised $1,000+ for Wide Rainbow, an after-school art program in under-resourced&nbsp;neighborhoods.</p>
@@ -632,7 +701,7 @@ page("camp.html", "Marketing Camp Recap · Vanessa Gershbein", "mba", back=("mba
     <div class="quiz" data-answer="3">
       <p class="quiz-q">Your turn. Where do you think my team placed?</p>
       <div class="quiz-opts"><button type="button" data-pick="1">First</button><button type="button" data-pick="2">Second</button><button type="button" data-pick="3">Third</button></div>
-      <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Third! A podium finish on one hour of prep.</p>
+      <p class="quiz-result"><strong class="quiz-verdict"></strong> Third! A podium finish on one hour of prep.</p>
     </div>
     <script src="quiz.js" defer></script>
 
@@ -652,7 +721,7 @@ page("kenvue.html", "Kenvue DFML Summit · Vanessa Gershbein", "mba", back=("mba
   <figure class="trek-hero"><img src="images/kenvue-group.jpg" alt="Our group of MBA students smiling in front of the Kenvue building" width="1600" height="1200"></figure>
 
   <div class="post">
-    <p class="hook">Brand management, it turns out, is the art of holding two good ideas at once.</p>
+    <p class="hook">Brand management is the art of holding two good ideas at once.</p>
     <p>In November I flew to New Jersey for Kenvue's Developing Future Marketing Leaders (DFML) Summit: two days at headquarters with MBA students from several schools, just days after Kenvue officially became part of Kimberly-Clark. Across panels, case studies, and coffee chats, the leaders kept coming back to the same tensions.</p>
 
     <h2>A company that invests in leaders before it hires them</h2>
@@ -675,7 +744,7 @@ page("kenvue.html", "Kenvue DFML Summit · Vanessa Gershbein", "mba", back=("mba
     <div class="quiz" data-answer="3">
       <p class="quiz-q">Quick guess. Who moves an over-the-counter brand the most?</p>
       <div class="quiz-opts"><button type="button" data-pick="1">A creator with millions of followers</button><button type="button" data-pick="2">A big TV campaign</button><button type="button" data-pick="3">Your doctor</button></div>
-      <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Your doctor! The panel called doctor recommendations an annuity: slow to build, and they keep paying out.</p>
+      <p class="quiz-result"><strong class="quiz-verdict"></strong> Your doctor! The panel called doctor recommendations an annuity: slow to build, and they keep paying out.</p>
     </div>
     <script src="quiz.js" defer></script>
     <p>The panel on marketing to doctors flipped how I think about influence. Health brands need both creators with big audiences and the experts who publish research and teach other doctors. Patients now walk in with answers from ChatGPT, so brands also have to make sure accurate information is what AI tools learn from.</p>
