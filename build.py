@@ -20,6 +20,15 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="Vanessa Gershbein: marketer, customer-insights nerd, and MBA candidate at UT Austin McCombs.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="Six years figuring out why people choose what they choose. Now an MBA candidate at UT Austin McCombs.">
+<meta property="og:image" content="https://vanessagershbein.netlify.app/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/logo-vg.png">
+<link rel="apple-touch-icon" href="images/logo-vg.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Work+Sans:wght@400;600;700&family=Caveat:wght@600&family=Mrs+Saint+Delafield&display=swap">
@@ -38,7 +47,7 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
   <div class="talk-info">
   <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
   <div class="rows">
-    <div class="row"><span class="label">Email</span><span class="addr" id="email">vg25626@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="label">Email</span><span class="addr" id="email">vanessa.gershbein@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
     <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
     <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
   </div>
@@ -82,7 +91,7 @@ document.querySelectorAll('.talk-form').forEach(function (form) {{
     btn.disabled = true; status.textContent = 'Sending...';
     fetch('/', {{ method: 'POST', headers: {{ 'Content-Type': 'application/x-www-form-urlencoded' }}, body: new URLSearchParams(new FormData(form)).toString() }})
       .then(function (r) {{ if (!r.ok) throw new Error(r.status); form.reset(); form.classList.add('sent'); status.textContent = 'Thanks! Your note is on its way to my inbox.'; }})
-      .catch(function () {{ status.textContent = "Hmm, that didn't send. You can email me at vg25626@my.utexas.edu."; }})
+      .catch(function () {{ status.textContent = "Hmm, that didn't send. You can email me at vanessa.gershbein@my.utexas.edu."; }})
       .then(function () {{ btn.disabled = false; }});
   }});
 }});
@@ -124,7 +133,7 @@ page("index.html", "Vanessa Gershbein", "home", landing=True, body="""
 </section>
 
 <section class="lp-proof" aria-label="The short version">
-  <p><span><b>6+</b> years in market research</span><span class="lp-tip-wrap"><b>100+</b> <button type="button" class="lp-tip" aria-describedby="brands-tip">brands advised</button><span class="lp-tip-box" id="brands-tip" role="tooltip">From tech and CPG to retail, financial services, entertainment, and advocacy campaigns.</span></span><span><b>650+</b> studies</span><span class="lp-tip-wrap"><b>1 of 47</b> <button type="button" class="lp-tip" aria-describedby="gs-tip">Goldstar Achievers</button><span class="lp-tip-box" id="gs-tip" role="tooltip">Kantar's annual program for emerging talent. 47 people were chosen worldwide from 500+ applicants for leadership challenges, events with regional leadership, and one-on-one mentoring from a senior leader.</span></span></p>
+  <p><span><b>6+</b> years in market research</span><span class="lp-tip-wrap"><b>100+</b> <button type="button" class="lp-tip" aria-describedby="brands-tip">brands advised</button><span class="lp-tip-box" id="brands-tip" role="tooltip">Across 60+ clients, from tech and CPG to retail, financial services, entertainment, and advocacy campaigns.</span></span><span><b>650+</b> studies</span><span class="lp-tip-wrap"><b>1 of 47</b> <button type="button" class="lp-tip" aria-describedby="gs-tip">Goldstar Achievers</button><span class="lp-tip-box" id="gs-tip" role="tooltip">Kantar's annual program for emerging talent. 47 people were chosen worldwide from 500+ applicants for leadership challenges, events with regional leadership, and one-on-one mentoring from a senior leader.</span></span></p>
 </section>
 
 <nav class="lp-index" aria-label="Explore">
@@ -160,7 +169,6 @@ page("about.html", "About Vanessa", "about", body="""
   <div class="route" aria-label="Places I've lived">
     <span>San Francisco</span><span>Boston</span><span>New York</span><span>Austin <em>now</em></span>
   </div>
-  <p class="muted-note">Midwest next?</p>
 </section>
 
 <section class="about-section">
@@ -195,7 +203,7 @@ page("career.html", "Vanessa's Career", "career", body="""
     <div class="logo has-img"><img src="images/logo-ut-seal.png" alt="University of Texas at Austin seal"></div>
     <div>
       <span class="when">2026 – 2028</span>
-      <h2>MBA, Marketing Strategy</h2>
+      <h2>MBA</h2>
       <p class="where">UT Austin McCombs School of Business · Austin, TX</p>
       <ul>
         <li>Hildebrand Scholar (full-tuition merit scholarship) and Forté Fellow.</li>
@@ -228,10 +236,10 @@ page("career.html", "Vanessa's Career", "career", body="""
       <p class="where">Kantar · New York, NY</p>
       <ul>
         <li>Turned brand equity and customer perception data into market-specific growth strategies for a global tech company's marketing organization.</li>
-        <li>Led 14+ customer and merchant insight initiatives across APEC, AMEA, and Canada, shaping incentive design and positioning.</li>
+        <li>Led 14+ customer and merchant insight initiatives across APAC, EMEA, and Canada, shaping incentive design and positioning.</li>
         <li>Managed 35+ marketing effectiveness engagements for Fortune 500 clients, delivering $2.8M in revenue.</li>
         <li>Delivered 70+ executive-level recommendations a year on campaigns from $1M to $50M+ in spend.</li>
-        <li><a href="https://www.credential.net/c148b7a5-beac-4953-873c-b2cd26478754" target="_blank" rel="noopener">Goldstar Achiever, 2023</a>: one of 47 chosen worldwide from 500+ applicants for Kantar's annual program for emerging talent, with leadership challenges, exclusive events with regional leadership, and one-on-one mentoring from a senior leader.</li>
+        <li><a href="https://www.credential.net/c148b7a5-beac-4953-873c-b2cd26478754" target="_blank" rel="noopener">Goldstar Achiever, 2023</a>: one of 47 chosen worldwide from 500+ applicants for Kantar's annual program for emerging talent, with leadership challenges, exclusive events with regional leadership, and one-on-one mentoring from a senior leader. I presented my final ESG project to Kantar's CEO of North America and graduated with an honorable mention for North America.</li>
       </ul>
     </div>
   </article>
@@ -256,6 +264,29 @@ page("career.html", "Vanessa's Career", "career", body="""
     </div>
   </article>
 </div>
+
+<section class="resume-dl">
+  <p>Prefer the one-page version?</p>
+  <div class="dl-menu">
+    <button type="button" class="dl-btn" aria-expanded="false" aria-controls="dl-list">Download resume <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="dl-list" id="dl-list" hidden>
+      <p class="dl-ask">Which one?</p>
+      <a href="Vanessa-Gershbein-Resume-Brand-Marketing.pdf" download>Brand marketing <span aria-hidden="true">↓</span></a>
+      <a href="Vanessa-Gershbein-Resume-Product-Marketing.pdf" download>Product marketing <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var m = document.querySelector('.dl-menu'); if (!m) return;
+  var btn = m.querySelector('.dl-btn'), list = m.querySelector('.dl-list');
+  function set(open) { list.hidden = !open; btn.setAttribute('aria-expanded', open); m.classList.toggle('open', open); }
+  btn.addEventListener('click', function () { set(list.hidden); if (!list.hidden) list.querySelector('a').focus(); });
+  document.addEventListener('click', function (e) { if (!m.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !list.hidden) { set(false); btn.focus(); } });
+  list.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setTimeout(function () { set(false); }, 150); }); });
+})();
+</script>
 """)
 
 # ---------- SELECTED WORK ----------
@@ -271,7 +302,7 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
     <div class="body">
       <span class="when">Enterprise tech brand strategy · Kantar</span>
       <h2>Taking a tech giant's brand pulse</h2>
-      <p>A global enterprise tech company needed to know how its brand was landing, market by market. Using quarterly brand health tracking, I analyzed brand equity and customer perception data with Tableau and statistical models, then turned the findings into market-specific growth strategies. Those recommendations guided where the company invested across its key international markets.</p>
+      <p>A global enterprise tech company needed to know how its brand was landing, market by market. Using quarterly brand health tracking, I analyzed brand equity and customer perception data with Tableau and statistical models, then turned the findings into market-specific growth strategies. Those recommendations guided where the company invested across its key international markets, and the work generated $3.6M in annual revenue.</p>
     </div>
   </article>
   <article class="entry" style="--c:var(--tomato)">
@@ -311,12 +342,36 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
       </div>
     </div>
   </article>
+  <article class="entry" style="--c:var(--cobalt)">
+    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
+    <div class="body">
+      <span class="when">Creative testing · Swayable</span>
+      <h2>Fixing an ad before it was made</h2>
+      <p>A Mexican food brand was about to produce an awareness ad built around a grandmother's wisdom. Before they spent money on production, I tested the storyboard and presented the results to the brand and its creative agency together. Younger audiences, especially millennial moms, loved it. Older viewers were more hesitant.</p>
+      <div class="quiz" data-answer="brand">
+        <p class="quiz-q">Your turn. People liked the ad. What was holding it back?</p>
+        <div class="quiz-opts">
+          <button type="button" data-pick="brand">They couldn't tell which brand it was for</button>
+          <button type="button" data-pick="story">The story was confusing</button>
+        </div>
+        <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Viewers weren't connecting the ad to the brand. I recommended a watermark and more product moments throughout. After the changes, the produced ad lifted aided brand awareness almost 10 points.</p>
+      </div>
+    </div>
+  </article>
   <article class="entry" style="--c:var(--mint)">
     <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
     <div class="body">
       <span class="when">Loyalty · Swayable</span>
       <h2>Designing a loyalty program people want to join</h2>
-      <p>An outdoor retailer was launching a rewards program that had to feel like the brand, not just a points card. I helped the team go from idea to decision on visual identity, messaging, incentive structure, and positioning, including a premium credit card tier.</p>
+      <p>An outdoor retailer was launching a rewards program that had to feel like the brand, not just a points card. I helped the team go from idea to decision on visual identity, messaging, incentive structure, and positioning, including a premium credit card tier. The research helped settle the program's name and its incentive structure. It also reshaped the credit card offer: outdoor-themed messaging didn't build trust at the point of sign-up, so we took it out of that stage.</p>
+    </div>
+  </article>
+  <article class="entry" style="--c:var(--sun)">
+    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
+    <div class="body">
+      <span class="when">Product · Swayable</span>
+      <h2>Turning client complaints into a feature</h2>
+      <p>Clients kept asking for an easier way to export and share research results with their teams, but nobody had made it a product priority. I went back through my client conversations, found an export issue in roughly 30% of them, and brought that case to product and engineering. I worked with engineering on the requirements, stayed the bridge between clients and the build, and helped test and roll it out. It launched within one development cycle, client satisfaction improved, and sales started using it as a selling point.</p>
     </div>
   </article>
   <article class="entry" style="--c:var(--pink)">
@@ -332,12 +387,20 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
       </div>
     </div>
   </article>
+  <article class="entry" style="--c:var(--cobalt)">
+    <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo"></div>
+    <div class="body">
+      <span class="when">Media effectiveness · Kantar</span>
+      <h2>When the results are bad news</h2>
+      <p>A B2B software company had just rebranded two products and wanted to know how the campaign landed with tech decision-makers. The results came back negative across the board. Instead of sugarcoating it, I cut the data many ways, looking at brand equity, message association, and brand relationship separately to find what was landing and what wasn't. I built the report around clear fixes for the next campaign, and the marketing team used it to refine their future campaigns.</p>
+    </div>
+  </article>
   <article class="entry" style="--c:var(--mint)">
     <div class="logo has-img"><img src="images/logo-kantar.png" alt="Kantar logo"></div>
     <div class="body">
       <span class="when">Media effectiveness · Kantar</span>
-      <h2>Where should a big bank spend its next ad dollar?</h2>
-      <p>A national bank wanted to know which channels were earning their budget. With its media agency, I ran a cross-media synergy study to optimize the media mix and show where to invest next.</p>
+      <h2>Where should a financial brand spend its next ad dollar?</h2>
+      <p>A national financial services company wanted to know which channels were earning their budget. I ran a cross-media effectiveness study that helped optimize its media buying plan. It showed that how often people saw the ads mattered more in some channels than others, and it shed light on how different audience segments see the value of working with a financial advisor. Leadership walked away with a clear roadmap for how often each audience needs to see the ads and which channels to optimize.</p>
     </div>
   </article>
   <article class="entry" style="--c:var(--pink)">
@@ -345,7 +408,7 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
     <div class="body">
       <span class="when">Payments customer insights · Kantar</span>
       <h2>Why merchants should want these cardholders</h2>
-      <p>A global payments company needed to prove its cardholders were worth courting. Across 14+ research reports in three regions, I identified the drivers of merchant value perception, which shaped sales incentive design and positioning.</p>
+      <p>A global payments company needed to prove its cardholders were worth courting. Across 14+ research reports in three regions, I identified the drivers of merchant value perception, which shaped sales incentive design and positioning. The program generated $1M in revenue.</p>
     </div>
   </article>
 </div>
@@ -446,7 +509,7 @@ page("projects.html", "Projects and Builds", "made", back=MADE_BACK, body="""
   <ul class="give-list">
     <li><strong>Volunteer swim instructor</strong><span>Keens</span><span class="yrs">2025</span></li>
     <li><strong>Operations</strong><span>Artist Talk on Art</span><span class="yrs">2023 – 2025</span><p class="give-note">Every week I helped host and publish panel discussions where senior artists talked about their work. The series is archived at the Smithsonian's Archives of American Art.</p></li>
-    <li><strong>Community Outreach Liaison</strong><span>Kantar</span><span class="yrs">2022 – 2023</span><p class="give-note">Organized community service events for the New York office, from volunteer days with Encore to clothing and food drives.</p></li>
+    <li><strong>Community Outreach Liaison</strong><span>Kantar</span><span class="yrs">2022 – 2023</span><p class="give-note">Organized community service events for the New York office, from volunteer days with Encore to clothing and food drives. I also co-created Lunch with a Leader, informal lunches that connected analysts and directors with visiting leaders. It became a monthly series that kept going after I left.</p></li>
     <li><strong>Marketing Specialist</strong><span>50:50 Startup</span><span class="yrs">2020 – 2021</span><p class="give-note">Helped fundraise for and promote a global entrepreneurship program that brings together Israeli Arabs, Jews, and Palestinians to build equally owned tech startups.</p></li>
   </ul>
 </section>
@@ -456,7 +519,7 @@ page("projects.html", "Projects and Builds", "made", back=MADE_BACK, body="""
 page("mba.html", "Vanessa at McCombs", "mba", body="""
 <section class="page-title">
   <h1>Two years to learn how to <span class="hl">make the call.</span></h1>
-  <p>I'm a first-year MBA at UT Austin McCombs, concentrating in Marketing Strategy (Class of 2028).</p>
+  <p>I'm a first-year MBA at UT Austin McCombs, focused on marketing (Class of 2028).</p>
 </section>
 
 <section class="proj-section honors" aria-labelledby="honors-h">
@@ -479,6 +542,7 @@ page("mba.html", "Vanessa at McCombs", "mba", body="""
 <section class="proj-section recaps" aria-labelledby="trek-h">
   <h2 id="trek-h"><span class="dot" style="--c:var(--cobalt)"></span>What I'm learning</h2>
   <div class="proj-grid fit">
+    <a class="proj-card trek-link" href="kenvue.html" style="--c:var(--cobalt)"><span class="when">Kenvue DFML Summit · Nov 4 – 5, 2026</span><h3>What Kenvue taught me about the tensions in brand management</h3><p>Two days at Kenvue's Developing Future Marketing Leaders Summit, and the tradeoffs every brand manager learns to balance.</p><span class="go">Read the recap →</span></a>
     <a class="proj-card trek-link" href="trek.html" style="--c:var(--cobalt)"><span class="when">Tech Trek · Sept 24 – 25, 2026</span><h3>What I learned on the McCombs Tech Trek</h3><p>Two days with Adobe, Visa, Google, and more, and what shifted in how I think about marketing.</p><span class="go">Read the recap →</span></a>
     <a class="proj-card trek-link" href="camp.html" style="--c:var(--cobalt)"><span class="when">Marketing Camp · Sept 18, 2026</span><h3>What Marketing Camp taught me about insight</h3><p>Marketing leaders from CPG, fast food, tech, and gaming, plus a live KFC case where my team placed third.</p><span class="go">Read the recap →</span></a>
     <a class="proj-card trek-link" href="forte.html" style="--c:var(--cobalt)"><span class="when">Forté · June 26 – 27, 2026</span><h3>My MBA started before day one</h3><p>Two days in Atlanta at the Forté MBA Leadership Conference: exploring career paths, building recruiting skills, and meeting my McCombs classmates.</p><span class="go">Read the recap →</span></a>
@@ -573,6 +637,53 @@ page("camp.html", "Marketing Camp Recap", "mba", back=("mba.html", "Back to At M
     <script src="quiz.js" defer></script>
 
     <p>Honestly, I left energized! It made me feel like six years on the research side was a head start. Nearly every speaker ended on the same advice: stay curious, and build relationships while you're still in school.</p>
+  </div>
+</article>
+""")
+
+# ---------- KENVUE BLOG ----------
+page("kenvue.html", "Kenvue Recap", "mba", back=("mba.html", "Back to At McCombs"), body="""
+<article class="blog">
+  <header class="page-title">
+    <h1>What Kenvue taught me about the <span class="hl">tensions in brand management</span></h1>
+    <p class="meta">Kenvue DFML Summit · Nov 4 – 5, 2026</p>
+  </header>
+
+  <figure class="trek-hero"><img src="images/kenvue-group.jpg" alt="Our group of MBA students smiling in front of the Kenvue building" width="1600" height="1200"></figure>
+
+  <div class="post">
+    <p class="hook">Brand management, it turns out, is the art of holding two good ideas at once.</p>
+    <p>In November I flew to New Jersey for Kenvue's Developing Future Marketing Leaders (DFML) Summit: two days at headquarters with MBA students from several schools, just days after Kenvue officially became part of Kimberly-Clark. Across panels, case studies, and coffee chats, the leaders kept coming back to the same tensions.</p>
+
+    <h2>A company that invests in leaders before it hires them</h2>
+    <p>Honestly, DFML itself impressed me most! Weeks before we arrived, the team ran a case interview prep session to get us ready. At the summit, each of us got a one-on-one with an associate brand manager buddy, an honest real-talk panel with current ABMs, and mock interview prep. The whole program is built to break down barriers into brand management. They bring people in before any offers are made, so everyone leaves with sharper skills and a network across schools, whether or not they end up joining.</p>
+    <p>The proof was in the room. Two of the panelists had come through DFML themselves, and one of the leaders we heard from started as an associate brand manager intern and now leads sales for a whole business unit. They described a culture where development conversations start in your first month, new ABMs get boot camps from day one, managers map your skill gaps and push for your next rotation, and stretch assignments are normal. In the middle of a huge merger, this team still made time to invest in people who don't work there yet. That says everything about the kind of leaders Kenvue and Kimberly-Clark want to build.</p>
+
+    <h2>Your brand vs. the retailer's category</h2>
+    <p>Retailers don't care if your brand wins. They care if their category grows. So every pitch has to prove it brings in new shoppers, gets people using more, or gets them trading up. Even with AI shopping on the rise, most sales still happen in stores, so one rocky retailer relationship can sink a year.</p>
+
+    <h2>Growth vs. cannibalization</h2>
+    <p>Every new product, pack size, or bundle has to pass one filter first: is it truly incremental, or will it just pull sales from the brand's own shelf? A two-pack can look like a win and quietly shrink the single. These are the research questions I've been asking for six years, and it was so fun to see them sit at the center of brand decisions.</p>
+
+    <h2>One global idea vs. many local markets</h2>
+    <p>Global teams own the big idea, and local teams make it work in their market and channels. The hard part is language. A claim that lands in one country can fall flat in another, so the work has to resonate everywhere at once.</p>
+
+    <h2>Moving fast vs. committing big</h2>
+    <p>One leader sorted decisions into one-way and two-way doors. A digital test can fail fast and pivot. A TV campaign commits millions, so you get alignment first.</p>
+
+    <h2>Reach vs. trust</h2>
+    <div class="quiz" data-answer="3">
+      <p class="quiz-q">Quick guess. Who moves an over-the-counter brand the most?</p>
+      <div class="quiz-opts"><button type="button" data-pick="1">A creator with millions of followers</button><button type="button" data-pick="2">A big TV campaign</button><button type="button" data-pick="3">Your doctor</button></div>
+      <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Your doctor! The panel called doctor recommendations an annuity: slow to build, and they keep paying out.</p>
+    </div>
+    <script src="quiz.js" defer></script>
+    <p>The panel on marketing to doctors flipped how I think about influence. Health brands need both creators with big audiences and the experts who publish research and teach other doctors. Patients now walk in with answers from ChatGPT, so brands also have to make sure accurate information is what AI tools learn from.</p>
+
+    <h2>Being seen vs. making sense</h2>
+    <p>One team walked us through a music festival activation for a pain-relief brand: recharge kits, a lounge with samples and phone charging, and recovery tools for tired legs. The best feedback wasn't about reach. It was festival-goers saying the brand being there actually made sense. Their lesson was to start with a business problem and a real consumer tension, not a cool execution.</p>
+
+    <p>The leader I'll remember most called herself a steel umbrella: she takes the pressure from above and the heat for her team's calls, so they can take smart risks. Holding the tension so your team doesn't have to might be the most important job of all. Thank you to the DFML team and every Kenvue and Kimberly-Clark leader who gave us their time and such honest answers!</p>
   </div>
 </article>
 """)

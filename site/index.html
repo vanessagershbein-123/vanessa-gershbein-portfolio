@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vanessa Gershbein</title>
 <meta name="description" content="Vanessa Gershbein: marketer, customer-insights nerd, and MBA candidate at UT Austin McCombs.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vanessa Gershbein">
+<meta property="og:description" content="Six years figuring out why people choose what they choose. Now an MBA candidate at UT Austin McCombs.">
+<meta property="og:image" content="https://vanessagershbein.netlify.app/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/logo-vg.png">
+<link rel="apple-touch-icon" href="images/logo-vg.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Work+Sans:wght@400;600;700&family=Caveat:wght@600&family=Mrs+Saint+Delafield&display=swap">
@@ -48,7 +57,7 @@
 </section>
 
 <section class="lp-proof" aria-label="The short version">
-  <p><span><b>6+</b> years in market research</span><span class="lp-tip-wrap"><b>100+</b> <button type="button" class="lp-tip" aria-describedby="brands-tip">brands advised</button><span class="lp-tip-box" id="brands-tip" role="tooltip">From tech and CPG to retail, financial services, entertainment, and advocacy campaigns.</span></span><span><b>650+</b> studies</span><span class="lp-tip-wrap"><b>1 of 47</b> <button type="button" class="lp-tip" aria-describedby="gs-tip">Goldstar Achievers</button><span class="lp-tip-box" id="gs-tip" role="tooltip">Kantar's annual program for emerging talent. 47 people were chosen worldwide from 500+ applicants for leadership challenges, events with regional leadership, and one-on-one mentoring from a senior leader.</span></span></p>
+  <p><span><b>6+</b> years in market research</span><span class="lp-tip-wrap"><b>100+</b> <button type="button" class="lp-tip" aria-describedby="brands-tip">brands advised</button><span class="lp-tip-box" id="brands-tip" role="tooltip">Across 60+ clients, from tech and CPG to retail, financial services, entertainment, and advocacy campaigns.</span></span><span><b>650+</b> studies</span><span class="lp-tip-wrap"><b>1 of 47</b> <button type="button" class="lp-tip" aria-describedby="gs-tip">Goldstar Achievers</button><span class="lp-tip-box" id="gs-tip" role="tooltip">Kantar's annual program for emerging talent. 47 people were chosen worldwide from 500+ applicants for leadership challenges, events with regional leadership, and one-on-one mentoring from a senior leader.</span></span></p>
 </section>
 
 <nav class="lp-index" aria-label="Explore">
@@ -64,7 +73,7 @@
   <div class="talk-info">
   <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
   <div class="rows">
-    <div class="row"><span class="label">Email</span><span class="addr" id="email">vg25626@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="label">Email</span><span class="addr" id="email">vanessa.gershbein@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
     <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
     <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
   </div>
@@ -108,7 +117,7 @@ document.querySelectorAll('.talk-form').forEach(function (form) {
     btn.disabled = true; status.textContent = 'Sending...';
     fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
       .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset(); form.classList.add('sent'); status.textContent = 'Thanks! Your note is on its way to my inbox.'; })
-      .catch(function () { status.textContent = "Hmm, that didn't send. You can email me at vg25626@my.utexas.edu."; })
+      .catch(function () { status.textContent = "Hmm, that didn't send. You can email me at vanessa.gershbein@my.utexas.edu."; })
       .then(function () { btn.disabled = false; });
   });
 });
