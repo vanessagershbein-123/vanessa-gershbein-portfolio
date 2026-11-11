@@ -56,7 +56,7 @@
   <h2>The short version of my story</h2>
   <div class="prose">
     <p>I studied Communication Studies at Northeastern, with a minor in Environmental Studies and Sustainable Business Practices.</p>
-    <p>Then I spent six years as the person brands called when they needed to understand their customers: first at TapResearch, then Kantar, then Swayable. Two startups and one global consulting firm. The startups taught me to build from scratch and move fast. Kantar taught me rigor, and how to turn complex data into recommendations senior leaders could act on. Either way, I handed marketing leaders the insight, and they decided what to do with it.</p>
+    <p>Then I became the person brands called when they needed to understand their customers: first at TapResearch, then Kantar, then Swayable. The startups taught me to build from scratch and move fast. Kantar taught me rigor, and how to turn complex data into recommendations senior leaders could act on. Either way, I handed marketing leaders the insight, and they decided what to do with it.</p>
     <p>At some point I realized I wanted to be the one making the call. So now I'm at McCombs as a Hildebrand Scholar, Forté Fellow, MIINT Fellow, and Marketing Fellow, getting ready to do exactly that.</p>
   </div>
 </section>
@@ -66,7 +66,7 @@
   <ul class="loves">
     <li style="--c:var(--mint)"><strong>Backpacking</strong>Two summers as a counselor in Yosemite, and I've been chasing trails and road trips ever since.</li>
     <li style="--c:var(--pink)"><strong>Rollerskating</strong>The one place I happily look a little silly. Highly&nbsp;recommend!</li>
-    <li style="--c:var(--paper)"><strong>Film photography</strong><span>More on that in <a href="made.html">What I've Made</a>.</span></li>
+    <li style="--c:var(--paper)"><strong>Film photography</strong><span>See them on my <a href="photography.html">Photography</a>&nbsp;page.</span></li>
   </ul>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" defer></script>
@@ -77,7 +77,7 @@
   <div class="talk-info">
   <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
   <div class="rows">
-    <div class="row"><span class="label">Email</span><span class="addr" id="email">vanessa.gershbein@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="label">Email</span><a class="addr" id="email" href="mailto:vanessa.gershbein@my.utexas.edu">vanessa.gershbein@my.utexas.edu</a><button class="copy" type="button" data-copy="email">Copy</button><span class="sr-only" aria-live="polite" data-copy-live></span></div>
     <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
     <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
   </div>
@@ -100,7 +100,8 @@
 document.querySelectorAll('.copy').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var el = document.getElementById(btn.dataset.copy);
-    var done = function () { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy'; }, 1500); };
+    var live = btn.parentNode.querySelector('[data-copy-live]');
+    var done = function () { btn.textContent = 'Copied!'; if (live) live.textContent = 'Email address copied'; setTimeout(function () { btn.textContent = 'Copy'; if (live) live.textContent = ''; }, 1500); };
     var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
     if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(el.textContent.trim()).then(done, fallback); } else { fallback(); }
   });

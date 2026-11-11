@@ -3,7 +3,7 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent / "site"
 
-CRUMB_NAMES = {"about.html": "About me", "career.html": "My Career", "work.html": "Selected Work", "mba.html": "At McCombs", "made.html": "What I've Made", "photography.html": "Photography", "projects.html": "Projects &amp; Builds", "kenvue.html": "Kenvue DFML Summit", "trek.html": "Tech Trek", "camp.html": "Marketing Camp", "forte.html": "Forté Conference"}
+CRUMB_NAMES = {"preview-about.html": "About me", "about.html": "About me", "career.html": "My Career", "work.html": "Selected Work", "mba.html": "At McCombs", "made.html": "What I've Made", "photography.html": "Photography", "projects.html": "Projects &amp; Builds", "kenvue.html": "Kenvue DFML Summit", "trek.html": "Tech Trek", "camp.html": "Marketing Camp", "forte.html": "Forté Conference"}
 DESCRIPTIONS = {
     "index.html": "Vanessa Gershbein: six years figuring out why people choose what they choose. MBA candidate at UT Austin McCombs, looking for a summer 2027 marketing role.",
     "about.html": "Step inside Vanessa Gershbein's head: West Coast raised, East Coast trained, now at UT Austin McCombs.",
@@ -19,13 +19,26 @@ DESCRIPTIONS = {
     "forte.html": "Vanessa Gershbein's recap of the Forté MBA Leadership Conference.",
 }
 
-def page(filename, title, current, body, home=False, back=("index.html", "Back home"), landing=False):
+def page(filename, title, current, body, home=False, back=("index.html", "Back home"), landing=False, preview=False):
     nav_about = ' aria-current="page"' if current == "about" else ""
     nav_home = ' aria-current="page"' if home or landing else ""
     here = CRUMB_NAMES.get(filename)
     crumb = "" if home or landing else f'<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a>' + ("" if back[0] == "index.html" else f'<span>/</span><a href="{back[0]}">{back[1].replace("Back to ", "")}</a>') + (f'<span>/</span><span aria-current="page">{here}</span>' if here else '') + '</nav>\n'
     explore_cur = ' is-current' if current in ("work", "career", "mba", "made") else ''
     desc = DESCRIPTIONS.get(filename, DESCRIPTIONS["index.html"])
+    home_href = "preview-home.html" if preview else "index.html"
+    resume_menu = '<div class="explore-menu resume-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="resume-list">Resume <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="resume-list" hidden><li><a href="Vanessa-Gershbein-Resume-Brand-Marketing.pdf" download>Brand marketing resume</a></li><li><a href="Vanessa-Gershbein-Resume-Product-Marketing.pdf" download>Product marketing resume</a></li></ul></div>'
+    chev = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    if preview:
+        cur = lambda k: ' aria-current="page"' if current == k else ''
+        about_href = "preview-about.html"
+        more_cur = ' is-current' if current in ("mba", "made") else ''
+        nav = (f'<nav aria-label="Main" class="nav-v2"><a class="d-only" href="{about_href}"{cur("about")}>About me</a><a href="work.html"{cur("work")}>Work</a><a href="career.html"{cur("career")}>Career</a>'
+               f'<div class="explore-menu"><button type="button" class="explore-btn{more_cur}" aria-expanded="false" aria-controls="more-list">More {chev}</button><ul class="explore-list" id="more-list" hidden><li class="m-only"><a href="{about_href}">About me</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I\'ve Made</a></li><li class="m-only"><a href="#contact">Say hello</a></li></ul></div>'
+               f'{resume_menu}<a class="d-only" href="#contact">Say hello</a></nav>')
+    else:
+        nav = (f'<nav aria-label="Main"><a href="index.html"{nav_home}>Home</a><a href="about.html"{nav_about}>About me</a><div class="explore-menu"><button type="button" class="explore-btn{explore_cur}" aria-expanded="false" aria-controls="explore-list">Explore {chev}</button><ul class="explore-list" id="explore-list" hidden><li><a href="work.html">Selected Work</a></li><li><a href="career.html">My Career</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I\'ve Made</a></li><li><a href="photography.html">Photography</a></li><li><a href="projects.html">Projects &amp; Builds</a></li></ul></div>'
+               f'{resume_menu}<a href="#contact">Say hello</a></nav>')
     no_bubbles = filename not in ("career.html",)  # floating bubbles only on Career (About has the bubble mind; home has its bubble field)
     bubble = "" if no_bubbles else '<div class="page-bubbles" aria-hidden="true">' + ''.join(f'<button class="page-bubble b{i}" type="button" tabindex="-1"></button>' for i in range(1, 8)) + '</div>\n'
     bubble_js = "" if home else '<script src="bubble.js" defer></script>\n'  # still loaded for the back-home pop
@@ -57,8 +70,8 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
 <div>
 <div class="wrap">
 <header class="site-head">
-  <a class="brand" href="index.html"><span class="avatar logo"><img src="images/logo-vg.png" alt="" width="96" height="96"></span>Vanessa Gershbein</a>
-  <nav aria-label="Main"><a href="index.html"{nav_home}>Home</a><a href="about.html"{nav_about}>About me</a><div class="explore-menu"><button type="button" class="explore-btn{explore_cur}" aria-expanded="false" aria-controls="explore-list">Explore <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="explore-list" hidden><li><a href="work.html">Selected Work</a></li><li><a href="career.html">My Career</a></li><li><a href="mba.html">At McCombs</a></li><li><a href="made.html">What I've Made</a></li><li><a href="photography.html">Photography</a></li><li><a href="projects.html">Projects &amp; Builds</a></li></ul></div><div class="explore-menu resume-menu"><button type="button" class="explore-btn" aria-expanded="false" aria-controls="resume-list">Resume <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="explore-list" id="resume-list" hidden><li><a href="Vanessa-Gershbein-Resume-Brand-Marketing.pdf" download>Brand marketing resume</a></li><li><a href="Vanessa-Gershbein-Resume-Product-Marketing.pdf" download>Product marketing resume</a></li></ul></div><a href="#contact">Say hello</a></nav>
+  <a class="brand" href="{home_href}"><span class="avatar logo"><img src="images/logo-vg.png" alt="" width="96" height="96"></span>Vanessa Gershbein</a>
+  {nav}
 </header>
 {body}
 <section class="talk" id="contact">
@@ -66,7 +79,7 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
   <div class="talk-info">
   <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
   <div class="rows">
-    <div class="row"><span class="label">Email</span><span class="addr" id="email">vanessa.gershbein@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="label">Email</span><a class="addr" id="email" href="mailto:vanessa.gershbein@my.utexas.edu">vanessa.gershbein@my.utexas.edu</a><button class="copy" type="button" data-copy="email">Copy</button><span class="sr-only" aria-live="polite" data-copy-live></span></div>
     <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
     <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
   </div>
@@ -89,7 +102,8 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
 document.querySelectorAll('.copy').forEach(function (btn) {{
   btn.addEventListener('click', function () {{
     var el = document.getElementById(btn.dataset.copy);
-    var done = function () {{ btn.textContent = 'Copied!'; setTimeout(function () {{ btn.textContent = 'Copy'; }}, 1500); }};
+    var live = btn.parentNode.querySelector('[data-copy-live]');
+    var done = function () {{ btn.textContent = 'Copied!'; if (live) live.textContent = 'Email address copied'; setTimeout(function () {{ btn.textContent = 'Copy'; if (live) live.textContent = ''; }}, 1500); }};
     var fallback = function () {{ var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }};
     if (navigator.clipboard && navigator.clipboard.writeText) {{ navigator.clipboard.writeText(el.textContent.trim()).then(done, fallback); }} else {{ fallback(); }}
   }});
@@ -128,7 +142,7 @@ page("index.html", "Vanessa Gershbein", "home", landing=True, body="""
 <section class="lp-hero">
   <div class="lp-copy">
     <h1>Six years figuring out <span class="hl">why people choose what they choose.</span></h1>
-    <p class="lp-lede">I'm Vanessa, an MBA candidate at UT Austin McCombs (Class of 2028). I spent six years in customer insights at TapResearch, Kantar, and Swayable, and I'm looking for a marketing role for summer 2027.</p>
+    <p class="lp-lede">I'm Vanessa, an MBA candidate at UT Austin McCombs (Class of 2028). Before business school I worked in customer insights at TapResearch, Kantar, and Swayable. Now I'm looking for a marketing role for summer 2027.</p>
     <div class="lp-actions">
       <a class="lp-btn" href="about.html">Step inside my head <span aria-hidden="true">→</span></a>
     </div>
@@ -161,9 +175,9 @@ page("index.html", "Vanessa Gershbein", "home", landing=True, body="""
 
 <nav class="lp-index" aria-label="Explore">
   <a href="work.html"><span class="lp-i-title">Selected Work</span><span class="lp-i-desc">The projects I still bring up at dinner.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
-  <a href="career.html"><span class="lp-i-title">My Career</span><span class="lp-i-desc">Three companies, six years, a lot of survey data. The resume, with more personality.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
-  <a href="mba.html"><span class="lp-i-title">At McCombs</span><span class="lp-i-desc">What I'm learning, working on, and joining as a first-year MBA.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
-  <a href="made.html"><span class="lp-i-title">What I've Made</span><span class="lp-i-desc">Film photography, creative side projects, and things I've built.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
+  <a href="career.html"><span class="lp-i-title">My Career</span><span class="lp-i-desc">Where I've been, newest first. The resume, with more personality.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
+  <a href="mba.html"><span class="lp-i-title">At McCombs</span><span class="lp-i-desc">What I'm learning and building as a first-year MBA.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
+  <a href="made.html"><span class="lp-i-title">What I've Made</span><span class="lp-i-desc">Film photography and side projects.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
 </nav>
 
 <section class="lp-film" aria-labelledby="film-h">
@@ -212,7 +226,7 @@ page("about.html", "About Vanessa", "about", body="""
   <h2>The short version of my story</h2>
   <div class="prose">
     <p>I studied Communication Studies at Northeastern, with a minor in Environmental Studies and Sustainable Business Practices.</p>
-    <p>Then I spent six years as the person brands called when they needed to understand their customers: first at TapResearch, then Kantar, then Swayable. Two startups and one global consulting firm. The startups taught me to build from scratch and move fast. Kantar taught me rigor, and how to turn complex data into recommendations senior leaders could act on. Either way, I handed marketing leaders the insight, and they decided what to do with it.</p>
+    <p>Then I became the person brands called when they needed to understand their customers: first at TapResearch, then Kantar, then Swayable. The startups taught me to build from scratch and move fast. Kantar taught me rigor, and how to turn complex data into recommendations senior leaders could act on. Either way, I handed marketing leaders the insight, and they decided what to do with it.</p>
     <p>At some point I realized I wanted to be the one making the call. So now I'm at McCombs as a Hildebrand Scholar, Forté Fellow, MIINT Fellow, and Marketing Fellow, getting ready to do exactly that.</p>
   </div>
 </section>
@@ -222,7 +236,7 @@ page("about.html", "About Vanessa", "about", body="""
   <ul class="loves">
     <li style="--c:var(--mint)"><strong>Backpacking</strong>Two summers as a counselor in Yosemite, and I've been chasing trails and road trips ever since.</li>
     <li style="--c:var(--pink)"><strong>Rollerskating</strong>The one place I happily look a little silly. Highly&nbsp;recommend!</li>
-    <li style="--c:var(--paper)"><strong>Film photography</strong><span>More on that in <a href="made.html">What I've Made</a>.</span></li>
+    <li style="--c:var(--paper)"><strong>Film photography</strong><span>See them on my <a href="photography.html">Photography</a>&nbsp;page.</span></li>
   </ul>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" defer></script>
@@ -304,6 +318,7 @@ page("career.html", "Vanessa's Career", "career", body="""
   <article class="entry" style="--c:var(--pink)">
     <div class="logo has-img"><img src="images/logo-northeastern.png" alt="Northeastern University seal"></div>
     <div>
+      <span class="when">Class of 2020</span>
       <h2>BA, Communication Studies, Cum Laude</h2>
       <p class="where">Northeastern University · Boston, MA</p>
     </div>
@@ -487,7 +502,7 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
 page("made.html", "What Vanessa Made", "made", body="""
 <section class="page-title">
   <h1>Things I made when <span class="hl">nobody was paying me to.</span></h1>
-  <p>Pictures, side projects, and things I've built. Pick one.</p>
+  <p>Film photos and side projects. Pick one.</p>
 </section>
 <section class="explore" aria-label="What I've Made">
   <div class="blocks">
@@ -556,7 +571,7 @@ page("photography.html", "Vanessa's Photography", "made", back=MADE_BACK, body="
 page("projects.html", "Projects and Builds · Vanessa Gershbein", "made", back=MADE_BACK, body="""
 <section class="page-title">
   <h1>I like trying things <span class="hl">I don't know how to do yet.</span></h1>
-  <p>From building with AI to volunteering and creative side projects, this is where I push myself.</p>
+  <p>This is where I push myself, from building with AI to giving back.</p>
 </section>
 
 <section class="proj-section" aria-labelledby="ai-h">

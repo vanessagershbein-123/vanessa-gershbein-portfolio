@@ -30,7 +30,7 @@
 <section class="lp-hero">
   <div class="lp-copy">
     <h1>Six years figuring out <span class="hl">why people choose what they choose.</span></h1>
-    <p class="lp-lede">I'm Vanessa, an MBA candidate at UT Austin McCombs (Class of 2028). I spent six years in customer insights at TapResearch, Kantar, and Swayable, and I'm looking for a marketing role for summer 2027.</p>
+    <p class="lp-lede">I'm Vanessa, an MBA candidate at UT Austin McCombs (Class of 2028). Before business school I worked in customer insights at TapResearch, Kantar, and Swayable. Now I'm looking for a marketing role for summer 2027.</p>
     <div class="lp-actions">
       <a class="lp-btn" href="about.html">Step inside my head <span aria-hidden="true">→</span></a>
     </div>
@@ -63,9 +63,9 @@
 
 <nav class="lp-index" aria-label="Explore">
   <a href="work.html"><span class="lp-i-title">Selected Work</span><span class="lp-i-desc">The projects I still bring up at dinner.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
-  <a href="career.html"><span class="lp-i-title">My Career</span><span class="lp-i-desc">Three companies, six years, a lot of survey data. The resume, with more personality.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
-  <a href="mba.html"><span class="lp-i-title">At McCombs</span><span class="lp-i-desc">What I'm learning, working on, and joining as a first-year MBA.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
-  <a href="made.html"><span class="lp-i-title">What I've Made</span><span class="lp-i-desc">Film photography, creative side projects, and things I've built.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
+  <a href="career.html"><span class="lp-i-title">My Career</span><span class="lp-i-desc">Where I've been, newest first. The resume, with more personality.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
+  <a href="mba.html"><span class="lp-i-title">At McCombs</span><span class="lp-i-desc">What I'm learning and building as a first-year MBA.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
+  <a href="made.html"><span class="lp-i-title">What I've Made</span><span class="lp-i-desc">Film photography and side projects.</span><span class="lp-i-go" aria-hidden="true">→</span></a>
 </nav>
 
 <section class="lp-film" aria-labelledby="film-h">
@@ -88,7 +88,7 @@
   <div class="talk-info">
   <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
   <div class="rows">
-    <div class="row"><span class="label">Email</span><span class="addr" id="email">vanessa.gershbein@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="label">Email</span><a class="addr" id="email" href="mailto:vanessa.gershbein@my.utexas.edu">vanessa.gershbein@my.utexas.edu</a><button class="copy" type="button" data-copy="email">Copy</button><span class="sr-only" aria-live="polite" data-copy-live></span></div>
     <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
     <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
   </div>
@@ -111,7 +111,8 @@
 document.querySelectorAll('.copy').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var el = document.getElementById(btn.dataset.copy);
-    var done = function () { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy'; }, 1500); };
+    var live = btn.parentNode.querySelector('[data-copy-live]');
+    var done = function () { btn.textContent = 'Copied!'; if (live) live.textContent = 'Email address copied'; setTimeout(function () { btn.textContent = 'Copy'; if (live) live.textContent = ''; }, 1500); };
     var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
     if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(el.textContent.trim()).then(done, fallback); } else { fallback(); }
   });

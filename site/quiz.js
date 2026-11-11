@@ -20,6 +20,7 @@ document.querySelectorAll('.quiz').forEach(function (quiz) {
       });
       result.hidden = false;
       live.textContent = result.textContent.replace(/\s+/g, ' ').trim();
+      result.setAttribute('tabindex', '-1'); result.focus({ preventScroll: true });
     });
   });
 });

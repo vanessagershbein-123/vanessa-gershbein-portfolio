@@ -30,7 +30,7 @@
 
 <section class="page-title">
   <h1>Things I made when <span class="hl">nobody was paying me to.</span></h1>
-  <p>Pictures, side projects, and things I've built. Pick one.</p>
+  <p>Film photos and side projects. Pick one.</p>
 </section>
 <section class="explore" aria-label="What I've Made">
   <div class="blocks">
@@ -54,7 +54,7 @@
   <div class="talk-info">
   <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
   <div class="rows">
-    <div class="row"><span class="label">Email</span><span class="addr" id="email">vanessa.gershbein@my.utexas.edu</span><button class="copy" type="button" data-copy="email">Copy</button></div>
+    <div class="row"><span class="label">Email</span><a class="addr" id="email" href="mailto:vanessa.gershbein@my.utexas.edu">vanessa.gershbein@my.utexas.edu</a><button class="copy" type="button" data-copy="email">Copy</button><span class="sr-only" aria-live="polite" data-copy-live></span></div>
     <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
     <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
   </div>
@@ -77,7 +77,8 @@
 document.querySelectorAll('.copy').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var el = document.getElementById(btn.dataset.copy);
-    var done = function () { btn.textContent = 'Copied!'; setTimeout(function () { btn.textContent = 'Copy'; }, 1500); };
+    var live = btn.parentNode.querySelector('[data-copy-live]');
+    var done = function () { btn.textContent = 'Copied!'; if (live) live.textContent = 'Email address copied'; setTimeout(function () { btn.textContent = 'Copy'; if (live) live.textContent = ''; }, 1500); };
     var fallback = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
     if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(el.textContent.trim()).then(done, fallback); } else { fallback(); }
   });

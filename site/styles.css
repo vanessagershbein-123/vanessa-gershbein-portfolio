@@ -1278,3 +1278,58 @@ li, li > span, .loves span, .give-note, .quiz-result, .when, .where { text-wrap:
 
 /* Career: keep the headline download chooser above the timeline */
 .inner .page-title:has(.dl-menu.down) { position: relative; z-index: 30; }
+
+/* ===== Preview v2: recruiter-row header ===== */
+.nav-v2 .m-only { display: none; }
+@media (max-width: 600px) { .nav-v2 .d-only { display: none; } .nav-v2 .m-only { display: list-item; } }
+
+/* ===== Preview v2 home: her face beside the headline ===== */
+.landing .lp-hero.with-face { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: center; gap: clamp(1rem, 3vw, 3rem); }
+.landing .with-face .lp-copy { pointer-events: auto; }
+.landing .with-face h1 { max-width: 13ch; }
+.face-stage { position: relative; width: 100%; max-width: 30rem; aspect-ratio: 1 / 1.08; justify-self: end; }
+.face-stage .face { position: absolute; left: 50%; top: 58%; translate: -50% -50%; width: 64%; height: auto;
+  -webkit-mask-image: url("images/face/mask.png"), linear-gradient(#000 88%, transparent 100%); -webkit-mask-size: 100% 100%, 100% 100%; -webkit-mask-repeat: no-repeat; -webkit-mask-composite: source-in;
+  mask-image: url("images/face/mask.png"), linear-gradient(#000 88%, transparent 100%); mask-size: 100% 100%, 100% 100%; mask-repeat: no-repeat; mask-composite: intersect; }
+.landing .face-stage .lp-float { z-index: 3; }
+.landing .face-stage .lp-float.f1 { width: 24%; left: 0; top: 30%; right: auto; bottom: auto; }
+.landing .face-stage .lp-float.f2 { width: 15%; left: auto; right: 4%; top: 22%; bottom: auto; }
+.landing .face-stage .lp-float.f3 { width: 10%; left: 12%; top: 76%; right: auto; bottom: auto; }
+.landing .face-stage .lp-float.f4 { width: 19%; left: auto; right: 0; top: 62%; bottom: auto; }
+.landing .face-stage .lp-float.f5 { width: 8%; left: 78%; top: 8%; right: auto; bottom: auto; }
+.face-stage.settled .lp-float { animation-play-state: paused; }
+.face-thought { position: absolute; z-index: 5; left: 50%; top: 0; translate: -50% 0; width: min(19rem, 96%); margin: 0; padding: .8rem 1.1rem .9rem; background: #fff; border: 1.5px solid rgba(112, 168, 224, .85); border-radius: 26px; box-shadow: 0 20px 40px -26px rgba(18, 28, 80, .5); display: grid; gap: .25rem; text-align: left; }
+.face-thought::before, .face-thought::after { content: ""; position: absolute; border-radius: 50%; background: #fff; border: 1.5px solid rgba(112, 168, 224, .85); }
+.face-thought::before { width: .9rem; height: .9rem; left: 46%; bottom: -1.15rem; }
+.face-thought::after { width: .5rem; height: .5rem; left: 50%; bottom: -1.95rem; }
+.face-thought[hidden] { display: none; }
+.ft-count { font-size: .75rem; font-weight: 700; letter-spacing: .08em; color: var(--cobalt); font-variant-numeric: tabular-nums; }
+.ft-text { font-weight: 600; font-size: 1rem; line-height: 1.38; color: var(--ink); text-wrap: pretty; }
+@media (prefers-reduced-motion: no-preference) { .face-thought.in { animation: fact-in .4s cubic-bezier(.16, 1, .3, 1); } }
+.face-hint { position: absolute; left: 50%; bottom: -1.2rem; translate: -50% 0; margin: 0; white-space: nowrap; font-family: var(--hand); font-size: 1.45rem; color: var(--cobalt); transform: rotate(-3deg); transition: opacity .3s; }
+.face-hint.gone { opacity: 0; }
+@media (max-width: 760px) {
+  .landing .lp-hero.with-face { grid-template-columns: 1fr; }
+  .face-stage { justify-self: center; max-width: 21rem; margin-top: .5rem; }
+}
+
+/* ===== Preview v2 about: real thoughts ===== */
+.beliefs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr)); gap: clamp(1.25rem, 3vw, 2rem); }
+.belief a { position: relative; display: grid; align-content: center; justify-items: center; gap: .55rem; min-height: 13rem; padding: 2rem 2.2rem; border-radius: 50%; text-align: center; text-decoration: none; color: var(--ink);
+  border: 1.5px solid rgba(112, 168, 224, .8); background: radial-gradient(circle at 50% 45%, #fff 0 55%, rgba(220, 234, 250, .7) 85%, rgba(170, 208, 240, .55) 100%); box-shadow: 0 24px 40px -30px rgba(18, 28, 80, .45); transition: scale .3s cubic-bezier(.16, 1, .3, 1); }
+.belief a::before, .belief a::after { content: ""; position: absolute; border-radius: 50%; border: 1.5px solid rgba(112, 168, 224, .8); background: #fff; }
+.belief a::before { width: 1.1rem; height: 1.1rem; left: 14%; bottom: 2%; }
+.belief a::after { width: .6rem; height: .6rem; left: 8%; bottom: -6%; }
+.belief a:hover, .belief a:focus-visible { scale: 1.04; outline: none; }
+.belief a:focus-visible { box-shadow: 0 0 0 3px var(--cobalt); }
+.belief q { font-family: var(--display); font-weight: 800; font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.25; letter-spacing: -.02em; quotes: none; text-wrap: balance; max-width: 16ch; }
+.belief .src { font-size: .85rem; font-weight: 600; color: var(--cobalt); }
+@media (max-width: 600px) { .inner .site-head .nav-v2 a.d-only { display: none; } }
+.landing .with-face h1 { max-width: 14ch; font-size: clamp(2.7rem, 6.2vw, 5.4rem); }
+
+/* Readable line length inside wide cards */
+.entry .body > p { max-width: 72ch; }
+/* Home stats: keep the four on one row on wide screens */
+@media (min-width: 1100px) { .landing .lp-proof p { display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; column-gap: 1.5rem; font-size: clamp(1.3rem, 1.75vw, 1.7rem); } }
+/* email is a link now: same look as before */
+.talk .row a.addr[href^="mailto"] { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--cobalt) 45%, transparent); text-underline-offset: .2em; }

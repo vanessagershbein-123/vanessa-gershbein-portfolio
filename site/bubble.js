@@ -79,10 +79,14 @@
   addEventListener('resize', function () { W = innerWidth; H = innerHeight; });
 
   if (!reduce && bubbles.length) {
-    var last = performance.now();
+    var last = performance.now(), still = false;
+    // arrive, then settle: the bubbles drift for a few seconds, then hold still (pops still work)
+    setTimeout(function () { still = true; }, 6000);
+    var tlEl = document.querySelector('.timeline');
+    if (tlEl && 'IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) still = true; }); }).observe(tlEl);
     (function tick(now) {
       var dt = Math.min(.05, (now - last) / 1000); last = now;
-      if (!document.hidden) {
+      if (!document.hidden && !still) {
         bubbles.forEach(function (b) {
           if (b.gone) return;
           b.y -= b.v * dt;
@@ -138,7 +142,11 @@
 
   // came here by popping a thought on About? then "back" goes to About, where the bubbles live
   var fromAbout = false;
-  try { fromAbout = sessionStorage.getItem('cameFrom') === 'about'; } catch (err) {}
+  try {
+    var came = sessionStorage.getItem('cameFrom') || '';
+    // only the page you dove into from About links back there; any later page goes back home as usual
+    fromAbout = came !== '' && came === location.pathname.split('/').pop();
+  } catch (err) {}
   if (fromAbout && !/about\.html$/.test(location.pathname)) {
     document.querySelectorAll('.crumbs a[href="index.html"]').forEach(function (a) { a.href = 'about.html'; a.textContent = 'About me'; });
     document.querySelectorAll('.site-foot a[href="index.html"]').forEach(function (a) { a.href = 'about.html'; a.textContent = '← Back to About me'; });

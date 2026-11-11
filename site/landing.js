@@ -22,7 +22,7 @@
     var el = factEl;
     factTimer = setTimeout(function () { el.classList.add('out'); setTimeout(function () { el.remove(); }, 400); }, 3600);
   }
-  document.querySelectorAll('.lp-float').forEach(function (b) {
+  document.querySelectorAll('.lp-field .lp-float').forEach(function (b) {
     function pop() {
       if (b.classList.contains('popped')) return;
       var r = b.getBoundingClientRect();

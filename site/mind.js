@@ -113,7 +113,7 @@
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; // new-tab clicks open normally
       // dive into the thought: the bubble swells past the edges of the screen, pops into droplets, and the next page arrives
       e.preventDefault();
-      try { sessionStorage.setItem('cameFrom', 'about'); } catch (err) {}
+      try { sessionStorage.setItem('cameFrom', (t.getAttribute('href') || '').split('#')[0]); } catch (err) {}
       diveInto(t, t.getAttribute('href'));
     });
     t.addEventListener('dragstart', function (e) { e.preventDefault(); });
