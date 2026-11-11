@@ -151,7 +151,7 @@ page("about.html", "About Vanessa", "about", body="""
 <section class="mind" aria-labelledby="hi-h">
   <p class="hero-line"><span class="invite">Step inside my head. Pop a thought.</span></p>
   <div class="mind-stage">
-    <h1 id="hi-h" class="giant-name"><span class="sig">hi, I'm</span><span class="word">vanessa</span><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.9 6.3 5.7 11.1 12 12-6.3.9-11.1 5.7-12 12-.9-6.3-5.7-11.1-12-12C6.3 11.1 11.1 6.3 12 0Z"/></svg></h1>
+    <p id="hi-h" class="giant-name"><span class="sig">hi, I'm</span><span class="word">vanessa</span><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.9 6.3 5.7 11.1 12 12-6.3.9-11.1 5.7-12 12-.9-6.3-5.7-11.1-12-12C6.3 11.1 11.1 6.3 12 0Z"/></svg></p>
     <img class="me" src="images/face/face-5.jpg" alt="Vanessa Gershbein smiling, wearing a dark green blazer" width="404" height="404">
     <a class="thought t1" href="career.html" style="--c:var(--sun)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">My Career</span></a>
     <a class="thought t2" href="work.html" style="--c:var(--cobalt)"><span class="puff p1" aria-hidden="true"></span><span class="puff p2" aria-hidden="true"></span><span class="t-title">Selected Work</span></a>
@@ -305,12 +305,20 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
       <p>A global enterprise tech company needed to know how its brand was landing, market by market. Using quarterly brand health tracking, I analyzed brand equity and customer perception data with Tableau and statistical models, then turned the findings into market-specific growth strategies. Those recommendations guided where the company invested across its key international markets, and the work generated $3.6M in annual revenue.</p>
     </div>
   </article>
-  <article class="entry" style="--c:var(--tomato)">
-    <div class="logo has-img"><img src="images/logo-salesvu.png" alt="SalesVu logo"></div>
+  <article class="entry" style="--c:var(--cobalt)">
+    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
     <div class="body">
-      <span class="when">Go-to-market · McCombs+ · in progress</span>
-      <h2>Taking restaurant tech into Mexican restaurants</h2>
-      <p>Building the go-to-market plan for an AI restaurant-tech startup entering a new segment: who to target and what to say to win them. Yes, the research involves tacos.</p>
+      <span class="when">Creative testing · Swayable</span>
+      <h2>Fixing an ad before it was made</h2>
+      <p>A Mexican food brand was about to produce an awareness ad built around a grandmother's wisdom. Before they spent money on production, I tested the storyboard and presented the results to the brand and its creative agency together. Younger audiences, especially millennial moms, loved it. Older viewers were more hesitant.</p>
+      <div class="quiz" data-answer="brand">
+        <p class="quiz-q">Your turn. People liked the ad. What was holding it back?</p>
+        <div class="quiz-opts">
+          <button type="button" data-pick="brand">They couldn't tell which brand it was for</button>
+          <button type="button" data-pick="story">The story was confusing</button>
+        </div>
+        <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Viewers weren't connecting the ad to the brand. I recommended a watermark and more product moments throughout. After the changes, the produced ad lifted aided brand awareness almost 10 points.</p>
+      </div>
     </div>
   </article>
   <article class="entry feature" style="--c:var(--sun)">
@@ -329,6 +337,22 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
       </div>
     </div>
   </article>
+  <article class="entry" style="--c:var(--sun)">
+    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
+    <div class="body">
+      <span class="when">Product · Swayable</span>
+      <h2>Turning client complaints into a feature</h2>
+      <p>Clients kept asking for an easier way to export and share research results with their teams, but nobody had made it a product priority. I went back through my client conversations, found an export issue in roughly 30% of them, and brought that case to product and engineering. I worked with engineering on the requirements, stayed the bridge between clients and the build, and helped test and roll it out. It launched within one development cycle, client satisfaction improved, and sales started using it as a selling point.</p>
+    </div>
+  </article>
+  <article class="entry" style="--c:var(--mint)">
+    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
+    <div class="body">
+      <span class="when">Loyalty · Swayable</span>
+      <h2>Designing a loyalty program people want to join</h2>
+      <p>An outdoor retailer was launching a rewards program that had to feel like the brand, not just a points card. I helped the team go from idea to decision on visual identity, messaging, incentive structure, and positioning, including a premium credit card tier. The research helped settle the program's name and its incentive structure. It also reshaped the credit card offer: outdoor-themed messaging didn't build trust at the point of sign-up, so we took it out of that stage.</p>
+    </div>
+  </article>
   <article class="entry" style="--c:var(--tomato)">
     <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
     <div class="body">
@@ -340,38 +364,6 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
         <div class="quiz-opts"><button type="button" data-pick="reveal">Show me the winner</button></div>
         <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> A nostalgic young family breaking free together on a Friday night.</p>
       </div>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--cobalt)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Creative testing · Swayable</span>
-      <h2>Fixing an ad before it was made</h2>
-      <p>A Mexican food brand was about to produce an awareness ad built around a grandmother's wisdom. Before they spent money on production, I tested the storyboard and presented the results to the brand and its creative agency together. Younger audiences, especially millennial moms, loved it. Older viewers were more hesitant.</p>
-      <div class="quiz" data-answer="brand">
-        <p class="quiz-q">Your turn. People liked the ad. What was holding it back?</p>
-        <div class="quiz-opts">
-          <button type="button" data-pick="brand">They couldn't tell which brand it was for</button>
-          <button type="button" data-pick="story">The story was confusing</button>
-        </div>
-        <p class="quiz-result" aria-live="polite"><strong class="quiz-verdict"></strong> Viewers weren't connecting the ad to the brand. I recommended a watermark and more product moments throughout. After the changes, the produced ad lifted aided brand awareness almost 10 points.</p>
-      </div>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--mint)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Loyalty · Swayable</span>
-      <h2>Designing a loyalty program people want to join</h2>
-      <p>An outdoor retailer was launching a rewards program that had to feel like the brand, not just a points card. I helped the team go from idea to decision on visual identity, messaging, incentive structure, and positioning, including a premium credit card tier. The research helped settle the program's name and its incentive structure. It also reshaped the credit card offer: outdoor-themed messaging didn't build trust at the point of sign-up, so we took it out of that stage.</p>
-    </div>
-  </article>
-  <article class="entry" style="--c:var(--sun)">
-    <div class="logo has-img"><img src="images/logo-swayable.png" alt="Swayable logo"></div>
-    <div class="body">
-      <span class="when">Product · Swayable</span>
-      <h2>Turning client complaints into a feature</h2>
-      <p>Clients kept asking for an easier way to export and share research results with their teams, but nobody had made it a product priority. I went back through my client conversations, found an export issue in roughly 30% of them, and brought that case to product and engineering. I worked with engineering on the requirements, stayed the bridge between clients and the build, and helped test and roll it out. It launched within one development cycle, client satisfaction improved, and sales started using it as a selling point.</p>
     </div>
   </article>
   <article class="entry" style="--c:var(--pink)">
@@ -409,6 +401,14 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
       <span class="when">Payments customer insights · Kantar</span>
       <h2>Why merchants should want these cardholders</h2>
       <p>A global payments company needed to prove its cardholders were worth courting. Across 14+ research reports in three regions, I identified the drivers of merchant value perception, which shaped sales incentive design and positioning. The program generated $1M in revenue.</p>
+    </div>
+  </article>
+  <article class="entry" style="--c:var(--tomato)">
+    <div class="logo has-img"><img src="images/logo-salesvu.png" alt="SalesVu logo"></div>
+    <div class="body">
+      <span class="when">Go-to-market · McCombs+ · in progress</span>
+      <h2>Taking restaurant tech into Mexican restaurants</h2>
+      <p>Building the go-to-market plan for an AI restaurant-tech startup entering a new segment: who to target and what to say to win them. Yes, the research involves tacos.</p>
     </div>
   </article>
 </div>
@@ -484,7 +484,7 @@ page("photography.html", "Vanessa's Photography", "made", back=MADE_BACK, body="
 
 # ---------- BUILT WITH CLAUDE (hidden for now) ----------
 # ---------- PROJECTS ----------
-page("projects.html", "Projects and Builds", "made", back=MADE_BACK, body="""
+page("projects.html", "Projects and Builds · Vanessa Gershbein", "made", back=MADE_BACK, body="""
 <section class="page-title">
   <h1>I like trying things <span class="hl">I don't know how to do yet.</span></h1>
   <p>From building with AI to volunteering and creative side projects, this is where I push myself.</p>
@@ -507,7 +507,7 @@ page("projects.html", "Projects and Builds", "made", back=MADE_BACK, body="""
 <section class="proj-section" aria-labelledby="give-h">
   <h2 id="give-h"><span class="dot" style="--c:var(--sun)"></span>Giving back</h2>
   <ul class="give-list">
-    <li><strong>Volunteer swim instructor</strong><span>Keens</span><span class="yrs">2025</span></li>
+    <li><strong>Volunteer swim coach</strong><span>Keens</span><span class="yrs">2025 – 2026</span></li>
     <li><strong>Operations</strong><span>Artist Talk on Art</span><span class="yrs">2023 – 2025</span><p class="give-note">Every week I helped host and publish panel discussions where senior artists talked about their work. The series is archived at the Smithsonian's Archives of American Art.</p></li>
     <li><strong>Community Outreach Liaison</strong><span>Kantar</span><span class="yrs">2022 – 2023</span><p class="give-note">Organized community service events for the New York office, from volunteer days with Encore to clothing and food drives. I also co-created Lunch with a Leader, informal lunches that connected analysts and directors with visiting leaders. It became a monthly series that kept going after I left.</p></li>
     <li><strong>Marketing Specialist</strong><span>50:50 Startup</span><span class="yrs">2020 – 2021</span><p class="give-note">Helped fundraise for and promote a global entrepreneurship program that brings together Israeli Arabs, Jews, and Palestinians to build equally owned tech startups.</p></li>
@@ -561,7 +561,7 @@ page("mba.html", "Vanessa at McCombs", "mba", body="""
 """)
 
 # ---------- TECH TREK BLOG ----------
-page("trek.html", "Tech Trek Recap", "mba", back=("mba.html", "Back to At McCombs"), body="""
+page("trek.html", "Tech Trek Recap · Vanessa Gershbein", "mba", back=("mba.html", "Back to At McCombs"), body="""
 <article class="blog">
   <header class="page-title">
     <h1>What I learned on the <span class="hl">McCombs Tech Trek</span></h1>
@@ -602,7 +602,7 @@ page("trek.html", "Tech Trek Recap", "mba", back=("mba.html", "Back to At McComb
 """)
 
 # ---------- MARKETING CAMP BLOG ----------
-page("camp.html", "Marketing Camp Recap", "mba", back=("mba.html", "Back to At McCombs"), body="""
+page("camp.html", "Marketing Camp Recap · Vanessa Gershbein", "mba", back=("mba.html", "Back to At McCombs"), body="""
 <article class="blog">
   <header class="page-title">
     <h1>What Marketing Camp taught me about <span class="hl">insight</span></h1>
@@ -642,7 +642,7 @@ page("camp.html", "Marketing Camp Recap", "mba", back=("mba.html", "Back to At M
 """)
 
 # ---------- KENVUE BLOG ----------
-page("kenvue.html", "Kenvue Recap", "mba", back=("mba.html", "Back to At McCombs"), body="""
+page("kenvue.html", "Kenvue DFML Summit · Vanessa Gershbein", "mba", back=("mba.html", "Back to At McCombs"), body="""
 <article class="blog">
   <header class="page-title">
     <h1>What Kenvue taught me about the <span class="hl">tensions in brand management</span></h1>
@@ -689,7 +689,7 @@ page("kenvue.html", "Kenvue Recap", "mba", back=("mba.html", "Back to At McCombs
 """)
 
 # ---------- FORTE BLOG ----------
-page("forte.html", "Forte Leadership Conference", "mba", back=("mba.html", "Back to At McCombs"), body="""
+page("forte.html", "Forté Leadership Conference · Vanessa Gershbein", "mba", back=("mba.html", "Back to At McCombs"), body="""
 <article class="blog">
   <header class="page-title">
     <h1>My MBA started <span class="hl">before day one</span></h1>
