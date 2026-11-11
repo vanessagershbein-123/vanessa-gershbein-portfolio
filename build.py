@@ -184,7 +184,7 @@ page("about.html", "About Vanessa", "about", body="""
   <h2>A few things I love</h2>
   <ul class="loves">
     <li style="--c:var(--mint)"><strong>Backpacking</strong>Two summers as a counselor in Yosemite, and I've been chasing trails and road trips ever since.</li>
-    <li style="--c:var(--pink)"><strong>Rollerskating</strong>The one place I happily look a little silly. Highly recommend!</li>
+    <li style="--c:var(--pink)"><strong>Rollerskating</strong>The one place I happily look a little silly. Highly&nbsp;recommend!</li>
     <li style="--c:var(--paper)"><strong>Film photography</strong><span>More on that in <a href="made.html">What I've Made</a>.</span></li>
   </ul>
 </section>
@@ -456,7 +456,7 @@ page("photography.html", "Vanessa's Photography", "made", back=MADE_BACK, body="
     <div class="show-item"><video src="images/show-video.mp4" poster="images/show-video-poster.jpg" autoplay muted loop playsinline aria-label="Short video walking through the crowded gallery at the opening"></video></div>
     <div class="show-item"><img src="images/show-tv.jpg" alt="An old television playing the club's photo archive, surrounded by photo books on the floor" loading="lazy"></div>
   </div>
-  <p class="show-note">I curated 35+ works for the show, representing one year of work from our film club, a group of practicing photographers still learning to call themselves artists. Each month brought a new theme and film stock, from double exposures and diptychs to strangers and maximalism. Visitors lounged in our recreated living room while our photo archive played on an old TV. Framed prints sold for $50 each, and we raised $1,000+ for Wide Rainbow, an after-school art program in under-resourced neighborhoods.</p>
+  <p class="show-note">I curated 35+ works for the show, representing one year of work from our film club, a group of practicing photographers still learning to call themselves artists. Each month brought a new theme and film stock, from double exposures and diptychs to strangers and maximalism. Visitors lounged in our recreated living room while our photo archive played on an old TV. Framed prints sold for $50 each, and we raised $1,000+ for Wide Rainbow, an after-school art program in under-resourced&nbsp;neighborhoods.</p>
 </section>
 
 <section class="gallery-wrap" aria-labelledby="photos-h">
