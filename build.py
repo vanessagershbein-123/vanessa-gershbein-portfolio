@@ -9,7 +9,7 @@ DESCRIPTIONS = {
     "about.html": "Step inside Vanessa Gershbein's head: West Coast raised, East Coast trained, now at UT Austin McCombs.",
     "career.html": "Vanessa Gershbein's career: six years in customer insights at TapResearch, Kantar, and Swayable, now an MBA candidate at McCombs.",
     "work.html": "Selected work by Vanessa Gershbein: brand strategy, creative testing, go-to-market, and media effectiveness, each with its result.",
-    "mba.html": "Vanessa Gershbein at UT Austin McCombs: Hildebrand Scholar, Forté Fellow, MIINT Fellow, and Marketing Fellow.",
+    "mba.html": "Vanessa Gershbein at UT Austin McCombs: Hildebrand Scholar, Forté Fellow, MIINT Fellow, Marketing Fellow, and Board Fellow.",
     "made.html": "What Vanessa Gershbein makes outside work: film photography, side projects, and things built with AI.",
     "photography.html": "Vanessa Gershbein's film photography, and the Brooklyn gallery show that raised $1,000+ for an after-school art program.",
     "projects.html": "Projects and builds by Vanessa Gershbein: this website, resin jewelry, and volunteering.",
@@ -226,7 +226,7 @@ page("about.html", "About Vanessa", "about", body="""
   <div class="prose">
     <p>I studied Communication Studies at Northeastern, with a minor in Environmental Studies and Sustainable Business Practices.</p>
     <p>Then I became the person brands called when they needed to understand their customers: first at TapResearch, then Kantar, then Swayable. The startups taught me to build from scratch and move fast. Kantar taught me rigor, and how to turn complex data into recommendations senior leaders could act on. Either way, I handed marketing leaders the insight, and they decided what to do with it.</p>
-    <p>At some point I realized I wanted to be the one making the call. So now I'm at McCombs as a Hildebrand Scholar, Forté Fellow, MIINT Fellow, and Marketing Fellow, getting ready to do exactly that.</p>
+    <p>At some point I realized I wanted to be the one making the call. So now I'm at McCombs as a Hildebrand Scholar, Forté Fellow, MIINT Fellow, Marketing Fellow, and Board Fellow, getting ready to do exactly that.</p>
   </div>
 </section>
 
@@ -269,6 +269,7 @@ page("career.html", "Vanessa's Career", "career", body="""
         <li>Tech Club, Graduate Marketing Network, Graduate Women in Business, and Graduate Consulting Group.</li>
         <li><a href="https://www.turnermiint.org/" target="_blank" rel="noopener">MIINT Fellow</a>: selected as 1 of 5 fellows for a competitive, year-long global program focused on impact investment sourcing, due diligence, and investment recommendations.</li>
         <li><a href="https://www.mccombs.utexas.edu/centers-initiatives/center-for-customer-insight-and-marketing-solutions/marketing-fellows/" target="_blank" rel="noopener">Marketing Fellow</a>: chosen for McCombs' selective marketing leadership program, combining company-sponsored consulting projects with a focused marketing curriculum.</li>
+        <li><a href="https://www.mccombs.utexas.edu/graduate/mba/full-time-mba/student-experience/fellows-groups-and-funds/golub-capital-board-fellows/" target="_blank" rel="noopener">Golub Capital Board Fellow</a>: a year as a non-voting board member of a local nonprofit, leading a strategic project on one of its key challenges.</li>
         <li>Currently hunting for a marketing role for summer 2027.</li>
       </ul>
     </div>
@@ -612,6 +613,7 @@ page("mba.html", "Vanessa at McCombs", "mba", body="""
     <article class="proj-card" style="--c:var(--cobalt)"><span class="when">Fellowship</span><h3>Forté Fellow</h3><p>A fellowship for women in business. Read about the <a href="forte.html">Forté MBA Leadership Conference</a>.</p></article>
     <article class="proj-card" style="--c:var(--cobalt)"><span class="when">Fellowship</span><h3><a href="https://www.turnermiint.org/" target="_blank" rel="noopener">MIINT Fellow</a></h3><p>Turner MBA Impact Investing Network &amp; Training. Selected as 1 of 5 fellows for a competitive, year-long global program focused on impact investment sourcing, due diligence, and investment recommendations.</p></article>
     <article class="proj-card" style="--c:var(--cobalt)"><span class="when">Selective program</span><h3><a href="https://www.mccombs.utexas.edu/centers-initiatives/center-for-customer-insight-and-marketing-solutions/marketing-fellows/" target="_blank" rel="noopener">Marketing Fellow</a></h3><p>Selected for McCombs' program built to develop elite marketing talent. Fellows go deeper than the core MBA, taking on company-sponsored consulting projects alongside a focused marketing curriculum.</p></article>
+    <article class="proj-card" style="--c:var(--cobalt)"><span class="when">Selective program</span><h3><a href="https://www.mccombs.utexas.edu/graduate/mba/full-time-mba/student-experience/fellows-groups-and-funds/golub-capital-board-fellows/" target="_blank" rel="noopener">Golub Capital Board Fellow</a></h3><p>Selected for McCombs' nonprofit board program. Fellows spend a year as non-voting board members of a local nonprofit and lead a strategic project on one of its key challenges.</p></article>
   </div>
 </section>
 
