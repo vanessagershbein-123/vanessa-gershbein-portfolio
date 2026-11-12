@@ -656,7 +656,7 @@ page("trek.html", "Tech Trek Recap · Vanessa Gershbein", "mba", back=("mba.html
   <figure class="trek-hero"><img src="images/trek-google.jpg" alt="Our McCombs Tech Trek group throwing up Hook 'em Horns in front of the Google sign" width="1600" height="960"></figure>
 
   <div class="post">
-    <p class="hook">I expected to spend two days learning about tech companies. I came back having learned more about how to think like a marketer inside one.</p>
+    <p class="hook">I expected to spend two days learning about tech companies. I&nbsp;came back having learned more about how to think like a marketer inside one.</p>
     <p>In September I joined the McCombs Tech Trek: two days of sessions with teams at Adobe, Visa, and Google, an AI startup founder, and the Quantum in Business Conference (QIB).</p>
 
     <h2>One company, two kinds of marketing</h2>

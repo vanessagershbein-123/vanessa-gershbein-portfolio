@@ -1352,3 +1352,6 @@ li, li > span, .loves span, .give-note, .quiz-result, .when, .where { text-wrap:
 .mind .thought.belief-t .t-title { font-size: clamp(1.02rem, 1.45vw, 1.22rem); line-height: 1.2; max-width: 14ch; text-wrap: balance; }
 .mind .thought.belief-t .t-line { font-size: .78rem; font-weight: 600; letter-spacing: .02em; opacity: .85; }
 .inner .about-mind { margin-top: clamp(.5rem, 2vw, 1.5rem); }
+
+/* Blog hooks: balance the lines at every width so none ends on a stray word */
+.post .hook { text-wrap: balance; }
