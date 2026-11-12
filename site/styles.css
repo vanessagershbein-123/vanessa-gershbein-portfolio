@@ -1355,3 +1355,11 @@ li, li > span, .loves span, .give-note, .quiz-result, .when, .where { text-wrap:
 
 /* Blog hooks: balance the lines at every width so none ends on a stray word */
 .post .hook { text-wrap: balance; }
+
+/* Blog posts grow with the window: wider column, photos, and type on bigger screens */
+.blog { max-width: clamp(52rem, 72vw, 76rem); }
+.post p { font-size: clamp(1.05rem, .92rem + .32vw, 1.3rem); }
+.post .hook { font-size: clamp(1.35rem, .95rem + 1.3vw, 2.3rem); }
+.post h2 { font-size: clamp(1.3rem, 1rem + .9vw, 2rem); }
+.inner .post > p { max-width: 70ch; }
+.wrap-img { width: clamp(9rem, 28%, 20rem); }
