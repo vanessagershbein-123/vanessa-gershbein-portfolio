@@ -1378,4 +1378,14 @@ li, li > span, .loves span, .give-note, .quiz-result, .when, .where { text-wrap:
 .rate-chart .val { font-weight: 600; font-size: .95rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 @media (max-width: 560px) { .rate-chart li { grid-template-columns: 1fr; } }
 .post ul.asks { margin: 0; padding-left: 1.25rem; display: grid; gap: .55rem; max-width: 70ch; font-size: clamp(1.05rem, .92rem + .32vw, 1.3rem); line-height: 1.6; }
-.post .post-note { font-size: .9rem; color: var(--muted); }
+.post sup.fn { font-size: .68em; line-height: 0; margin-left: .08em; }
+.post sup.fn a { font-weight: 700; text-decoration: none; padding: 0 .12em; }
+.post sup.fn a:hover { text-decoration: underline; }
+.post .footnotes { display: grid; gap: .6rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); max-width: 70ch; }
+.post .footnotes h2 { font-size: 1.15rem; margin-top: 0; }
+.post .footnotes p { font-size: .92rem; color: var(--muted); }
+.post .footnotes ol { margin: 0; padding-left: 1.5rem; display: grid; gap: .55rem; font-size: .92rem; line-height: 1.55; color: var(--muted); }
+.post .footnotes li { scroll-margin-top: 1.5rem; }
+.post .footnotes li:target { background: color-mix(in srgb, var(--sun) 35%, transparent); border-radius: 6px; }
+.post .fn-back { text-decoration: none; margin-left: .15em; }
+.post sup.fn a:target { background: color-mix(in srgb, var(--sun) 50%, transparent); border-radius: 3px; }
