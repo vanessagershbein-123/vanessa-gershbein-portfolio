@@ -1363,3 +1363,19 @@ li, li > span, .loves span, .give-note, .quiz-result, .when, .where { text-wrap:
 .post h2 { font-size: clamp(1.3rem, 1rem + .9vw, 2rem); }
 .inner .post > p { max-width: 70ch; }
 .wrap-img { width: clamp(9rem, 28%, 20rem); }
+
+/* TomorrowX post: borrowing-cost bar chart, question list, figures note */
+.rate-chart { margin: .25rem 0 .5rem; max-width: 70ch; display: grid; gap: .9rem; }
+.rate-chart figcaption { display: grid; gap: .15rem; }
+.rate-chart figcaption strong { font-family: var(--display); font-weight: 800; font-size: 1.15rem; letter-spacing: -.01em; }
+.rate-chart figcaption span { font-size: .9rem; color: var(--muted); }
+.rate-chart ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.rate-chart li { display: grid; grid-template-columns: minmax(9rem, 15rem) minmax(0, 1fr); align-items: center; gap: .25rem 1rem; padding: .3rem .4rem; border-radius: 6px; }
+.rate-chart li:hover { background: var(--stone); }
+.rate-chart .who { font-size: .95rem; }
+.rate-chart .track { display: flex; align-items: center; gap: .6rem; min-width: 0; }
+.rate-chart .bar { flex: none; height: 18px; width: calc(var(--v) * 4.6%); background: var(--cobalt); border-radius: 0 4px 4px 0; }
+.rate-chart .val { font-weight: 600; font-size: .95rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 560px) { .rate-chart li { grid-template-columns: 1fr; } }
+.post ul.asks { margin: 0; padding-left: 1.25rem; display: grid; gap: .55rem; max-width: 70ch; font-size: clamp(1.05rem, .92rem + .32vw, 1.3rem); line-height: 1.6; }
+.post .post-note { font-size: .9rem; color: var(--muted); }
