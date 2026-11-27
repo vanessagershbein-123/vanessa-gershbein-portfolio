@@ -673,7 +673,7 @@ page("trek.html", "Tech Trek Recap · Vanessa Gershbein", "mba", back=("mba.html
     <h2>An AI founder on planning for failure</h2>
     <p>An AI founder said most builders are optimists, and it shows: products get designed for the ideal customer on the ideal day. Real customers are messier. Their answer was to think about how something fails before celebrating how it works, a mindset they traced to Andy Grove's <i>Only the Paranoid Survive</i>. Marketing plans can fall into the same trap when they're built around the ideal customer.</p>
 
-    <h2>What recruiters actually notice</h2>
+    <h2>What recruiters notice</h2>
     <p>Recruiters said they can tell quickly who is serious about a company. The habits they described were practical: read the latest quarterly report and use AI to decode the confusing parts, compare where a company is hiring with where it's investing, watch a demo before talking about a product, and ask alumni for fifteen minutes. Most will say yes, and some know about roles that aren't posted yet.</p>
 
     <p>As someone switching careers myself, I liked hearing how many panelists had started out in journalism, teaching, or public accounting.</p>
@@ -703,19 +703,19 @@ page("camp.html", "Marketing Camp Recap · Vanessa Gershbein", "mba", back=("mba
     <h2>A snack launch that started with a magazine article</h2>
     <p><img class="wrap-img right" src="images/camp-2.jpg" alt="A speaker on the main stage at McCombs Marketing Camp" width="750" height="1000">The executive told the story of a snack launch that began with a magazine article. Parents wanted more whole grains, and their kids didn't want the taste. That tension became a product the company rejected five times internally before it launched and grew into a major line. Later, at two fast-food chains, the same pattern repeated: a sharp insight first, then the creative. His advice was to go sit with your own data before you ask for a big research budget. As someone who has spent years on the research side, I loved hearing a senior leader say that the best insights often come from digging into the data.</p>
 
-    <h2>Positioning has to be true</h2>
+    <h2>How a pasture-raised egg brand positions itself</h2>
     <p>The egg brand's marketing leader defined marketing as "getting people to think differently in order to generate demand," and was firm that positioning has to come from truth, not a brainstorm. The brand prints the name of the farm on every carton of its pasture-raised eggs and links to a video of it, proof that competitors can't easily copy. When the brand faced a wave of misinformation online, the team didn't fight back. They checked the facts, found that most critics weren't even customers, answered sincere questions directly, and watched sentiment recover. As she put it, "You exist in the woods. The storms are always coming."</p>
 
     <h2>Moving fast without breaking the brand</h2>
     <p>The panel kept coming back to one tension: how to move fast enough to stay relevant without chipping away at the brand. Their answer was clear brand guardrails. When everyone knows exactly what the brand stands for, teams and agencies can act on a social moment the same day without escalating every call, and save the slower, careful work for things that last, like packaging or a major campaign.</p>
     <p>A beverage marketer showed what that clarity looks like across a whole portfolio. Each brand owns a different occasion, like a quiet night in versus a social gathering. That keeps the brands from competing with each other. As one panelist put it, much of leadership is deciding what not to do.</p>
 
-    <h2>A good brief is a good prompt</h2>
+    <h2>What a good brief and a good AI prompt have in common</h2>
     <p>The egg brand's marketing leader pointed out that a great brief spells out the problem, the behavior you want to change, and the core insight, which is also what makes a good AI prompt. One executive described AI as a way to get to 85% of an answer faster, then check everything, because it will confidently get things wrong. Another speaker warned that presenting AI-generated work you don't understand gets exposed the moment someone asks a question.</p>
 
     <h2>The KFC case</h2>
     <p>The day ended with a live brand strategy case from KFC. My team had one hour to prepare and five minutes to present to a panel of judges, who dropped into our room halfway through to test our thinking.</p>
-    <p><img class="wrap-img left" src="images/camp-1.jpg" alt="My team working on the KFC case in a breakout room" width="750" height="1000">With no time to perfect anything, we had to pick a direction early, use frameworks as scaffolding rather than a checklist, and answer as brand managers rather than as customers. When the judges came by with questions, we had to explain our reasoning on the spot. I learned how much of presenting with confidence comes from being clear on your one big idea, so you can think on your feet when the questions come.</p>
+    <p><img class="wrap-img left" src="images/camp-1.jpg" alt="My team working on the KFC case in a breakout room" width="750" height="1000">With no time to perfect anything, we had to pick a direction early, use frameworks as scaffolding, and answer as brand managers rather than as customers. When the judges came by with questions, we had to explain our reasoning on the spot. I learned how much of presenting with confidence comes from being clear on your one big idea, so you can think on your feet when the questions come.</p>
     <div class="quiz" data-answer="3">
       <p class="quiz-q">Your turn. Where do you think my team placed?</p>
       <div class="quiz-opts"><button type="button" data-pick="1">First</button><button type="button" data-pick="2">Second</button><button type="button" data-pick="3">Third</button></div>
@@ -753,7 +753,7 @@ page("kenvue.html", "Kenvue DFML Summit · Vanessa Gershbein", "mba", back=("mba
     <p>Every new product, pack size, or bundle has to pass one filter first: is it incremental, or will it just pull sales from the brand's own shelf? A two-pack can look like a win and quietly shrink the single. These are the research questions I've been asking for six years, and it was so fun to see how much brand decisions depend on them!</p>
 
     <h2>One global idea vs. many local markets</h2>
-    <p>Global teams own the big idea, and local teams make it work in their market and channels. The hard part is language. A claim that works in one country can fall flat in another, so the work has to make sense in every market at once.</p>
+    <p>Global teams own the big idea, and local teams make it work in their market and channels. Language is the hardest part, because a claim that works in one country can fall flat in another. The work has to make sense in every market at once.</p>
 
     <h2>Moving fast vs. committing big</h2>
     <p>One leader sorted decisions into one-way and two-way doors. A digital test can fail fast and pivot. A TV campaign commits millions, so you get alignment first.</p>
@@ -786,7 +786,7 @@ page("tomorrowx.html", "TomorrowX Summit · Vanessa Gershbein", "mba", back=("mb
   <figure class="trek-hero"><img src="images/tomorrowx-crowd.jpg" alt="The TomorrowX stage and screens at the Moody Center, seen over rows of attendees with their laptops open" width="1600" height="1200"></figure>
 
   <div class="post">
-    <p class="hook">The big numbers got the applause. I was more interested in the arguments about who carries the risk.</p>
+    <p class="hook">The arguments I found most interesting at TomorrowX were about who carries the risk.</p>
     <p>In November I went to <a href="https://tomorrowxsummit.com/" target="_blank" rel="noopener">TomorrowX Summit</a> at the Moody Center on the UT Austin campus, on a student pass. It's an invite-only summit for tech CEOs and investors, pitched on its own website as "two days with the CEOs in your portfolio." The theme was how AI can revive the American dream. Most sessions were short main-stage conversations, usually an investor interviewing a CEO. Over two days I heard from the people building and financing AI's chips, data centers, power plants, and the deals behind them. The most useful moments were when they disagreed, especially about money. Figures below are as speakers said them on stage, and a few notes at the end flag where public sources tell a different story.</p>
 
     <h2>Everyone on stage had a stake</h2>
@@ -794,12 +794,12 @@ page("tomorrowx.html", "TomorrowX Summit · Vanessa Gershbein", "mba", back=("mb
 
     <h2>Boom vs. bubble</h2>
     <p>Blackstone's president made the strongest case against a bubble, using three tests. On valuation, the Nasdaq traded at more than 60 times earnings in the dot-com era, compared with about 17 times next year's earnings today, by the speaker's estimate<sup class="fn"><a href="#fn-1" id="fnref-1" aria-label="Note 1">1</a></sup>. On speculation, telecom companies in the 1990s laid fiber and hoped demand would come, while today demand is ahead of supply. On leverage, homebuyers in 2006 borrowed 90% or more. This build-out is mostly paid for by the biggest tech companies, which are expected to generate about $1 trillion of EBITDA (a rough measure of operating cash flow) next year<sup class="fn"><a href="#fn-2" id="fnref-2" aria-label="Note 2">2</a></sup>.</p>
-    <p>Almost every speaker also reached for history. Arm's CEO compared AI to the transcontinental railroads, overbuilt in the 1870s until European investors pulled their money and the stock market crashed. The railroads still changed everything. A credit investor who had lived through the telecom and shale booms said it's crazy to think AI won't have periods of oversupply too. Intel's CEO called some correction healthy. My takeaway is that something can change the world and still wipe out the people who paid for it too early.</p>
+    <p>Almost every speaker also reached for history. Arm's CEO compared AI to the transcontinental railroads, overbuilt in the 1870s until European investors pulled their money and the stock market crashed. The railroads still changed everything. A credit investor who had lived through the telecom and shale booms said it's crazy to think AI won't have periods of oversupply too. Intel's CEO called some correction healthy. My takeaway is that AI could change the world, like the railroads did, and still wipe out the people who paid for it too early.</p>
     <p>That same credit investor said 99 out of 100 people they'd talked to that week expected the chip shortage to last another year, which felt skewed too far one way. In their view, the stock and bond markets were already pricing in a bigger risk of too much capacity. Several sessions opened by asking executives about their falling stock prices.</p>
 
     <h2>Contracts first vs. returns first</h2>
     <p>The biggest disagreement I heard was about how to pay for all of this. Blackstone puts most of its money in only once a tenant, typically a company worth trillions, signs a 15- to 20-year lease. CoreWeave said it only buys chips after a customer signs a take-or-pay contract, meaning the customer pays whether or not it uses the capacity, and it asks customers to prepay 20 to 25%. Micron said its 26 multi-year supply agreements came with $32 billion of upfront cash and commitments.</p>
-    <p>The CEO of Base Power, a battery and power startup, called that approach backwards. Build something that earns strong returns first, around 30% before any borrowing, and lenders will line up to finance it. Contracts also don't make risk disappear. The interviewer at the Micron session, a 27-year semiconductor veteran, said every take-or-pay deal they'd seen in that time was either broken or became an albatross. Then they called "this time is different" a very dangerous thing for an investor to say, and said it anyway. A contract moves risk to whoever signed it. If the end customers never show up, someone still takes the loss.</p>
+    <p>The CEO of Base Power, a battery and power startup, called that approach backwards. Build something that earns strong returns first, around 30% before any borrowing, and lenders will line up to finance it. Contracts also don't make risk disappear. The interviewer at the Micron session, a 27-year semiconductor veteran, said every take-or-pay deal they'd seen in that time was either broken or became an albatross. Then they called "this time is different" a very dangerous thing for an investor to say, and said it anyway. If the end customers never show up, whoever signed the contract takes the loss.</p>
 
     <h2>Lenders vs. accountants</h2>
     <p>Companies spread the cost of a chip over its useful life, which is called depreciation. CoreWeave said the industry uses about six years<sup class="fn"><a href="#fn-3" id="fnref-3" aria-label="Note 3">3</a></sup> and argued chips last even longer. Its older A100 chips are now contracted through 2029, roughly eight years of use by CoreWeave's own estimate, at higher prices than their original contracts.</p>
@@ -846,7 +846,7 @@ page("tomorrowx.html", "TomorrowX Summit · Vanessa Gershbein", "mba", back=("mb
 
     <section class="footnotes" aria-labelledby="fn-h">
       <h2 id="fn-h">Fact-checks</h2>
-      <p>Where public sources differ from what was said on stage, or add context that matters. Checked in November 2026.</p>
+      <p>Where public sources differ from what was said on stage, or add context. Checked in November 2026.</p>
       <ol>
         <li id="fn-1">Public data puts it a bit higher: the Nasdaq-100 traded at about 21 times forward earnings at the end of October 2026. <a href="https://siblisresearch.com/data/nasdaq-100-pe-ratio/" target="_blank" rel="noopener">Siblis Research</a>. <a class="fn-back" href="#fnref-1" aria-label="Back to note 1 in the text">↩</a></li>
         <li id="fn-2">I couldn't find a published EBITDA estimate. Reuters, using LSEG estimates, projects the five biggest spenders' operating cash flow rising about $340 billion from 2025 to 2027, while their capex rises about $534 billion. <a href="https://www.thestar.com.my/tech/tech-news/2026/07/22/analysis-ai-investment-boom-puts-big-tech039s-free-cash-flow-under-pressure" target="_blank" rel="noopener">Reuters via The Star, Jul 22, 2026</a>. <a class="fn-back" href="#fnref-2" aria-label="Back to note 2 in the text">↩</a></li>
