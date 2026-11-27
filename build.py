@@ -10,7 +10,7 @@ DESCRIPTIONS = {
     "career.html": "Vanessa Gershbein's career: six years in customer insights at TapResearch, Kantar, and Swayable, now an MBA candidate at McCombs.",
     "work.html": "Selected work by Vanessa Gershbein: brand strategy, creative testing, go-to-market, and media effectiveness, each with its result.",
     "mba.html": "Vanessa Gershbein at UT Austin McCombs: Hildebrand Scholar, Forté Fellow, MIINT Fellow, Marketing Fellow, and Board Fellow.",
-    "made.html": "What Vanessa Gershbein makes outside work: film photography, side projects, and things built with AI.",
+    "made.html": "What Vanessa Gershbein makes outside work: film photography, side projects, things built with AI, and a learning hub for product marketing, product management and brand.",
     "photography.html": "Vanessa Gershbein's film photography, and the Brooklyn gallery show that raised $1,000+ for an after-school art program.",
     "projects.html": "Projects and builds by Vanessa Gershbein: this website, resin jewelry, and volunteering.",
     "kenvue.html": "What Vanessa Gershbein learned at Kenvue's Developing Future Marketing Leaders Summit about the tensions in brand management.",
@@ -503,10 +503,10 @@ page("work.html", "Vanessa's Selected Work", "work", body="""
 page("made.html", "What Vanessa Made", "made", body="""
 <section class="page-title">
   <h1>Things I made when <span class="hl">nobody was paying me to.</span></h1>
-  <p>Film photos and side projects. Pick one.</p>
+  <p>Film photos, side projects and a learning hub. Pick one.</p>
 </section>
 <section class="explore" aria-label="What I've Made">
-  <div class="blocks">
+  <div class="blocks three">
     <a class="block has-img" href="photography.html" style="--c:var(--sun)">
       <img class="block-img" src="images/show-room.jpg" alt="" loading="lazy">
       <h2>Photography</h2>
@@ -518,6 +518,12 @@ page("made.html", "What Vanessa Made", "made", body="""
       <h2>Projects &amp; Builds</h2>
       <p>I love pushing myself to try new things, from building with AI to volunteering and creative side projects.</p>
       <span class="go">Take a look →</span>
+    </a>
+    <a class="block has-img" href="learn/" style="--c:var(--pink)">
+      <img class="block-img" src="images/learning-hub.svg" alt="" loading="lazy">
+      <h2>Learning Hub</h2>
+      <p>As I explore different career paths, I'm building a learning hub for each role I'm curious about: product marketing, product management and brand.</p>
+      <span class="go">Start learning →</span>
     </a>
   </div>
 </section>

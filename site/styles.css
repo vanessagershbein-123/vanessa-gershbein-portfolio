@@ -1389,3 +1389,6 @@ li, li > span, .loves span, .give-note, .quiz-result, .when, .where { text-wrap:
 .post .footnotes li:target { background: color-mix(in srgb, var(--sun) 35%, transparent); border-radius: 6px; }
 .post .fn-back { text-decoration: none; margin-left: .15em; }
 .post sup.fn a:target { background: color-mix(in srgb, var(--sun) 50%, transparent); border-radius: 3px; }
+
+/* What I've Made: three bubbles across on wide screens */
+@media (min-width: 900px) { .blocks.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

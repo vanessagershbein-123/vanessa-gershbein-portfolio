@@ -1,2 +1,16 @@
 [build]
   publish = "site"
+
+# Learning Hub: lives in its own repo and Netlify site, shown here at /learn.
+# Hub updates deploy on their own; this site only forwards the path.
+[[redirects]]
+  from = "/learn"
+  to = "/learn/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/*"
+  to = "https://vanessa-learning-hub.netlify.app/:splat"
+  status = 200
+  force = true
