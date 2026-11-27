@@ -5,7 +5,7 @@
 # Hub updates deploy on their own; this site only forwards the path.
 [[redirects]]
   from = "/learn"
-  to = "/learn/"
+  to = "/learn/index.html"
   status = 301
   force = true
 
