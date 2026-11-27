@@ -658,7 +658,7 @@ page("trek.html", "Tech Trek Recap · Vanessa Gershbein", "mba", back=("mba.html
   <figure class="trek-hero"><img src="images/trek-google.jpg" alt="Our McCombs Tech Trek group throwing up Hook 'em Horns in front of the Google sign" width="1600" height="960"></figure>
 
   <div class="post">
-    <p class="hook">I expected to spend two days learning about tech companies. I&nbsp;came back having learned more about how to think like a marketer inside one.</p>
+    <p class="hook">The biggest thing I took away from the Tech Trek was how to think like a marketer inside a tech company.</p>
     <p>In September I joined the McCombs Tech Trek: two days of sessions with teams at Adobe, Visa, and Google, an AI startup founder, and the Quantum in Business Conference (QIB).</p>
 
     <h2>One company, two kinds of marketing</h2>
@@ -668,13 +668,13 @@ page("trek.html", "Tech Trek Recap · Vanessa Gershbein", "mba", back=("mba.html
     <p>One speaker told us interviews are moving toward "show me what you built," and that the people getting ahead keep pushing AI one step past what it does by default. In another session, the advice was to stay in the driver's seat and check everything AI gives you. Both are part of why I built <a href="projects.html">this website</a> with AI.</p>
 
     <h2>Thirty minutes with a CFO</h2>
-    <p>One panel said the skill they value most is being able to brief a senior leader, like a CFO, in thirty minutes. That stuck with me because it's the hardest part of research work: choosing what to leave out so the recommendation is easy to act on.</p>
+    <p>One panel said the skill they value most is being able to brief a senior leader, like a CFO, in thirty minutes. I related to that, because it's the hardest part of research work: choosing what to leave out so the recommendation is easy to act on.</p>
 
     <h2>An AI founder on planning for failure</h2>
     <p>An AI founder said most builders are optimists, and it shows: products get designed for the ideal customer on the ideal day. Real customers are messier. Their answer was to think about how something fails before celebrating how it works, a mindset they traced to Andy Grove's <i>Only the Paranoid Survive</i>. Marketing plans can fall into the same trap when they're built around the ideal customer.</p>
 
     <h2>What recruiters actually notice</h2>
-    <p>Recruiters said they can tell quickly who is genuinely interested. The habits they described were practical: read the latest quarterly report and use AI to decode the confusing parts, compare where a company is hiring with where it's investing, watch a demo before talking about a product, and ask alumni for fifteen minutes. Most will say yes, and some know about roles that aren't posted yet.</p>
+    <p>Recruiters said they can tell quickly who is serious about a company. The habits they described were practical: read the latest quarterly report and use AI to decode the confusing parts, compare where a company is hiring with where it's investing, watch a demo before talking about a product, and ask alumni for fifteen minutes. Most will say yes, and some know about roles that aren't posted yet.</p>
 
     <p>As someone switching careers myself, I liked hearing how many panelists had started out in journalism, teaching, or public accounting.</p>
 <div class="trek-photos">
@@ -683,7 +683,7 @@ page("trek.html", "Tech Trek Recap · Vanessa Gershbein", "mba", back=("mba.html
       <img src="images/trek-group.jpg" alt="The trek group in front of the same glowing light wall" width="1600" height="1172" loading="lazy">
     </div>
 
-    <p>Thank you to every speaker who shared their time and honesty, and to the McCombs community that made the trek happen.</p>
+    <p>Thank you to every speaker for being so honest with us, and to the McCombs community that made the trek happen!</p>
   </div>
 </article>
 """)
@@ -723,7 +723,7 @@ page("camp.html", "Marketing Camp Recap · Vanessa Gershbein", "mba", back=("mba
     </div>
     <script src="quiz.js" defer></script>
 
-    <p>Honestly, I left energized! It made me feel like six years on the research side was a head start. Nearly every speaker ended on the same advice: stay curious, and build relationships while you're still in school.</p>
+    <p>Nearly every speaker ended on the same advice: stay curious, and build relationships while you're still in school. I left energized! It made me feel like six years on the research side was a head start.</p>
   </div>
 </article>
 """)
@@ -739,21 +739,21 @@ page("kenvue.html", "Kenvue DFML Summit · Vanessa Gershbein", "mba", back=("mba
   <figure class="trek-hero"><img src="images/kenvue-group.jpg" alt="Our group of MBA students smiling in front of the Kenvue building" width="1600" height="1200"></figure>
 
   <div class="post">
-    <p class="hook">Brand management is the art of holding two good ideas at once.</p>
+    <p class="hook">I came home from Kenvue with a list of tradeoffs every brand manager has to balance.</p>
     <p>In November I flew to New Jersey for Kenvue's Developing Future Marketing Leaders (DFML) Summit: two days at headquarters with MBA students from several schools, just days after Kenvue officially became part of Kimberly-Clark. Across panels, case studies, and coffee chats, the leaders kept coming back to the same tensions.</p>
 
     <h2>A company that invests in leaders before it hires them</h2>
-    <p>Honestly, DFML itself impressed me most! Weeks before we arrived, the team ran a case interview prep session to get us ready. At the summit, each of us got a one-on-one with an associate brand manager buddy, an honest real-talk panel with current ABMs, and mock interview prep. The whole program is built to break down barriers into brand management. They bring people in before any offers are made, so everyone leaves with sharper skills and a network across schools, whether or not they end up joining.</p>
-    <p>The proof was in the room. Two of the panelists had come through DFML themselves, and one of the leaders we heard from started as an associate brand manager intern and now leads sales for a whole business unit. They described a culture where development conversations start in your first month, new ABMs get boot camps from day one, managers map your skill gaps and push for your next rotation, and stretch assignments are normal. In the middle of a huge merger, this team still made time to invest in people who don't work there yet. That says everything about the kind of leaders Kenvue and Kimberly-Clark want to build.</p>
+    <p>DFML itself impressed me most! Weeks before we arrived, the team ran a case interview prep session to get us ready. At the summit, each of us got a one-on-one with an associate brand manager buddy, an honest real-talk panel with current ABMs, and mock interview prep. The whole program is built to break down barriers into brand management. They bring people in before any offers are made, so everyone leaves with sharper skills and a network across schools, whether or not they end up joining.</p>
+    <p>Two of the panelists had come through DFML themselves, and one of the leaders we heard from started as an associate brand manager intern and now leads sales for a whole business unit. They described a culture where development conversations start in your first month, new ABMs get boot camps from day one, managers map your skill gaps and push for your next rotation, and stretch assignments are normal. In the middle of a huge merger, this team still made time to invest in people who don't work there yet.</p>
 
     <h2>Your brand vs. the retailer's category</h2>
     <p>Retailers don't care if your brand wins. They care if their category grows. So every pitch has to prove it brings in new shoppers, gets people using more, or gets them trading up. Even with AI shopping on the rise, most sales still happen in stores, so one rocky retailer relationship can sink a year.</p>
 
     <h2>Growth vs. cannibalization</h2>
-    <p>Every new product, pack size, or bundle has to pass one filter first: is it truly incremental, or will it just pull sales from the brand's own shelf? A two-pack can look like a win and quietly shrink the single. These are the research questions I've been asking for six years, and it was so fun to see them sit at the center of brand decisions.</p>
+    <p>Every new product, pack size, or bundle has to pass one filter first: is it incremental, or will it just pull sales from the brand's own shelf? A two-pack can look like a win and quietly shrink the single. These are the research questions I've been asking for six years, and it was so fun to see how much brand decisions depend on them!</p>
 
     <h2>One global idea vs. many local markets</h2>
-    <p>Global teams own the big idea, and local teams make it work in their market and channels. The hard part is language. A claim that lands in one country can fall flat in another, so the work has to resonate everywhere at once.</p>
+    <p>Global teams own the big idea, and local teams make it work in their market and channels. The hard part is language. A claim that works in one country can fall flat in another, so the work has to make sense in every market at once.</p>
 
     <h2>Moving fast vs. committing big</h2>
     <p>One leader sorted decisions into one-way and two-way doors. A digital test can fail fast and pivot. A TV campaign commits millions, so you get alignment first.</p>
@@ -768,9 +768,9 @@ page("kenvue.html", "Kenvue DFML Summit · Vanessa Gershbein", "mba", back=("mba
     <p>The panel on marketing to doctors flipped how I think about influence. Health brands need both creators with big audiences and the experts who publish research and teach other doctors. Patients now walk in with answers from ChatGPT, so brands also have to make sure accurate information is what AI tools learn from.</p>
 
     <h2>Being seen vs. making sense</h2>
-    <p>One team walked us through a music festival activation for a pain-relief brand: recharge kits, a lounge with samples and phone charging, and recovery tools for tired legs. The best feedback wasn't about reach. It was festival-goers saying the brand being there actually made sense. Their lesson was to start with a business problem and a real consumer tension, not a cool execution.</p>
+    <p>One team walked us through a music festival activation for a pain-relief brand: recharge kits, a lounge with samples and phone charging, and recovery tools for tired legs. The best feedback came from festival-goers who said the brand being there made sense. Their lesson was to start with a business problem and a real consumer tension before picking a cool execution.</p>
 
-    <p>The leader I'll remember most called herself a steel umbrella: she takes the pressure from above and the heat for her team's calls, so they can take smart risks. Holding the tension so your team doesn't have to might be the most important job of all. Thank you to the DFML team and every Kenvue and Kimberly-Clark leader who gave us their time and such honest answers!</p>
+    <p>My favorite moment was a leader who called herself a steel umbrella: she takes the pressure from above and the heat for her team's calls, so they can take smart risks. Thank you to the DFML team and every Kenvue and Kimberly-Clark leader who gave us their time and such honest answers!</p>
   </div>
 </article>
 """)
@@ -786,15 +786,15 @@ page("tomorrowx.html", "TomorrowX Summit · Vanessa Gershbein", "mba", back=("mb
   <figure class="trek-hero"><img src="images/tomorrowx-crowd.jpg" alt="The TomorrowX stage and screens at the Moody Center, seen over rows of attendees with their laptops open" width="1600" height="1200"></figure>
 
   <div class="post">
-    <p class="hook">The big numbers got the applause. The arguments about who carries the risk are what I keep thinking about.</p>
+    <p class="hook">The big numbers got the applause. I was more interested in the arguments about who carries the risk.</p>
     <p>In November I went to <a href="https://tomorrowxsummit.com/" target="_blank" rel="noopener">TomorrowX Summit</a> at the Moody Center on the UT Austin campus, on a student pass. It's an invite-only summit for tech CEOs and investors, pitched on its own website as "two days with the CEOs in your portfolio." The theme was how AI can revive the American dream. Most sessions were short main-stage conversations, usually an investor interviewing a CEO. Over two days I heard from the people building and financing AI's chips, data centers, power plants, and the deals behind them. The most useful moments were when they disagreed, especially about money. Figures below are as speakers said them on stage, and a few notes at the end flag where public sources tell a different story.</p>
 
     <h2>Everyone on stage had a stake</h2>
-    <p><img class="wrap-img right" src="images/tomorrowx-stage.jpg" alt="The TomorrowX stage and its giant screen, seen from the upper seats of the Moody Center" width="750" height="1000" loading="lazy">Almost everyone on stage had money riding on what they were talking about, and the format made that hard to miss. Interviewers often came from firms that back the company on stage, like a16z with Coinbase and Valor with Zipline, and the top pass, at $10,000, came with private meetings with the companies. A few speakers said it out loud, too. Blackstone's president argued that market negativity has gone too far, then noted that a shakeout would mean less competition for Blackstone. One credit investor said their fund is positioned against the riskier borrowers. Dell's founder, with an earnings report days away, said the build-out only goes wrong if AI simply doesn't work. On day two, the hosts talked about making a YouTube ad to flip the narrative on data centers, which one of them called a terrible name. As a marketer, I found that last one fascinating! A lot of this summit was about managing how people feel about AI, not just building it.</p>
+    <p><img class="wrap-img right" src="images/tomorrowx-stage.jpg" alt="The TomorrowX stage and its giant screen, seen from the upper seats of the Moody Center" width="750" height="1000" loading="lazy">Almost everyone on stage had money riding on what they were talking about, and the format made that hard to miss. Interviewers often came from firms that back the company on stage, like a16z with Coinbase and Valor with Zipline, and the top pass, at $10,000, came with private meetings with the companies. A few speakers said it out loud, too. Blackstone's president argued that market negativity has gone too far, then noted that a shakeout would mean less competition for Blackstone. One credit investor said their fund is positioned against the riskier borrowers. Dell's founder, with an earnings report days away, said the build-out only goes wrong if AI simply doesn't work. On day two, the hosts talked about making a YouTube ad to flip the narrative on data centers, which one of them called a terrible name. As a marketer, I found that last one fascinating! A lot of this summit was about managing how people feel about AI.</p>
 
     <h2>Boom vs. bubble</h2>
     <p>Blackstone's president made the strongest case against a bubble, using three tests. On valuation, the Nasdaq traded at more than 60 times earnings in the dot-com era, compared with about 17 times next year's earnings today, by the speaker's estimate<sup class="fn"><a href="#fn-1" id="fnref-1" aria-label="Note 1">1</a></sup>. On speculation, telecom companies in the 1990s laid fiber and hoped demand would come, while today demand is ahead of supply. On leverage, homebuyers in 2006 borrowed 90% or more. This build-out is mostly paid for by the biggest tech companies, which are expected to generate about $1 trillion of EBITDA (a rough measure of operating cash flow) next year<sup class="fn"><a href="#fn-2" id="fnref-2" aria-label="Note 2">2</a></sup>.</p>
-    <p>Almost every speaker also reached for history. Arm's CEO compared AI to the transcontinental railroads, overbuilt in the 1870s until European investors pulled their money and the stock market crashed. The railroads still changed everything. A credit investor who had lived through the telecom and shale booms said it's crazy to think AI won't have periods of oversupply too. Intel's CEO called some correction healthy. My takeaway: something can change the world and still wipe out the people who paid for it too early.</p>
+    <p>Almost every speaker also reached for history. Arm's CEO compared AI to the transcontinental railroads, overbuilt in the 1870s until European investors pulled their money and the stock market crashed. The railroads still changed everything. A credit investor who had lived through the telecom and shale booms said it's crazy to think AI won't have periods of oversupply too. Intel's CEO called some correction healthy. My takeaway is that something can change the world and still wipe out the people who paid for it too early.</p>
     <p>That same credit investor said 99 out of 100 people they'd talked to that week expected the chip shortage to last another year, which felt skewed too far one way. In their view, the stock and bond markets were already pricing in a bigger risk of too much capacity. Several sessions opened by asking executives about their falling stock prices.</p>
 
     <h2>Contracts first vs. returns first</h2>
@@ -877,7 +877,7 @@ page("forte.html", "Forté Leadership Conference · Vanessa Gershbein", "mba", b
     <p>As a Forté Fellow, I attended the Forté MBA Leadership Conference in June, a two-day event for incoming MBA students at Forté member schools. Day one was about exploring careers. Day two was a professional development day focused on the skills that carry you through recruiting and beyond.</p>
 
     <h2>Meeting my class early</h2>
-    <p><img class="wrap-img right" src="images/forte-sign.jpg" alt="The McCombs group throwing up Hook 'em Horns behind a glowing FORTÉ sign" width="1179" height="848">The McCombs group showed up in matching burnt-orange shirts, and it was the first time many of us were in the same room. By the time we got to Austin for orientation, I already had familiar faces, and a group of women I knew I could lean on through recruiting.</p>
+    <p><img class="wrap-img right" src="images/forte-sign.jpg" alt="The McCombs group throwing up Hook 'em Horns behind a glowing FORTÉ sign" width="1179" height="848">The McCombs group showed up in matching burnt-orange shirts, and it was the first time many of us were in the same room! By the time we got to Austin for orientation, I already had familiar faces, and a group of women I knew I could lean on through recruiting.</p>
 
     <h2>Day one: seeing what's possible</h2>
     <p>Friday was about exploring careers, and I used it to test my assumptions about where an MBA could take me. I went to three panels.</p>
@@ -892,7 +892,7 @@ page("forte.html", "Forté Leadership Conference · Vanessa Gershbein", "mba", b
     <figure class="forte-wide"><img src="images/forte-booth.jpg" alt="Smiling McCombs classmates in a photo booth holding a #MoreWomenLeading sign" width="1179" height="774"></figure>
 
     <h2>What I carried into McCombs</h2>
-    <p>I left Atlanta with new friends, a clearer map of MBA career paths, and two books on my reading list: <i>Runnin' Down a Dream</i> by Bill Gurley and <i>Good to Great</i> by Jim Collins.</p>
+    <p>I left Atlanta with new friends and a clearer map of MBA career paths. I also added two books to my reading list: <i>Runnin' Down a Dream</i> by Bill Gurley and <i>Good to Great</i> by Jim Collins.</p>
   </div>
 </article>
 """)
