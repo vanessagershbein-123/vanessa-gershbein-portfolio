@@ -899,4 +899,5 @@ page("forte.html", "Forté Leadership Conference · Vanessa Gershbein", "mba", b
 (OUT / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     + "".join(f"  <url><loc>{public_url(f)}</loc></url>\n" for f in DESCRIPTIONS)
+    + f"  <url><loc>{SITE}/learn/</loc></url>\n"  # the Learning Hub, copied into site/learn/
     + "</urlset>\n", encoding="utf-8")

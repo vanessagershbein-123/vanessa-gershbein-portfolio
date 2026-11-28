@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Driver-based forecasting and S&amp;OP · Learning Hub</title>
+<meta name="description" content="Build a forecast from the drivers behind it, keep the base apart from events, measure bias as well as accuracy, and know where your number goes each month.">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/styles.css?v=98967a9d">
+</head>
+<body data-root="../../" data-page="bm/reading-the-business/driver-based-forecasting" data-kind="lesson" data-path="bm">
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="hub-head">
+  <a class="brand" href="../../index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Learning Hub</a>
+  <nav aria-label="Learning Hub"><details class="nav-menu" data-nav-menu><summary class="on">Paths</summary><div class="menu"><a href="../../pmm/index.html" class="c-pmm" data-nav="pmm"><span class="path-chip">PMM</span>Product Marketing</a><a href="../../bm/index.html" class="c-bm" aria-current="page" data-nav="bm"><span class="path-chip">Brand</span>Brand Management</a><span class="soon c-pm"><span class="path-chip">PM</span>Product Management<span class="meta">Coming soon</span></span></div></details><details class="nav-menu" data-nav-menu><summary>Skills</summary><div class="menu"><a href="../../skills/index.html">All skills</a><hr><a href="../../skills/business-math.html">Business math</a><a href="../../skills/data-and-charts.html">Data &amp; charts</a><a href="../../skills/sizing-and-forecasting.html">Sizing &amp; forecasting</a><a href="../../skills/research-and-insight.html">Research &amp; insight</a><a href="../../skills/positioning-and-strategy.html">Positioning &amp; strategy</a><a href="../../skills/pricing-and-promotion.html">Pricing &amp; promotion</a><a href="../../skills/writing-and-storytelling.html">Writing &amp; storytelling</a><a href="../../skills/interviews-and-career.html">Interviews &amp; career</a></div></details><a href="../../review.html" data-nav="review">Review<span class="due-count" data-due-count hidden></span></a><a href="../../notes.html" data-nav="notes">Notes</a><a href="../../glossary.html" data-nav="glossary">Glossary</a><a href="../../roadmap.html" data-nav="roadmap">What&#x27;s coming</a></nav>
+</header>
+<main id="main">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../index.html">Learning Hub</a> <a href="../../bm/index.html">Brand Management</a> <a href="../../bm/reading-the-business/index.html">Reading the business &amp; forecasting</a> <span>2.5</span></nav>
+<div class="item-layout">
+  <div class="item-main">
+    <header class="item-head c-bm">
+      <h1>Driver-based forecasting and S&amp;OP</h1>
+      <p class="item-meta"><span class="path-chip">Brand</span><span>Lesson 2.5</span><span>14 min</span></p>
+      <p class="goal"><strong>Goal:</strong> Build a forecast from the drivers behind it, keep the base apart from events, measure bias as well as accuracy, and know where your number goes each month.</p>
+      <p class="skill-chips"><span class="label-s">Skills:</span> <a href="../../skills/sizing-and-forecasting.html">Sizing &amp; forecasting</a><a href="../../skills/business-math.html">Business math</a></p>
+    </header>
+    
+<article class="lesson prose">
+  <p>In May 2025, Freshpet cut its sales growth outlook for the year from 21–24% to 15–18%. Its CEO said growth hadn't been as strong as the company expected, so the company would plan as if first-quarter conditions continued for the rest of the year<sup class="fn"><a href="#src-1" aria-label="Source 1">1</a></sup>. It cut twice more, to 13–16% and then, in November, to about 13%<sup class="fn"><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+<p>Three cuts in one year, all in the same direction, is what <span class="term" tabindex="0" aria-describedby="term-1">forecast bias<span class="term-tip" role="tooltip" id="term-1">A tendency for forecasts to miss in the same direction, such as always too high.</span></span> looks like from the outside. Every brand misses forecasts. What matters is whether you can say which assumption broke. A forecast built on last year's growth rate just misses. A forecast built on drivers tells you where it missed, and what to change.</p>
+<h2>Words to know</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it means</th>
+<th>A quick example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forecast</td>
+<td>Your best estimate of what will sell, not what you hope will sell</td>
+<td>1.2 million units next quarter</td>
+</tr>
+<tr>
+<td>Plan or target</td>
+<td>What the business is aiming for, which can differ from the forecast</td>
+<td>The annual budget</td>
+</tr>
+<tr>
+<td>Baseline</td>
+<td>The forecast without promotions or one-time events</td>
+<td>What you'd sell in a normal week</td>
+</tr>
+<tr>
+<td>Driver</td>
+<td>Something that changes sales in a way you can estimate</td>
+<td>Distribution, velocity, price, promotions</td>
+</tr>
+<tr>
+<td>Lift</td>
+<td>The extra sales an event adds over the baseline</td>
+<td>A promotion that lifts units 40%</td>
+</tr>
+<tr>
+<td>Post-promotion dip</td>
+<td>Lower sales after a promotion, while shoppers or retailers work through stock</td>
+<td>Two slow weeks after a big deal</td>
+</tr>
+<tr>
+<td>Forward buying</td>
+<td>A retailer buying extra during a deal to sell after it ends</td>
+<td>Orders spike, then fall</td>
+</tr>
+<tr>
+<td>Pantry loading</td>
+<td>Shoppers stocking up during a deal</td>
+<td>Buying four jars instead of one</td>
+</tr>
+<tr>
+<td>Sell-in and sell-through</td>
+<td>What you ship to retailers vs. what shoppers buy</td>
+<td>Shipments vs. consumption</td>
+</tr>
+<tr>
+<td>Forecast error</td>
+<td>The gap between actual sales and the forecast</td>
+<td>Forecast 110, actual 100: an error of 10</td>
+</tr>
+<tr>
+<td>MAPE</td>
+<td>Mean absolute percentage error: the average size of your errors, in percent</td>
+<td>8%</td>
+</tr>
+<tr>
+<td>Bias</td>
+<td>A tendency to miss in the same direction</td>
+<td>Always too high</td>
+</tr>
+<tr>
+<td>S&amp;OP</td>
+<td>Sales and operations planning: the monthly process that turns forecasts into one plan for demand, supply and finance</td>
+<td>The demand review is its first step</td>
+</tr>
+<tr>
+<td>Unconstrained forecast</td>
+<td>What shoppers would buy if supply weren't a limit</td>
+<td>The number you start from</td>
+</tr>
+</tbody>
+</table></div>
+<p>These are standard planning terms; companies define a few of them slightly differently, especially bias.</p>
+<h2>Build it from drivers</h2>
+<p>Simply Good Foods' 2026 outlook reads like a driver-based forecast in one sentence: growth from innovation and new distribution for Quest and OWYN, offset by Atkins, with the timing of <span class="term" tabindex="0" aria-describedby="term-2">price elasticity<span class="term-tip" role="tooltip" id="term-2">How much the quantity sold changes when price changes. An elasticity of −1.5 means a 10% price rise cuts units about 15%.</span></span> and <span class="term" tabindex="0" aria-describedby="term-3">lapping<span class="term-tip" role="tooltip" id="term-3">Comparing against the same period a year earlier, especially when last year had something unusual, like a launch.</span></span> year-ago promotions weighing on the first half<sup class="fn"><a href="#src-2" aria-label="Source 2">2</a></sup>.</p>
+<p>Vital Farms shows what happens when drivers slip. In November 2026, it cut its 2026 revenue outlook to around $730 million from $775 million to $800 million. Its CFO pointed to new distribution that reached shelves later than expected, a more conservative assumption for how fast that distribution would sell, and an outlook that now assumes no seasonal lift in demand or in conventional egg prices<sup class="fn"><a href="#src-3" aria-label="Source 3">3</a></sup>.</p>
+<p>The building blocks look like this:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>What you forecast</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base</td>
+<td>Current distribution × base velocity × weeks</td>
+</tr>
+<tr>
+<td>New distribution</td>
+<td>Which stores and items, from which week, and how fast new points ramp up</td>
+</tr>
+<tr>
+<td>Events</td>
+<td>Promotion lift, minus any dip afterward</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Planned price changes × expected elasticity</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>Selling days, holidays, launch timing</td>
+</tr>
+</tbody>
+</table></div>
+<p>For example, say you're in 1,000 stores, selling 10 units per store per week. Over a 13-week quarter, the base is 1,000 × 10 × 13 = 130,000 units. Add 200 new stores from week 7 at half speed (200 × 5 × 7 weeks = 7,000), plus one promotion expected to add 6,000 units, minus a 1,500-unit dip after it, and the forecast is 141,500. If the quarter misses, you can check each line to see which assumption broke.</p>
+<h2>Keep the base and the events apart</h2>
+<p>A promotion's spike is the easy part. What happens after is harder. In a 1995 note, Duke's John McCann showed that shipments typically spike during a <span class="term" tabindex="0" aria-describedby="term-4">trade promotion<span class="term-tip" role="tooltip" id="term-4">Money a brand spends through retailers on price cuts, displays and features. Companies record it as a reduction of sales, not a marketing cost.</span></span> and dip afterward as retailers work through the stock they bought on deal. A dip in shoppers' own purchases, by contrast, was often hard to find in weekly store data<sup class="fn"><a href="#src-4" aria-label="Source 4">4</a></sup>. Circana today treats a large <span class="term" tabindex="0" aria-describedby="term-5">post-promotion dip<span class="term-tip" role="tooltip" id="term-5">Lower sales after a promotion while shoppers or retailers work through the stock they bought on deal.</span></span> as a sign of <span class="term" tabindex="0" aria-describedby="term-6">pantry loading<span class="term-tip" role="tooltip" id="term-6">Shoppers stocking up during a deal, which can lower what they buy afterward.</span></span>, or of loyalty that only shows up on deal<sup class="fn"><a href="#src-5" aria-label="Source 5">5</a></sup>. Measure the dip for your own brand rather than assuming it.</p>
+<h2>Forecast what shoppers buy, then what retailers order</h2>
+<p>Monster's <span class="term" tabindex="0" aria-describedby="term-7">net sales<span class="term-tip" role="tooltip" id="term-7">Sales after discounts, returns and trade promotions: the revenue a company reports.</span></span> fell 2.3% in the first quarter of 2025, even as Nielsen showed its retail sales strong and accelerating in most geographies. It named distributor ordering patterns, currency, weather and one fewer selling day among the causes. It also noted that billings over a short period swing with selling days, holiday timing, launches, price-increase timing, promotions and distributor incentives<sup class="fn"><a href="#src-6" aria-label="Source 6">6</a></sup>. So forecast consumption first, then layer on what retailers will order and when.</p>
+<h2>Accuracy vs. bias</h2>
+<p>A forecast error isn't a mistake, as the forecasting textbook by Rob Hyndman and George Athanasopoulos puts it. It's the unpredictable part of what happened. Percentage measures like <span class="term" tabindex="0" aria-describedby="term-8">MAPE<span class="term-tip" role="tooltip" id="term-8">Mean absolute percentage error: the average size of forecast misses, in percent, ignoring whether they were high or low.</span></span> make errors comparable across items, but they break down when sales are near zero, which matters for slow-moving items<sup class="fn"><a href="#src-7" aria-label="Source 7">7</a></sup>.</p>
+<p>Bias is different: a consistent gap in one direction. It often comes from incentives. If salespeople are judged on hitting quota, for example, they lean toward forecasting low<sup class="fn"><a href="#src-8" aria-label="Source 8">8</a></sup>.</p>
+<p>For example, say actual sales are 100 units every month. Forecasts of 110, 90, 110 and 90 have a 10% average error and no bias. Forecasts of 110, 110, 110 and 110 also have a 10% average error, but they're biased high every month. Same accuracy, very different problem.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Accuracy</th>
+<th>Bias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The question</td>
+<td>How far off are we?</td>
+<td>Are we always off the same way?</td>
+</tr>
+<tr>
+<td>A common measure</td>
+<td>Average absolute percentage error (MAPE)</td>
+<td>Average signed error</td>
+</tr>
+<tr>
+<td>The usual fix</td>
+<td>Better drivers and data</td>
+<td>Different incentives, and clear ownership of the number</td>
+</tr>
+</tbody>
+</table></div>
+<p>Agree on a sign convention before you report bias, since teams define error in both directions.</p>
+<h2>Where your forecast goes: S&amp;OP</h2>
+<p><span class="term" tabindex="0" aria-describedby="term-9">Sales and operations planning<span class="term-tip" role="tooltip" id="term-9">Sales and operations planning: the monthly process that combines demand, supply and financial plans into one business plan.</span></span> (S&amp;OP) is the process that combines demand, supply and financial planning into one business plan<sup class="fn"><a href="#src-8" aria-label="Source 8">8</a></sup>. Many companies run it monthly, in a sequence like this: a product review for launches and changes, a demand review that agrees the forecast, a supply review that checks what can be made and shipped, a step that reconciles the numbers with the financial plan, and a leadership meeting that settles the trade-offs. Your job in it is to own the marketing assumptions, like events, launches and price moves, and to flag changes as soon as you know them.</p>
+<p>The Institute of Business Forecasting &amp; Planning's "Demand Planning 101" covers unbiased forecasts, cross-functional agreement, driver-based models and tracking bias separately from error.</p>
+<figure class="video" data-video="kCkAHO1Mexk" data-start="168" data-title="Demand Planning 101: what every planner needs to know"><a class="video-link" href="https://www.youtube.com/watch?v=kCkAHO1Mexk&amp;t=168s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/kCkAHO1Mexk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span><span class="sr-only">Play video: Demand Planning 101: what every planner needs to know</span></a><figcaption><span class="video-title">Demand Planning 101: what every planner needs to know</span> <span class="meta">Demand Planning (IBF On Demand), Sep 2025 · 26 min · starts at 2:48 · YouTube</span></figcaption></figure>
+<details class="check">
+<summary>Self-check: Your forecast has been 8% too high four months running. Demand planning says MAPE is fine at 8%. Who&#x27;s right, and what do you do?</summary>
+<p>Both numbers describe the same problem: an error that always points the same way is bias, not bad luck. Find the assumption that keeps running hot, like event lift, the new-distribution ramp or a target plugged in as a forecast, fix it, and track bias as its own number in the demand review.</p>
+</details>
+</article>
+<section class="check" data-quiz="bm/reading-the-business/driver-based-forecasting" aria-labelledby="check-h"><h2 id="check-h">Check your understanding</h2><p class="meta" data-quiz-score>4 questions. Pick an answer to see if you're right.</p><ol class="quiz"><li class="q" data-correct="0"><fieldset><legend>A retailer tells you your new items will reach its shelves six weeks later than planned. When do you update the forecast?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q1" value="0"><span>Now, and you tell supply and finance at the next demand review</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q1" value="1"><span>At the end of the quarter, once the miss shows up</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q1" value="2"><span>Only if sales fall short</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q1" value="3"><span>Never; the annual plan is fixed</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>Now, and you tell supply and finance at the next demand review.</strong> Late distribution is one of the most common reasons forecasts miss. Flagging it early lets supply and finance adjust before inventory and budgets are locked.</p></details></li><li class="q" data-correct="1"><fieldset><legend>A retailer's big promotion will push next quarter's shipments up 20%, but you expect shopper purchases to stay flat. What do you warn the team about?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q2" value="0"><span>Nothing; shipments are what count</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q2" value="1"><span>Expect orders to dip afterward while the retailer works through the extra stock</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q2" value="2"><span>Expect a permanent 20% lift</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q2" value="3"><span>Expect scanner sales to rise 20% too</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>Expect orders to dip afterward while the retailer works through the extra stock.</strong> Retailers buy ahead on deal. If shoppers don't buy more, the extra stock comes out of later orders.</p></details></li><li class="q" data-correct="1"><fieldset><legend>Your team's forecasts land 5% above actual sales almost every month. What's the best fix?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q3" value="0"><span>Cut every forecast by 5% from now on</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q3" value="1"><span>Find the source of the bias, such as optimistic event lifts or targets used as forecasts, and track bias separately</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q3" value="2"><span>Stop forecasting promotions</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q3" value="3"><span>Switch to a new forecasting tool</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>Find the source of the bias, such as optimistic event lifts or targets used as forecasts, and track bias separately.</strong> A blanket cut hides the cause. Bias usually has a source in the process or the incentives, and fixing it there keeps it from coming back.</p></details></li><li class="q" data-correct="2"><fieldset><legend>Which of these is a driver-based forecast?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q4" value="0"><span>"Up 6%, in line with last year"</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q4" value="1"><span>"Whatever we need to hit the annual target"</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q4" value="2"><span>"Base velocity flat, distribution up from two retailer resets in March, two promotions at last year's lift, and a 3% price increase with expected elasticity"</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-driver-based-forecasting-q4" value="3"><span>"Up 10%, because the team is confident"</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>"Base velocity flat, distribution up from two retailer resets in March, two promotions at last year's lift, and a 3% price increase with expected elasticity".</strong> Each part has an assumption you can check and update. When the quarter misses, you'll know which one broke.</p></details></li></ol></section>
+<section class="lesson-done" aria-label="Finish this lesson">
+  <button type="button" class="btn big" data-mark-done="bm/reading-the-business/driver-based-forecasting">Mark as read</button>
+  <details class="note-box"><summary>Add a note</summary>
+    <label class="sr-only" for="note">Your note on this lesson</label>
+    <textarea id="note" rows="4" data-note="bm/reading-the-business/driver-based-forecasting" placeholder="What do you want to remember?"></textarea>
+    <p class="meta" data-note-status>Saved in this browser.</p>
+  </details>
+</section>
+    <section class="sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources</h2><ol><li id="src-1">Freshpet, <a href="https://www.sec.gov/Archives/edgar/data/1611647/000161164725000011/frpt-exx991x2025505.htm" target="_blank" rel="noopener">first-quarter 2025 results</a>, SEC (May 2025), and <a href="https://www.sec.gov/Archives/edgar/data/1611647/000161164725000027/frpt-exx991x20251103.htm" target="_blank" rel="noopener">third-quarter 2025 results</a>, SEC (Nov 2025)</li><li id="src-2">Simply Good Foods, <a href="https://www.sec.gov/Archives/edgar/data/1702744/000170274426000004/a991_pressreleasexq1x2026.htm" target="_blank" rel="noopener">first-quarter fiscal 2026 results</a>, SEC (Jan 2026)</li><li id="src-3">Vital Farms, <a href="https://www.sec.gov/Archives/edgar/data/1579733/000119312526444348/vitl-ex99_1.htm" target="_blank" rel="noopener">third-quarter 2026 results</a>, SEC (Nov 2026)</li><li id="src-4">John M. McCann, <a href="https://people.duke.edu/~mccann/cpg/thedip.htm" target="_blank" rel="noopener">"The post promotion dip: does it exist?"</a>, Duke University Fuqua School of Business (Mar 1995)</li><li id="src-5">Circana, <a href="https://www.circana.com/liquid-data-go/blog/post/data-first-pricing-diagnose-measure-and-optimize-profit-for-growing-cpg-brands" target="_blank" rel="noopener">"Data-first pricing: diagnose, measure and optimize profit for growing CPG brands"</a></li><li id="src-6">Monster Beverage, <a href="https://www.sec.gov/Archives/edgar/data/865752/000110465925046150/tm2514442d1_ex99-1.htm" target="_blank" rel="noopener">first-quarter 2025 results</a>, SEC (May 2025)</li><li id="src-7">Rob J. Hyndman and George Athanasopoulos, <a href="https://otexts.com/fpp3/toolbox.html#sec-accuracy" target="_blank" rel="noopener">Forecasting: Principles and Practice, 3rd ed., "Evaluating point forecast accuracy"</a></li><li id="src-8">Institute of Business Forecasting &amp; Planning glossary: <a href="https://ibf.org/knowledge/glossary/bias-37" target="_blank" rel="noopener">Bias</a> and <a href="https://ibf.org/knowledge/glossary/sales-and-operations-planning-sop-240" target="_blank" rel="noopener">Sales and operations planning</a></li></ol></section>
+    <nav class="pager" aria-label="Next and previous"><a class="prev" href="the-monthly-business-review.html"><span class="label">Previous</span>The monthly business review: from data to a recommendation</a><a class="next" href="drill-flat-sales-growing-share.html"><span class="label">Next</span>Flat sales, growing share</a></nav>
+  </div>
+  <aside class="item-side c-bm" aria-label="Reading the business &amp; forecasting">
+    <p class="side-h"><a href="index.html">Track 2: Reading the business &amp; forecasting</a></p>
+    <ol><li class=""><a href="share-distribution-and-velocity.html" data-item="bm/reading-the-business/share-distribution-and-velocity"><span class="ck" aria-hidden="true"></span><span class="num">2.1</span> Share, distribution and velocity</a></li><li class=""><a href="diagnosing-a-business.html" data-item="bm/reading-the-business/diagnosing-a-business"><span class="ck" aria-hidden="true"></span><span class="num">2.2</span> Diagnosing a business: distribution, velocity, price and promotion</a></li><li class=""><a href="panel-data-penetration-and-loyalty.html" data-item="bm/reading-the-business/panel-data-penetration-and-loyalty"><span class="ck" aria-hidden="true"></span><span class="num">2.3</span> Panel data: penetration, buy rate and loyalty</a></li><li class=""><a href="the-monthly-business-review.html" data-item="bm/reading-the-business/the-monthly-business-review"><span class="ck" aria-hidden="true"></span><span class="num">2.4</span> The monthly business review: from data to a recommendation</a></li><li class="on"><a href="driver-based-forecasting.html" data-item="bm/reading-the-business/driver-based-forecasting" aria-current="page"><span class="ck" aria-hidden="true"></span><span class="num">2.5</span> Driver-based forecasting and S&amp;OP</a></li><li class=""><a href="drill-flat-sales-growing-share.html" data-item="bm/reading-the-business/flat-sales-growing-share"><span class="ck" aria-hidden="true"></span><span class="num">D2.1</span> Flat sales, growing share</a></li><li class=""><a href="drill-fewer-buyers-buying-more.html" data-item="bm/reading-the-business/fewer-buyers-buying-more"><span class="ck" aria-hidden="true"></span><span class="num">D2.2</span> Fewer buyers, buying more</a></li><li class=""><a href="drill-build-the-quarter.html" data-item="bm/reading-the-business/build-the-quarter"><span class="ck" aria-hidden="true"></span><span class="num">D2.3</span> Build the quarter</a></li><li class=""><a href="drill-write-the-headline.html" data-item="bm/reading-the-business/write-the-headline"><span class="ck" aria-hidden="true"></span><span class="num">D2.4</span> Write the headline</a></li></ol>
+  </aside>
+</div>
+</main>
+<footer class="hub-foot">
+  <p>Built by <a href="https://vanessagershbein.com">Vanessa Gershbein</a>. Lessons are drafted with AI help and edited by her. Small numbers in the text point to the sources at the bottom of each page.</p>
+  <p>Your progress is saved in this browser only.</p>
+</footer>
+</div>
+<script src="../../assets/hub-data.js?v=98967a9d"></script>
+<script src="../../assets/app.js?v=98967a9d"></script>
+</body>
+</html>

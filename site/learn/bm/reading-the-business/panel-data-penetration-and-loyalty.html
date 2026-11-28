@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel data: penetration, buy rate and loyalty · Learning Hub</title>
+<meta name="description" content="Split sales into how many households buy and how much each one buys, and use that to judge where growth will come from.">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/styles.css?v=98967a9d">
+</head>
+<body data-root="../../" data-page="bm/reading-the-business/panel-data-penetration-and-loyalty" data-kind="lesson" data-path="bm">
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="hub-head">
+  <a class="brand" href="../../index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Learning Hub</a>
+  <nav aria-label="Learning Hub"><details class="nav-menu" data-nav-menu><summary class="on">Paths</summary><div class="menu"><a href="../../pmm/index.html" class="c-pmm" data-nav="pmm"><span class="path-chip">PMM</span>Product Marketing</a><a href="../../bm/index.html" class="c-bm" aria-current="page" data-nav="bm"><span class="path-chip">Brand</span>Brand Management</a><span class="soon c-pm"><span class="path-chip">PM</span>Product Management<span class="meta">Coming soon</span></span></div></details><details class="nav-menu" data-nav-menu><summary>Skills</summary><div class="menu"><a href="../../skills/index.html">All skills</a><hr><a href="../../skills/business-math.html">Business math</a><a href="../../skills/data-and-charts.html">Data &amp; charts</a><a href="../../skills/sizing-and-forecasting.html">Sizing &amp; forecasting</a><a href="../../skills/research-and-insight.html">Research &amp; insight</a><a href="../../skills/positioning-and-strategy.html">Positioning &amp; strategy</a><a href="../../skills/pricing-and-promotion.html">Pricing &amp; promotion</a><a href="../../skills/writing-and-storytelling.html">Writing &amp; storytelling</a><a href="../../skills/interviews-and-career.html">Interviews &amp; career</a></div></details><a href="../../review.html" data-nav="review">Review<span class="due-count" data-due-count hidden></span></a><a href="../../notes.html" data-nav="notes">Notes</a><a href="../../glossary.html" data-nav="glossary">Glossary</a><a href="../../roadmap.html" data-nav="roadmap">What&#x27;s coming</a></nav>
+</header>
+<main id="main">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../../index.html">Learning Hub</a> <a href="../../bm/index.html">Brand Management</a> <a href="../../bm/reading-the-business/index.html">Reading the business &amp; forecasting</a> <span>2.3</span></nav>
+<div class="item-layout">
+  <div class="item-main">
+    <header class="item-head c-bm">
+      <h1>Panel data: penetration, buy rate and loyalty</h1>
+      <p class="item-meta"><span class="path-chip">Brand</span><span>Lesson 2.3</span><span>13 min</span></p>
+      <p class="goal"><strong>Goal:</strong> Split sales into how many households buy and how much each one buys, and use that to judge where growth will come from.</p>
+      <p class="skill-chips"><span class="label-s">Skills:</span> <a href="../../skills/data-and-charts.html">Data &amp; charts</a><a href="../../skills/research-and-insight.html">Research &amp; insight</a></p>
+    </header>
+    
+<article class="lesson prose">
+  <p>Freshpet's sales grew 10% in the third quarter of 2026, yet it added few new buyers. Its third-quarter report showed <span class="term" tabindex="0" aria-describedby="term-1">household penetration<span class="term-tip" role="tooltip" id="term-1">The share of households that bought you at least once in a period.</span></span> up 1%, while the total <span class="term" tabindex="0" aria-describedby="term-2">buy rate<span class="term-tip" role="tooltip" id="term-2">What each buying household spends on you in a period.</span></span>, what each buying household spends, was up 9%. A group of households it calls Most Valuable Pet Parents made up 72% of its sales, and that group grew 8%<sup class="fn"><a href="#src-1" aria-label="Source 1">1</a></sup>.</p>
+<p>Freshpet is the exception rather than the rule. Across the brands Worldpanel by Numerator tracks, 68% of the brands that grew in 2025 added households<sup class="fn"><a href="#src-2" aria-label="Source 2">2</a></sup>. Both things are true, and <span class="term" tabindex="0" aria-describedby="term-3">panel data<span class="term-tip" role="tooltip" id="term-3">A large sample of households that record what they buy, so you can follow the same buyers over time.</span></span> is how you find out which story your brand is in.</p>
+<h2>Words to know</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it means</th>
+<th>A quick example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Household panel</td>
+<td>A large sample of households that record what they buy, so you can follow the same people over time</td>
+<td>Homes that scan their receipts or barcodes</td>
+</tr>
+<tr>
+<td>Buyers</td>
+<td>Households that bought you at least once in the period</td>
+<td>1,200 households</td>
+</tr>
+<tr>
+<td>Penetration</td>
+<td>Buyers as a share of all households</td>
+<td>1,200 of 10,000 households = 12%</td>
+</tr>
+<tr>
+<td>Buy rate</td>
+<td>What each buying household spends on you in the period</td>
+<td>$40 a year</td>
+</tr>
+<tr>
+<td>Purchase frequency</td>
+<td>How many times a buyer bought you in the period</td>
+<td>4 trips a year</td>
+</tr>
+<tr>
+<td>Spend per trip</td>
+<td>What a buyer spends on you each time</td>
+<td>$10 a trip</td>
+</tr>
+<tr>
+<td>Repeat rate</td>
+<td>The share of buyers who come back for another purchase</td>
+<td>Half of first-time buyers buy again</td>
+</tr>
+<tr>
+<td>Light and heavy buyers</td>
+<td>Buyers who buy you rarely vs. often</td>
+<td>Once a year vs. every week</td>
+</tr>
+<tr>
+<td>Share of requirements</td>
+<td>Your share of a buyer's total spending in the category, a common loyalty measure</td>
+<td>$40 of their $100 on coffee = 40%</td>
+</tr>
+<tr>
+<td>Repertoire</td>
+<td>The handful of brands a shopper rotates between</td>
+<td>Three yogurt brands, bought in turn</td>
+</tr>
+</tbody>
+</table></div>
+<p>These definitions are standard industry usage; providers word them slightly differently.</p>
+<h2>What a panel measures</h2>
+<p><span class="term" tabindex="0" aria-describedby="term-4">Scanner data<span class="term-tip" role="tooltip" id="term-4">Store checkout scans that firms like Circana and NielsenIQ collect from retailers and sell to many brands.</span></span> tells you what sold. A household panel tells you who bought it: a large sample of homes that record what they buy, so you can follow the same people over time. Penetration is the number of buying households divided by all households, times 100<sup class="fn"><a href="#src-3" aria-label="Source 3">3</a></sup>.</p>
+<p>From there, the math is simple: sales = households in the market × penetration × buy rate, and buy rate = trips per buyer × spend per trip.</p>
+<p>For example, say a town has 10,000 households, and 2,000 of them bought your salsa this year: 20% penetration. Each buyer bought it 4 times at $3 a trip, so the buy rate is $12, and sales are 10,000 × 20% × $12 = $24,000. To grow 10%, you could add 200 buying households, or get each buyer to spend $1.20 more. The panel tells you which of those actually happened.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Number</th>
+<th>What it tells you</th>
+<th>What usually moves it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penetration</td>
+<td>How many households bought you at least once</td>
+<td>Distribution, visibility, advertising that reaches light buyers, trial sizes</td>
+</tr>
+<tr>
+<td>Purchase frequency</td>
+<td>How often buyers come back</td>
+<td>Habit, being easy to find, being remembered</td>
+</tr>
+<tr>
+<td>Spend per trip</td>
+<td>How much they buy each time</td>
+<td>Pack sizes, price, multi-buy offers</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Why most growth comes from more buyers</h2>
+<p>Researchers at the Ehrenberg-Bass Institute call it <span class="term" tabindex="0" aria-describedby="term-5">double jeopardy<span class="term-tip" role="tooltip" id="term-5">The pattern that smaller brands have fewer buyers, and those buyers are also slightly less loyal.</span></span>: small brands have fewer buyers, and those buyers are slightly less loyal. The pattern was first spotted in the 1960s and shows up in many categories, from packaged goods to retail banking. Writing about business markets in 2021, the institute's conclusion is blunt: you can't grow sustainably by focusing on loyalty alone, because a bigger brand has many more buyers who are only slightly more loyal<sup class="fn"><a href="#src-4" aria-label="Source 4">4</a></sup>.</p>
+<p>For example, say Brand A reaches 24% of households and its buyers buy it 4 times a year, while Brand B reaches 8% and its buyers buy it 3 times. A sells four times as much as B, and almost all of that gap is the number of buyers, not how loyal they are. That's the typical shape of double jeopardy.</p>
+<p>Light buyers also matter more than the old 80/20 rule suggests. Byron Sharp and Charles Graham found the real split is closer to 60/20 over five years, about 50/20 over a year and about 40/20 in a quarter. So the light 80% of buyers deliver almost half of a brand's sales<sup class="fn"><a href="#src-5" aria-label="Source 5">5</a></sup>.</p>
+<p>That doesn't mean loyalty is irrelevant. Sharp himself writes that some growth comes from existing heavier buyers becoming a little more frequent and loyal. He also notes that in categories where people rotate between brands, penetration grows two ways: recruiting new buyers, and getting the many very light buyers who don't buy you every period to buy a little more often<sup class="fn"><a href="#src-6" aria-label="Source 6">6</a></sup>.</p>
+<h2>Recruiting isn't enough</h2>
+<p>The same Brand Footprint report has a second finding. Of the brands that recruited new households in 2024, only 22% kept them and were chosen more often a year later. What set those brands apart was a habit forming early: two in three were being bought more often inside their first year<sup class="fn"><a href="#src-2" aria-label="Source 2">2</a></sup>.</p>
+<p>So the panel question is never just "did we add buyers?" It's "did we add buyers, and did they come back?" Freshpet sits at the other end for now: a small brand in a fresh pet food category it's still converting shoppers into, with a heavy-buyer group that already drives most of its sales. Even there, part of the buy-rate rise came from having more of those heavy-buying households, the mirror image of the mix trap.</p>
+<h2>How to read a panel report</h2>
+<ul>
+<li><strong>Read penetration and buy rate together.</strong> Either one alone can mislead.</li>
+<li><strong>Watch for the mix trap.</strong> When light buyers drift away, the average buy rate rises even if nobody changed their habits.</li>
+<li><strong>Check the time window.</strong> Over a longer window, more light buyers show up, so penetration rises and buy rate grows less than the window does. Only compare a 52-week number with another 52-week number.</li>
+<li><strong>Ask where lapsed buyers went.</strong> A rival brand, the <span class="term" tabindex="0" aria-describedby="term-6">store brand<span class="term-tip" role="tooltip" id="term-6">Products sold under a retailer&#x27;s own brand name, like Kirkland Signature at Costco.</span></span> or out of the category each calls for a different fix.</li>
+</ul>
+<p>Byron Sharp revisits the laws of brand growth in this conversation, including penetration, double jeopardy and why heavy buyers of a brand often buy it less than you'd think.</p>
+<figure class="video" data-video="du4AGd0l_IQ" data-start="240" data-title="Revisiting &#x27;How Brands Grow&#x27; with Byron Sharp"><a class="video-link" href="https://www.youtube.com/watch?v=du4AGd0l_IQ&amp;t=240s" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/du4AGd0l_IQ/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="play" aria-hidden="true"></span><span class="sr-only">Play video: Revisiting &#x27;How Brands Grow&#x27; with Byron Sharp</span></a><figcaption><span class="video-title">Revisiting &#x27;How Brands Grow&#x27; with Byron Sharp</span> <span class="meta">The WARC Podcast, Aug 2026 · 45 min · starts at 4:00 · YouTube</span></figcaption></figure>
+<details class="check">
+<summary>Self-check: Your brand&#x27;s sales are flat. Penetration fell from 20% to 18%, and buy rate rose 11%. Your director says loyalty is up. What do you say?</summary>
+<p>The math checks out: 18 × 1.11 is about 20, so flat. But you lost a tenth of your buyers, and part of the buy-rate rise may just be light buyers leaving, which lifts the average. Pull the panel's buyer flows to see who left and where they went, and put the plan behind winning households back, not only rewarding the ones you kept.</p>
+</details>
+</article>
+<section class="check" data-quiz="bm/reading-the-business/panel-data-penetration-and-loyalty" aria-labelledby="check-h"><h2 id="check-h">Check your understanding</h2><p class="meta" data-quiz-score>4 questions. Pick an answer to see if you're right.</p><ol class="quiz"><li class="q" data-correct="0"><fieldset><legend>A mid-size brand wants to grow by launching a rewards program for its heaviest buyers. What's the main risk?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q1" value="0"><span>Its heavy buyers are few and already buy a lot, so most of the growth has to come from reaching more households</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q1" value="1"><span>Rewards programs are too expensive to run</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q1" value="2"><span>Heavy buyers don't like rewards</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q1" value="3"><span>It will cannibalize the brand's other products</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>Its heavy buyers are few and already buy a lot, so most of the growth has to come from reaching more households.</strong> Double jeopardy says bigger brands mainly have more buyers, not much more loyal ones. A plan aimed only at people already buying you a lot has little room to grow.</p></details></li><li class="q" data-correct="1"><fieldset><legend>Penetration rose 15% and buy rate fell 5%. What happened to sales?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q2" value="0"><span>Down about 5%</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q2" value="1"><span>Up about 9%</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q2" value="2"><span>Up about 20%</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q2" value="3"><span>Flat</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>Up about 9%.</strong> Sales = penetration × buy rate, so 1.15 × 0.95 ≈ 1.09. Adding buyers usually lowers the average buy rate, because new buyers tend to be light.</p></details></li><li class="q" data-correct="1"><fieldset><legend>A panel report shows "new buyers" up 30% this year. What do you check before celebrating?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q3" value="0"><span>Nothing; new buyers are always good news</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q3" value="1"><span>Whether they come back for another purchase, and whether they're first-time buyers or light buyers returning</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q3" value="2"><span>Whether the panel is big enough</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q3" value="3"><span>Whether the price went down</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>Whether they come back for another purchase, and whether they're first-time buyers or light buyers returning.</strong> Both count as penetration growth, but they tell different stories. A good early test is whether they buy again: Brand Footprint found the brands that kept their recruits had a buying habit forming in the first year.</p></details></li><li class="q" data-correct="2"><fieldset><legend>Which plan is most likely to grow a mid-size brand's penetration?</legend><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q4" value="0"><span>Bigger multipacks for current buyers</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q4" value="1"><span>A points program for loyal customers</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q4" value="2"><span>Wider distribution plus advertising that reaches light buyers of the category</span></label><label class="opt"><input type="radio" autocomplete="off" name="bm-reading-the-business-panel-data-penetration-and-loyalty-q4" value="3"><span>A price increase to fund more promotion</span></label></fieldset><p class="q-feedback" aria-live="polite" hidden></p><details class="q-answer"><summary>Show answer</summary><p><strong>Wider distribution plus advertising that reaches light buyers of the category.</strong> Penetration grows when more households can find you and think of you. Multipacks and points mostly sell more to people who already buy.</p></details></li></ol></section>
+<section class="lesson-done" aria-label="Finish this lesson">
+  <button type="button" class="btn big" data-mark-done="bm/reading-the-business/panel-data-penetration-and-loyalty">Mark as read</button>
+  <details class="note-box"><summary>Add a note</summary>
+    <label class="sr-only" for="note">Your note on this lesson</label>
+    <textarea id="note" rows="4" data-note="bm/reading-the-business/panel-data-penetration-and-loyalty" placeholder="What do you want to remember?"></textarea>
+    <p class="meta" data-note-status>Saved in this browser.</p>
+  </details>
+</section>
+    <section class="sources" aria-labelledby="sources-h"><h2 id="sources-h">Sources</h2><ol><li id="src-1">Freshpet, <a href="https://www.sec.gov/Archives/edgar/data/1611647/000161164726000026/frpt-20260930xexx992.htm" target="_blank" rel="noopener">third-quarter 2026 earnings presentation</a>, SEC (Nov 2026)</li><li id="src-2">Worldpanel by Numerator, <a href="https://worldpanelbynumerator.com/insights/brand-footprint-2026-the-shoppers-edit" target="_blank" rel="noopener">"Brand Footprint 2026: the shopper's edit"</a> (Oct 2026)</li><li id="src-3">Circana, Liquid Data Go CPG Dictionary: <a href="https://www.circana.com/liquid-data-go/cpg-dictionary/penetration" target="_blank" rel="noopener">Penetration</a></li><li id="src-4">Jenni Romaniuk, John Dawes and Sahar Faghidno, <a href="https://marketingscience.info/news-and-insights/the-double-jeopardy-law-in-b2b-shows-the-way-to-grow" target="_blank" rel="noopener">"The Double Jeopardy law in B2B shows the way to grow"</a>, Ehrenberg-Bass Institute (2021)</li><li id="src-5">Byron Sharp and Charles Graham, <a href="https://marketingscience.info/news-and-insights/value-paretos-bottom-80" target="_blank" rel="noopener">"The value of Pareto's bottom 80%"</a>, Ehrenberg-Bass Institute</li><li id="src-6">Byron Sharp, <a href="https://marketinglawsofgrowth.com/blog_files/3444403041d5fa8c9c07a9ae636b39b9-39.html" target="_blank" rel="noopener">"Reply to critics"</a>, How Brands Grow (2016)</li></ol></section>
+    <nav class="pager" aria-label="Next and previous"><a class="prev" href="diagnosing-a-business.html"><span class="label">Previous</span>Diagnosing a business: distribution, velocity, price and promotion</a><a class="next" href="the-monthly-business-review.html"><span class="label">Next</span>The monthly business review: from data to a recommendation</a></nav>
+  </div>
+  <aside class="item-side c-bm" aria-label="Reading the business &amp; forecasting">
+    <p class="side-h"><a href="index.html">Track 2: Reading the business &amp; forecasting</a></p>
+    <ol><li class=""><a href="share-distribution-and-velocity.html" data-item="bm/reading-the-business/share-distribution-and-velocity"><span class="ck" aria-hidden="true"></span><span class="num">2.1</span> Share, distribution and velocity</a></li><li class=""><a href="diagnosing-a-business.html" data-item="bm/reading-the-business/diagnosing-a-business"><span class="ck" aria-hidden="true"></span><span class="num">2.2</span> Diagnosing a business: distribution, velocity, price and promotion</a></li><li class="on"><a href="panel-data-penetration-and-loyalty.html" data-item="bm/reading-the-business/panel-data-penetration-and-loyalty" aria-current="page"><span class="ck" aria-hidden="true"></span><span class="num">2.3</span> Panel data: penetration, buy rate and loyalty</a></li><li class=""><a href="the-monthly-business-review.html" data-item="bm/reading-the-business/the-monthly-business-review"><span class="ck" aria-hidden="true"></span><span class="num">2.4</span> The monthly business review: from data to a recommendation</a></li><li class=""><a href="driver-based-forecasting.html" data-item="bm/reading-the-business/driver-based-forecasting"><span class="ck" aria-hidden="true"></span><span class="num">2.5</span> Driver-based forecasting and S&amp;OP</a></li><li class=""><a href="drill-flat-sales-growing-share.html" data-item="bm/reading-the-business/flat-sales-growing-share"><span class="ck" aria-hidden="true"></span><span class="num">D2.1</span> Flat sales, growing share</a></li><li class=""><a href="drill-fewer-buyers-buying-more.html" data-item="bm/reading-the-business/fewer-buyers-buying-more"><span class="ck" aria-hidden="true"></span><span class="num">D2.2</span> Fewer buyers, buying more</a></li><li class=""><a href="drill-build-the-quarter.html" data-item="bm/reading-the-business/build-the-quarter"><span class="ck" aria-hidden="true"></span><span class="num">D2.3</span> Build the quarter</a></li><li class=""><a href="drill-write-the-headline.html" data-item="bm/reading-the-business/write-the-headline"><span class="ck" aria-hidden="true"></span><span class="num">D2.4</span> Write the headline</a></li></ol>
+  </aside>
+</div>
+</main>
+<footer class="hub-foot">
+  <p>Built by <a href="https://vanessagershbein.com">Vanessa Gershbein</a>. Lessons are drafted with AI help and edited by her. Small numbers in the text point to the sources at the bottom of each page.</p>
+  <p>Your progress is saved in this browser only.</p>
+</footer>
+</div>
+<script src="../../assets/hub-data.js?v=98967a9d"></script>
+<script src="../../assets/app.js?v=98967a9d"></script>
+</body>
+</html>

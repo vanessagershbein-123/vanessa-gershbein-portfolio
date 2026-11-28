@@ -1,2 +1,2 @@
 # Cloudflare Pages redirects.
-# /learn is served by functions/learn/[[path]].js, which shows the Learning Hub on this domain.
+# The Learning Hub is plain files in site/learn/, copied from the learning-hub repo by its tools/publish_site.py.
