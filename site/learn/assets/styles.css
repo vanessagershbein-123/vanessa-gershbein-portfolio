@@ -441,3 +441,61 @@ details.coming summary { cursor: pointer; font-weight: 600; color: var(--muted);
 .pmap .pts circle { fill: var(--accent); stroke: var(--paper); stroke-width: 2; }
 .pmap .lbl text { font: 500 13px var(--body); fill: var(--ink); }
 .pmap figcaption { font-size: .9rem; color: var(--muted); }
+
+/* Charts drawn by tools/charts.py from @chart blocks. Categorical order checked for color-blind separation on white:
+   cobalt, clay, violet, ochre, sage (bars, lines, stacks); scatter and bubble use cobalt, clay, ochre. Gray is context. */
+:root { --chart-0: #b4b9c4; --chart-1: #2340d9; --chart-2: #c0603a; --chart-3: #8a5cc4; --chart-4: #c79a1e; --chart-5: #3a9468; --chart-total: #6b7080; }
+.chart { margin: .75rem 0; display: grid; gap: .55rem; max-width: 40rem; min-width: 0; }
+.chart figcaption { display: grid; gap: .1rem; }
+.chart-title { font-family: var(--display); font-weight: 600; font-size: 1.08rem; line-height: 1.3; color: var(--ink); letter-spacing: -.005em; }
+.chart-sub { font-size: .9rem; color: var(--muted); }
+.chart-plot { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.chart-plot svg { display: block; width: 100%; max-width: calc(var(--w) * 1px); min-width: min(30rem, calc(var(--w) * 1px)); height: auto; overflow: visible; }
+.chart svg text { font-family: var(--body); }
+.chart .tk { font-size: 13px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.chart .tk.cat, .chart .tk.hd { fill: var(--ink); }
+.chart .tk.hd { font-weight: 600; }
+.chart .tk.sm { font-size: 12px; }
+.chart .tk.warn { font-size: 12px; font-weight: 600; fill: var(--missed-ink); }
+.chart .ax { font-size: 12.5px; font-weight: 600; fill: var(--muted); }
+.chart .val, .chart .end, .chart .r2 { font-size: 12.5px; font-weight: 600; fill: var(--ink); }
+.chart .end-muted { fill: var(--muted); font-weight: 500; }
+.chart .in { font-size: 12px; font-weight: 600; fill: #fff; pointer-events: none; }
+.chart .in.in-dark { fill: var(--ink); }
+.chart .plbl { font-size: 12px; fill: var(--ink); }
+.chart .note { font-size: 12px; fill: var(--muted); }
+.chart .grid line, .chart .rowrule { stroke: var(--rule); stroke-width: 1; }
+.chart .base { stroke: var(--rule-strong); stroke-width: 1; }
+.chart .conn { stroke: var(--rule-strong); stroke-width: 1; }
+.chart .note-ln { stroke: var(--neutral); stroke-width: 1; }
+.chart .s0 { --sc: var(--chart-0); } .chart .s1 { --sc: var(--chart-1); } .chart .s2 { --sc: var(--chart-2); }
+.chart .s3 { --sc: var(--chart-3); } .chart .s4 { --sc: var(--chart-4); } .chart .s5 { --sc: var(--chart-5); }
+.chart .w-up { --sc: var(--chart-1); } .chart .w-dn { --sc: var(--chart-2); } .chart .w-t { --sc: var(--chart-total); }
+.chart .m { fill: var(--sc); transition: opacity .15s; }
+.chart .m:hover { opacity: .82; }
+.chart .ln { fill: none; stroke: var(--sc); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .ln.s0 { stroke-width: 1.5; }
+.chart .dot, .chart .pt { fill: var(--sc); stroke: var(--paper); stroke-width: 2; }
+.chart .bub { fill-opacity: .72; }
+.chart .wedge { stroke: var(--paper); stroke-width: 2; }
+.chart .hit { fill: transparent; }
+.chart .hit:hover { fill: var(--accent); fill-opacity: .1; }
+.chart .trend { stroke: var(--neutral-ink); stroke-width: 1.5; }
+.chart .hb-ring { fill: var(--paper); stroke: var(--chart-1); stroke-width: 1.5; }
+.chart .hb-fill { fill: var(--chart-1); }
+.chart .cell-na { fill: var(--wash); }
+.chart-legend, .prose .chart-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-size: .88rem; color: var(--muted); }
+.chart-legend li { display: inline-flex; align-items: center; gap: .4rem; }
+.chart .key { display: inline-block; background: var(--sc); flex: none; }
+.chart .key-rect { width: .75rem; height: .75rem; border-radius: 3px; }
+.chart .key-line { width: 1.1rem; height: 2px; border-radius: 2px; }
+.chart .key-dot { width: .6rem; height: .6rem; border-radius: 50%; }
+.chart-src, .chart-key { font-size: .85rem; color: var(--muted); }
+.chart-scale { display: flex; align-items: center; gap: .5rem; font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.scale-bar { width: 8rem; height: .6rem; border-radius: 3px; }
+.scale-bar.seq { background: linear-gradient(90deg, #eef1fd, #6a80e6, #2340d9, #122179); }
+.scale-bar.div { background: linear-gradient(90deg, #9c4a2a, #e2ad94, #f1f2f5, #8d9fee, #1a2fa6); }
+.chart-data summary { cursor: pointer; font-size: .88rem; font-weight: 600; color: var(--accent-ink); width: fit-content; }
+.chart-data .table-wrap { margin-top: .5rem; }
+.chart-data table { font-size: .88rem; font-variant-numeric: tabular-nums; }
+.chart-data td, .chart-data th { min-width: 0; }
