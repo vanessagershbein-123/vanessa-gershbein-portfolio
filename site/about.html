@@ -77,21 +77,11 @@
   <div class="talk-info">
   <h2><span class="sig">Pick my brain</span> over coffee. Or a breakfast taco.</h2>
   <div class="rows">
-    <div class="row"><span class="label">Email</span><a class="addr" id="email" href="mailto:vanessa.gershbein@my.utexas.edu">vanessa.gershbein@my.utexas.edu</a><button class="copy" type="button" data-copy="email">Copy</button><span class="sr-only" aria-live="polite" data-copy-live></span></div>
+    <div class="row"><span class="label">Email</span><a class="addr" id="email" href="mailto:vanessa.gershbein@my.utexas.edu">vanessa.gershbein@<wbr>my.utexas.edu</a><button class="copy" type="button" data-copy="email">Copy</button><span class="sr-only" aria-live="polite" data-copy-live></span></div>
     <div class="row"><span class="label">LinkedIn</span><a class="addr" href="https://www.linkedin.com/in/vanessa-gershbein/" target="_blank" rel="noopener">linkedin.com/in/vanessa-gershbein ↗</a></div>
     <div class="row"><span class="label">Based in</span><span>Austin, Texas</span></div>
   </div>
   </div>
-  <form class="talk-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact">
-    <input type="hidden" name="page" value="about.html">
-    <p class="hp" hidden><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-    <label class="f"><span>Name</span><input name="name" autocomplete="name" required></label>
-    <label class="f"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
-    <label class="f"><span>What's on your mind?</span><textarea name="message" rows="4" required></textarea></label>
-    <button type="submit" class="send">Send it</button>
-    <p class="form-status" role="status" aria-live="polite"></p>
-  </form>
 </section>
 <footer class="site-foot"><span>© 2026 Vanessa Gershbein</span><a href="index.html">← Back home</a></footer>
 </div>
@@ -116,18 +106,6 @@ document.querySelectorAll('.explore-menu').forEach(function (m) {
   document.addEventListener('click', function (e) { if (!m.contains(e.target)) set(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !list.hidden) { set(false); btn.focus(); } });
   m.addEventListener('focusout', function (e) { if (e.relatedTarget && !m.contains(e.relatedTarget)) set(false); });
-});
-// contact form: send to Netlify without leaving the page
-document.querySelectorAll('.talk-form').forEach(function (form) {
-  var status = form.querySelector('.form-status'), btn = form.querySelector('.send');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    btn.disabled = true; status.textContent = 'Sending...';
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset(); form.classList.add('sent'); status.textContent = 'Thanks! Your note is on its way to my inbox.'; })
-      .catch(function () { status.textContent = "Hmm, that didn't send. You can email me at vanessa.gershbein@my.utexas.edu."; })
-      .then(function () { btn.disabled = false; });
-  });
 });
 </script>
 <script src="bubble.js" defer></script>

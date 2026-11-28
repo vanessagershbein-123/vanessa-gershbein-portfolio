@@ -12,7 +12,7 @@ I spent six years figuring out why people choose what they choose. Now I'm an MB
 - **Step inside my head.** On the About page my eyes follow your cursor, and the thoughts orbiting me are things I believe about marketing. Pop one and it carries you to the post it came from.
 - **Results first.** Selected Work groups real projects by the kind of work, leads each one with its result, and turns a few into quick guessing games.
 - **A career timeline** that fills in as you scroll.
-- **A contact form** that sends straight to my inbox.
+- **A coffee-chat box** on every page with my email (one click to copy) and LinkedIn.
 
 | About me | Career timeline | Selected Work |
 | --- | --- | --- |

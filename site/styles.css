@@ -808,27 +808,11 @@ body.inner { overflow-x: clip; }
 .inner .proj-card { border-top: 9px solid var(--cobalt); }
 .inner .dot { border: 2px solid var(--ink); }
 
-/* ---------- contact form in the coffee box ---------- */
-.talk-info { display: grid; gap: 1.4rem; align-content: start; }
+/* ---------- the coffee box: heading left, contact rows right ---------- */
+.talk-info { display: grid; gap: 1.4rem; align-content: start; position: relative; z-index: 6; }
 @media (min-width: 900px) {
-  .home .talk, .inner .talk { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .home .talk-info, .inner .talk-info { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); column-gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 }
-.talk-form { display: grid; gap: 1.1rem; background: #fff; color: var(--ink); border: 2px solid var(--ink); border-radius: 22px; box-shadow: 7px 7px 0 var(--cobalt); padding: clamp(1.25rem, 3vw, 1.9rem); }
-.talk-form .f { display: grid; gap: .35rem; }
-.talk-form .f span { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: color-mix(in srgb, var(--cobalt) 70%, var(--ink)); }
-.talk-form input, .talk-form textarea { width: 100%; font: inherit; font-size: 1rem; color: var(--ink); background: transparent; border: 0; border-bottom: 2px solid color-mix(in srgb, var(--cobalt) 30%, #fff); border-radius: 0; padding: .5rem 0; transition: border-color .2s; }
-.talk-form textarea { resize: vertical; min-height: 6.5rem; }
-.talk-form input:focus, .talk-form textarea:focus { outline: none; border-bottom-color: var(--cobalt); }
-.talk-form input:focus-visible, .talk-form textarea:focus-visible { box-shadow: 0 2px 0 var(--cobalt); }
-.talk-form .send { justify-self: start; font: inherit; font-weight: 700; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: var(--cobalt); border: 2px solid var(--ink); border-radius: 999px; padding: .85rem 1.7rem; box-shadow: 4px 4px 0 var(--ink); transition: transform .15s, box-shadow .15s; }
-.talk-form .send:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
-.talk-form .send:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
-.talk-form .send:disabled { opacity: .6; }
-.talk-form .send:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; }
-.form-status { margin: 0; min-height: 1.4em; font-size: .95rem; color: var(--cobalt); font-weight: 600; }
-.form-status:empty { display: none; }
-@media (max-width: 600px) { .talk-form { box-shadow: 5px 5px 0 var(--cobalt); } .talk-form .send { justify-self: stretch; } }
-.talk-form { position: relative; z-index: 6; }
 
 /* ==========================================================================
    Sleek inner pages: hairline cards, quiet labels, calm spacing.
@@ -877,11 +861,7 @@ body.inner { overflow-x: clip; }
 
 /* contact form: hairline card, clean button */
 .inner .talk { border-radius: 24px; }
-.inner .talk .row .label, .inner .talk-form .f span { text-transform: none; letter-spacing: 0; font-size: .9rem; font-weight: 500; color: var(--muted); }
-.inner .talk-form { border: 1px solid var(--hair); box-shadow: 0 18px 40px -30px rgba(18, 28, 80, .35); border-radius: 18px; }
-.inner .talk-form .send { border: 0; box-shadow: none; text-transform: none; letter-spacing: 0; font-size: 1rem; font-weight: 600; padding: .85rem 1.8rem; transition: background .2s, transform .2s; }
-.inner .talk-form .send:hover { background: color-mix(in srgb, var(--cobalt) 85%, var(--ink)); transform: translateY(-1px); box-shadow: none; }
-.inner .talk-form .send:active { transform: none; box-shadow: none; }
+.inner .talk .row .label { text-transform: none; letter-spacing: 0; font-size: .9rem; font-weight: 500; color: var(--muted); }
 .inner .talk .copy { border-color: var(--hair); text-transform: none; letter-spacing: 0; font-size: .85rem; font-weight: 600; }
 
 /* quiz buttons on Selected Work */
