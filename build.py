@@ -2,6 +2,12 @@
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parent / "site"
+SITE = "https://vanessagershbein.com"
+
+
+def public_url(filename):
+    """The address Google should list for a page. Cloudflare serves pages without .html."""
+    return SITE + "/" if filename == "index.html" else f"{SITE}/{filename.removesuffix('.html')}"
 
 CRUMB_NAMES = {"preview-about.html": "About me", "about.html": "About me", "career.html": "My Career", "work.html": "Selected Work", "mba.html": "At McCombs", "made.html": "What I've Made", "photography.html": "Photography", "projects.html": "Projects &amp; Builds", "kenvue.html": "Kenvue DFML Summit", "tomorrowx.html": "TomorrowX Summit", "trek.html": "Tech Trek", "camp.html": "Marketing Camp", "forte.html": "Forté Conference"}
 DESCRIPTIONS = {
@@ -46,6 +52,9 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
     body = crumb + bubble + body
     foot_link = "" if home or landing else f'<a href="{back[0]}">← {back[1]}</a>'
     body_class = ' class="home site"' if home else (' class="inner site landing"' if landing else ' class="inner site"')
+    # Tell Google which address is the real one (not the old Netlify copy); keep previews out of search.
+    seo = ('<meta name="robots" content="noindex">' if preview
+           else f'<link rel="canonical" href="{public_url(filename)}">\n<meta property="og:url" content="{public_url(filename)}">')
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -53,6 +62,7 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+{seo}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -883,3 +893,10 @@ page("forte.html", "Forté Leadership Conference · Vanessa Gershbein", "mba", b
 </article>
 """)
 
+
+# ---------- search engines: robots.txt and sitemap.xml ----------
+(OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
+(OUT / "sitemap.xml").write_text(
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + "".join(f"  <url><loc>{public_url(f)}</loc></url>\n" for f in DESCRIPTIONS)
+    + "</urlset>\n", encoding="utf-8")
