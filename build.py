@@ -56,7 +56,7 @@ def page(filename, title, current, body, home=False, back=("index.html", "Back h
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://vanessagershbein.netlify.app/images/og-card.jpg">
+<meta property="og:image" content="https://vanessagershbein.com/images/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">

@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects.
+# The Learning Hub lives on its own site; /learn forwards there.
+/learn    https://vanessa-learning-hub.netlify.app/        302
+/learn/*  https://vanessa-learning-hub.netlify.app/:splat  302

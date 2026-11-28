@@ -1,6 +1,6 @@
 # Vanessa Gershbein · personal site
 
-**Live at [vanessagershbein.netlify.app](https://vanessagershbein.netlify.app)**
+**Live at [vanessagershbein.com](https://vanessagershbein.com)**
 
 I spent six years figuring out why people choose what they choose. Now I'm an MBA candidate at UT Austin McCombs (Class of 2028), and this is the site I built to show it: part portfolio, part invitation to grab a coffee.
 
@@ -25,7 +25,7 @@ I designed and built this site with Claude, starting from two sites I admired. I
 - **No framework.** Plain HTML, CSS, and a little JavaScript.
 - **One script builds every page.** `build.py` holds all the copy and writes each page into `site/`. To change a page, edit the copy there and run `python3 build.py`.
 - **Physics for the bubbles.** The orbiting thoughts on About use [Matter.js](https://brm.io/matter-js/). The cursor-following eyes swap between nine photos of me looking in different directions.
-- **Hosted on Netlify**, which publishes the `site/` folder and handles the contact form.
+- **Hosted on Cloudflare Pages**, which publishes the `site/` folder every time I push. The older Netlify copy at vanessagershbein.netlify.app is frozen as it was in November 2026.
 
 ```
 build.py        every page's copy and layout
