@@ -26,6 +26,7 @@ I designed and built this site with Claude, starting from two sites I admired. I
 - **One script builds every page.** `build.py` holds all the copy and writes each page into `site/`. To change a page, edit the copy there and run `python3 build.py`.
 - **Physics for the bubbles.** The orbiting thoughts on About use [Matter.js](https://brm.io/matter-js/). The cursor-following eyes swap between nine photos of me looking in different directions.
 - **Hosted on Cloudflare Pages**, which publishes the `site/` folder every time I push. The older Netlify copy at vanessagershbein.netlify.app is frozen as it was in November 2026.
+- **The Learning Hub shows at vanessagershbein.com/learn.** It lives in its own repo and deploys on its own to vanessa-learning-hub.netlify.app; `functions/learn/[[path]].js` (a Cloudflare Pages Function) fetches each hub page from there and serves it under /learn/, cached for 5 minutes. Hub updates never require touching this site.
 
 ```
 build.py        every page's copy and layout
