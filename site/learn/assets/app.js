@@ -21,7 +21,7 @@
 
   // ---------- state ----------
   function blank() { return { v: 1, done: {}, rate: {}, hist: {}, ans: {}, notes: {}, revealed: {}, quiz: {}, att: {}, prev: {}, tl: {}, last: null, act: {} }; }
-  function ensure() { ['quiz', 'att', 'prev', 'tl'].forEach(function (k) { if (!S[k] || typeof S[k] !== 'object') S[k] = {}; }); }
+  function ensure() { ['quiz', 'att', 'prev', 'tl', 'gl'].forEach(function (k) { if (!S[k] || typeof S[k] !== 'object') S[k] = {}; }); }
   function valid(s) {
     if (!s || typeof s !== 'object' || s.v !== 1) return false;
     return ['done', 'rate', 'hist', 'ans', 'notes', 'revealed', 'act'].every(function (k) {
@@ -615,6 +615,130 @@
     });
   });
 
+  // ---------- glossary flashcards: decks by path, flip, sort into Got it / Still learning ----------
+  function setupFlash() {
+    var box = $('[data-flash]'), src = document.getElementById('glossary-cards');
+    if (!box || !src) return;
+    var CARDS;
+    try { CARDS = JSON.parse(src.textContent); } catch (e) { return; }
+    var pref = S.gl;
+    if (!pref.k || typeof pref.k !== 'object') pref.k = {};
+    var deck = $('[data-deck="' + pref.deck + '"]', box) ? pref.deck : 'all';
+    var rev = !!pref.rev, only = !!pref.only;
+    var queue = [], total = 0, got = 0, flipped = false, cur = null;
+    var card = $('[data-flash-card]', box), stage = $('[data-flash-stage]', box), done = $('[data-flash-done]', box);
+    var bGot = $('[data-flash-got]', box), bAgain = $('[data-flash-again]', box), live = $('[data-flash-live]', box);
+    var cbRev = $('[data-flash-reverse]', box), cbOnly = $('[data-flash-only]', box);
+
+    function inDeck(c) { return deck === 'all' || c.p.indexOf('all') >= 0 || c.p.indexOf(deck) >= 0; }
+    function deckCards() { return CARDS.filter(inDeck); }
+    function shuffle(a) {
+      for (var i = a.length - 1; i > 0; i--) { var r = Math.floor(Math.random() * (i + 1)); var x = a[i]; a[i] = a[r]; a[r] = x; }
+      return a;
+    }
+    function paintKnown() {
+      var all = deckCards(), k = all.filter(function (c) { return pref.k[c.t]; }).length;
+      $('[data-flash-known]', box).textContent = k
+        ? 'You\'ve marked ' + k + ' of ' + all.length + ' cards in this deck as Got it.'
+        : all.length + ' cards in this deck. Flip a card, then sort it.';
+    }
+    function paintCount() {
+      $('[data-flash-count]', box).textContent = got + ' of ' + total + ' done';
+      $('[data-flash-bar]', box).style.width = (total ? Math.round(100 * got / total) : 0) + '%';
+    }
+    function face(isFlipped) {
+      flipped = isFlipped;
+      card.classList.toggle('is-flipped', flipped);
+      $('[data-face="front"]', card).setAttribute('aria-hidden', flipped ? 'true' : 'false');
+      $('[data-face="back"]', card).setAttribute('aria-hidden', flipped ? 'false' : 'true');
+      bGot.disabled = bAgain.disabled = !flipped;
+      if (cur) {
+        var showTerm = flipped === rev;
+        card.setAttribute('aria-label', (showTerm ? 'Term: ' + cur.t : 'Definition: ' + cur.d) + (flipped ? '' : '. Press to flip.'));
+      }
+    }
+    function paintCard() {
+      if (!queue.length) { finish(); return; }
+      cur = queue[0];
+      stage.hidden = false; done.hidden = true;
+      $('[data-front-label]', card).textContent = rev ? 'Definition' : 'Term';
+      $('[data-front-text]', card).textContent = rev ? cur.d : cur.t;
+      $('[data-back-label]', card).textContent = rev ? 'Term' : 'Definition';
+      $('[data-back-text]', card).textContent = rev ? cur.t : cur.d;
+      $('[data-back-also]', card).textContent = cur.o ? 'Also written as: ' + cur.o + '.' : '';
+      card.classList.toggle('is-rev', rev);
+      card.classList.add('no-anim');
+      face(false);
+      void card.offsetWidth;
+      card.classList.remove('no-anim');
+      paintCount();
+    }
+    function finish() {
+      cur = null;
+      stage.hidden = true; done.hidden = false;
+      var msg = total
+        ? 'Round done: all ' + total + ' cards sorted into Got it.'
+        : (only ? 'Nothing left to learn in this deck: every card is marked Got it.' : 'No cards in this deck yet.');
+      $('[data-flash-done-text]', box).textContent = msg;
+      live.textContent = msg;
+      paintKnown();
+    }
+    function start() {
+      var list = deckCards();
+      if (only) list = list.filter(function (c) { return !pref.k[c.t]; });
+      queue = shuffle(list.slice()); total = queue.length; got = 0;
+      $$('[data-deck]', box).forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-deck') === deck ? 'true' : 'false'); });
+      cbRev.checked = rev; cbOnly.checked = only;
+      paintKnown();
+      paintCard();
+    }
+    function sort(knew) {
+      if (!flipped || !cur) return;
+      queue.shift();
+      if (knew) { pref.k[cur.t] = 1; got++; }
+      else {
+        delete pref.k[cur.t];
+        queue.splice(Math.min(queue.length, 3 + Math.floor(Math.random() * 3)), 0, cur);
+      }
+      bump(); save(); paintKnown();
+      live.textContent = knew ? 'Got it.' : 'Still learning. It comes back in a few cards.';
+      paintCard();
+      if (!stage.hidden) card.focus({ preventScroll: true });
+    }
+
+    card.addEventListener('click', function () { if (cur) face(!flipped); });
+    bGot.addEventListener('click', function () { sort(true); });
+    bAgain.addEventListener('click', function () { sort(false); });
+    $$('[data-deck]', box).forEach(function (b) {
+      b.addEventListener('click', function () { deck = pref.deck = b.getAttribute('data-deck'); save(); start(); });
+    });
+    cbRev.addEventListener('change', function () { rev = pref.rev = cbRev.checked; save(); if (cur) paintCard(); });
+    cbOnly.addEventListener('change', function () { only = pref.only = cbOnly.checked; save(); start(); });
+    $('[data-flash-shuffle]', box).addEventListener('click', start);
+    $('[data-flash-restart]', box).addEventListener('click', start);
+    $('[data-flash-reset]', box).addEventListener('click', function () {
+      if (!window.confirm('Clear your Got it marks for every card in this deck?')) return;
+      deckCards().forEach(function (c) { delete pref.k[c.t]; });
+      save(); start();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.altKey || e.ctrlKey || e.metaKey || stage.hidden || !cur) return;
+      var tgt = e.target;
+      if (tgt && tgt.closest && tgt.closest('input, textarea, select, [contenteditable]')) return;
+      var r = box.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (!flipped) face(true); else sort(e.key === 'ArrowRight');
+      } else if (e.key === ' ' && tgt !== card && !(tgt && tgt.closest && tgt.closest('button, a, summary'))) {
+        e.preventDefault();
+        face(!flipped);
+      }
+    });
+    box.hidden = false;
+    start();
+  }
+
   // ---------- boot ----------
   paintCommon();
   if (KIND === 'home') paintHome();
@@ -622,4 +746,5 @@
   if (KIND === 'drill') setupDrill();
   if (KIND === 'review') paintReview();
   if (KIND === 'notes') setupNotes();
+  if (KIND === 'glossary') setupFlash();
 })();

@@ -361,6 +361,46 @@ textarea { resize: vertical; line-height: 1.5; }
 table.glossary th[scope="row"] { white-space: nowrap; font-weight: 600; vertical-align: top; }
 table.glossary td { vertical-align: top; }
 table.glossary td .meta { display: block; margin-top: .25rem; }
+/* Glossary flashcards */
+.flash { margin: 1.5rem 0 2.5rem; padding: 1.25rem 1.25rem 1rem; background: var(--wash); border-radius: var(--radius); }
+.flash-head h2 { margin: 0; font-family: var(--display); font-size: 1.35rem; line-height: 1.25; }
+.flash-known { margin: .25rem 0 0; color: var(--muted); font-size: .92rem; }
+.deck-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .9rem; }
+.deck-btn { font: inherit; font-size: .88rem; font-weight: 600; padding: .3rem .8rem; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--paper); color: var(--ink); cursor: pointer; transition: background .15s, border-color .15s; }
+.deck-btn:hover { border-color: var(--muted); }
+.deck-btn .n { color: var(--muted); font-weight: 500; margin-left: .15rem; }
+.deck-btn[aria-pressed="true"] { background: var(--c-tint); border-color: var(--c); color: var(--c-ink); }
+.deck-btn[aria-pressed="true"] .n { color: inherit; }
+.flash-opts { display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; margin-top: .75rem; font-size: .92rem; color: var(--muted); }
+.flash-opts label { display: inline-flex; align-items: center; gap: .45rem; cursor: pointer; }
+.flash-opts input { accent-color: var(--accent); width: 1rem; height: 1rem; margin: 0; }
+.flash-stage { margin-top: 1.1rem; }
+.flash-progress { display: flex; align-items: center; gap: .75rem; font-size: .85rem; color: var(--muted); margin-bottom: .6rem; white-space: nowrap; }
+.flash-progress .bar { flex: 1; height: 6px; border-radius: 999px; background: var(--wash-2); overflow: hidden; }
+.flash-progress .bar span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: inherit; transition: width .3s var(--ease); }
+.flash-card { display: grid; width: 100%; min-height: 13rem; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; perspective: 1400px; }
+.flash-card:focus { outline: none; }
+.flash-face { grid-area: 1 / 1; display: flex; flex-direction: column; justify-content: center; gap: .55rem; padding: 1.5rem 1.75rem; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 6px 22px rgba(24, 26, 32, .06); -webkit-backface-visibility: hidden; backface-visibility: hidden; transition: transform .5s var(--ease); }
+.flash-face.back { transform: rotateY(180deg); }
+.flash-card.is-flipped .flash-face.front { transform: rotateY(-180deg); }
+.flash-card.is-flipped .flash-face.back { transform: rotateY(0deg); }
+.flash-card.no-anim .flash-face { transition: none; }
+.flash-card:focus-visible .flash-face { outline: 2px solid var(--accent); outline-offset: 3px; }
+.flash-label { font-size: .72rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.flash-text { font-size: 1.08rem; line-height: 1.55; }
+.flash-card:not(.is-rev) .front .flash-text, .flash-card.is-rev .back .flash-text { font-family: var(--display); font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 600; line-height: 1.2; }
+.flash-hint { font-size: .8rem; color: var(--muted); margin-top: .4rem; }
+.flash-also { font-size: .85rem; color: var(--muted); }
+.flash-also:empty { display: none; }
+.flash-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.flash-actions .btn[disabled] { opacity: .45; cursor: default; transform: none; }
+.flash kbd { font: 600 .72rem/1 var(--body); padding: .12rem .32rem; margin-left: .35rem; border: 1px solid currentColor; border-radius: 4px; opacity: .65; }
+.flash-done { margin-top: 1.1rem; padding: 1.5rem; background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius); text-align: center; }
+.flash-done p { margin: 0 0 .85rem; font-weight: 600; }
+.flash-foot { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .25rem; margin-top: .6rem; }
+.flash-foot .btn { font-size: .85rem; padding: .35rem .7rem; color: var(--muted); }
+@media (hover: none) { .flash kbd { display: none; } }
+@media (max-width: 640px) { .flash { padding: 1rem .9rem .8rem; } .flash-face { padding: 1.25rem; } .flash-actions .btn { flex: 1; } }
 
 /* Drill hints: one per press of the hint button */
 .hints { display: grid; gap: .6rem; justify-items: start; }
